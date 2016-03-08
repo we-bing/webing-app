@@ -6,7 +6,21 @@ html, body {  height: 100%; width: 100%; margin: 0;  }
     height: 10%;
     background-color: #ddffdd;
 }
+.btn_side_menu{
+    position: absolute;
+    height: 100%;
+    width:40%;
+    border: 1px solid black;
+    left: 100%;
+    background-color: #ddffdd;
+    transition: left 1s;
+}
+.open_menu{
+    left: 60%;
+}
+
 /*end*/
+
 
 
 /*select district page*/

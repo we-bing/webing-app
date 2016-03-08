@@ -12,8 +12,14 @@
 </head>
 <body ng-app="webingApp" >
 <div ng-controller="WebingController" class="app-container">
+    <div class="btn_side_menu" ng-class="{open_menu : isMenuOpen }">
+        <div class="menu1">a</div>
+        <div class="menu2">b</div>
+        <div class="menu3">c</div>
+    </div>
     <div class="action_bar">
-        <div class="btn_menu" ng-click="back()">back</div>
+        <div class="btn_back" ng-click="back()">back</div>
+        <div class="side_menu_open" ng-click="menuClassToggle()">메뉴열기</div>
     </div>
 
     <div ng-view class="view-container"></div>

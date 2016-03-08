@@ -9,6 +9,7 @@ webing
     .controller('WebingController', function ($scope, $location, apiService, webingDataService) {
         var init;
         $scope.data = {};
+        $scope.isMenuOpen = false;
 
         var fetchTownList;
 
@@ -35,6 +36,10 @@ webing
         $scope.back = function() {
             window.history.back();
         };
+        $scope.menuClassToggle = function () {
+            $scope.isMenuOpen = !$scope.isMenuOpen;
+        };
+
         init();
 
     })
