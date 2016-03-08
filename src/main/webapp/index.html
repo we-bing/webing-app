@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    <title>index page</title>
+    <link rel="stylesheet" href="public/static/css/reset.css">
+    <link rel="stylesheet" href="public/static/css/css.css">
+    <style>
+
+    </style>
+</head>
+<body ng-app="webingApp" >
+<div ng-controller="WebingController" class="app-container">
+    <div class="action_bar">
+        <div class="btn_menu" ng-click="back()">back</div>
+    </div>
+
+    <div ng-view class="view-container"></div>
+</div>
+
+
+<script src="public/static/node_modules/angular/angular.js"></script>
+<script src="public/static/node_modules/angular-route/angular-route.js"></script>
+<script src="public/static/js/webingApp.js"></script>
+<script src="public/static/js/factory/ApiService.js"></script>
+<script src="public/static/js/factory/WebingDataService.js"></script>
+<script src="public/static/js/directive/SelectTownDirective.js"></script>
+<script src="public/static/js/controller/CandidacyListController.js"></script>
+<script src="public/static/js/controller/SelectTownController.js"></script>
+<script src="public/static/js/controller/CandidacyDetailController.js"></script>
+</body>
+</html>

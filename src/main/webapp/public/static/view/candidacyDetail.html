@@ -1,0 +1,14 @@
+<div id="candidacyDatail">
+    <img ng-src="http://info.nec.go.kr/{{currentCandidacy.candidacyImg}}" alt="" class="profile_picture">
+    <div class="career_box">
+        <span ng-bind="currentCandidacy.experience"></span>
+    </div>
+    <span class="name" ng-bind="currentCandidacy.name"></span>
+    <span class="pledge"></span>
+    <div class="keyword"
+         ng-repeat="keyword in currentCandidacy.candidacyKeywordList"
+         ng-bind="keyword.keywordName"
+    ></div>
+    <div class="btn_right" ng-click="changeToRight()">오른쪽</div>
+    <div class="bth_left" ng-click="changeToLeft()">왼쪽</div>
+</div>

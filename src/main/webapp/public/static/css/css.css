@@ -1,0 +1,73 @@
+html, body {  height: 100%; width: 100%; margin: 0;  }
+
+
+/*index page*/
+.menu{
+    height: 10%;
+    background-color: #ddffdd;
+}
+/*end*/
+
+
+/*select district page*/
+.view-container{
+    height: 90%;
+}
+
+.app-container{
+    height: 100%;
+}
+
+.input-district:focus{
+    outline: none !important;
+}
+
+
+
+#selectDistrict {
+    height: 100%;
+}
+
+.input-box .input-district{
+    float: left;
+}
+.input-box .search{
+    float: right;
+}
+.select-box {
+    height: 200px;
+}
+.input-box{
+    height:20%;
+}
+.input-box:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+.input-district{
+    border: 1px solid black;
+}
+.district-list{
+    font-size: 150%;
+    height: 60%;
+    overflow: auto;
+    padding-right: 17px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.district-name:hover{
+    color: red;
+}
+/*end*/
+
+/*candidacyList*/
+
+img{
+    height: 200px;
+}
+
+.card_box{
+    border: 1px solid black;
+}
