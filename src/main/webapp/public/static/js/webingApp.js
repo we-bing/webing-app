@@ -46,8 +46,8 @@ webing
     .config(function($routeProvider) {
         $routeProvider
             .when('/selectTown', {
-                templateUrl: 'public/static/view/selectTown.html',
-                controller: 'SelectTownController'
+                templateUrl: 'public/static/view/home.html',
+                controller: 'HomeController'
             })
             .when('/candidacyList/:districtCode', {
                 templateUrl: 'public/static/view/candidacyList.html',

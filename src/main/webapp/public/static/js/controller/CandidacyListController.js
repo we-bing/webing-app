@@ -10,7 +10,11 @@ webing.controller('CandidacyListController', function ($scope, $routeParams, $lo
 
     init = function() {
         $scope.district = webingDataService.town;
-        $scope.fetchCandidacies($scope.district.districtCode);
+        if (webingDataService.candidacyList === null) {
+            $scope.fetchCandidacies($scope.district.districtCode);
+        }else{
+            $scope.data.candidacise = webingDataService.candidacyList;
+        }
     };
     $scope.fetchCandidacies = function (districtCode) {
         apiService.candidacise(districtCode).success(function(candidacyMembers) {
