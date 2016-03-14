@@ -6,7 +6,7 @@
 var webing = angular.module('webingApp', ['ngRoute']);
 
 webing
-    .controller('WebingController', function ($scope, $location, apiService, webingDataService) {
+    .controller('WebingController', function ($scope, $location, $anchorScroll, apiService, webingDataService) {
         var init;
         $scope.data = {};
         $scope.isMenuOpen = false;
@@ -16,8 +16,7 @@ webing
         init = function() {
             fetchTownList();
             webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
-            var pathString = webingDataService.town === null ? 'selectTown' : 'candidacyList/' + webingDataService.town.districtCode;
-            $location.path(pathString);
+            $location.path("home");
         };
 
         fetchTownList = function() {
@@ -39,13 +38,25 @@ webing
         $scope.menuClassToggle = function () {
             $scope.isMenuOpen = !$scope.isMenuOpen;
         };
-
+        $scope.isPathHome = function() {
+            return $location.path() === "/home";
+        };
+        $scope.isPathOther = function() {
+            return $location.path() !== "/home";
+        };
+        $scope.goToAnchor = function(anchorName) {
+            if($location.path() !== "/home"){
+                $location.path("home");
+            }
+            $location.hash(anchorName);
+            $anchorScroll();
+        };
         init();
 
     })
     .config(function($routeProvider) {
         $routeProvider
-            .when('/selectTown', {
+            .when('/home', {
                 templateUrl: 'public/static/view/home.html',
                 controller: 'HomeController'
             })

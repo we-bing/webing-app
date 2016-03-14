@@ -5,20 +5,13 @@
 webing.controller('CandidacyListController', function ($scope, $routeParams, $location, apiService, webingDataService) {
     var init;
 
-    $scope.data = {};
-    $scope.data.candidacise = [];
-
     init = function() {
         $scope.district = webingDataService.town;
-        if (webingDataService.candidacyList === null) {
-            $scope.fetchCandidacies($scope.district.districtCode);
-        }else{
-            $scope.data.candidacise = webingDataService.candidacyList;
-        }
+        $scope.fetchCandidacies($scope.district.districtCode);
     };
     $scope.fetchCandidacies = function (districtCode) {
         apiService.candidacise(districtCode).success(function(candidacyMembers) {
-            $scope.data.candidacise = candidacyMembers;
+            $scope.candidacise = candidacyMembers;
             webingDataService.candidacyList = candidacyMembers;
         });
     };

@@ -7,10 +7,9 @@ webing.directive('selectTown', function(webingDataService, $location) {
         templateUrl : '/public/static/view/selectTownDirective.html',
         restrict: 'E',
         link : function(scope) {
-            scope.data = {};
-            scope.data.townList = webingDataService.townList;
-            scope.selectedTown = {};
-
+            if(scope.townList === undefined) {
+                scope.townList = webingDataService.townList;
+            }
             scope.selectTown = function (town) {
                 scope.selectedTown = town;
                 scope.townName = town.townName;

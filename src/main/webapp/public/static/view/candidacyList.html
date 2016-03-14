@@ -1,11 +1,10 @@
 <div id="candidacyList">
-    <select-town></select-town>
     <div class="reverse">
         카드 모두 공개
     </div>
     <div class="candidacy_list_container">
         <div class="candidacy_wrapper">
-            <div class="candidacy_box" ng-repeat="candidacy in data.candidacise">
+            <div class="candidacy_box" ng-repeat="candidacy in candidacise">
                 <div class="card_box secret_info">
                     <div class="keyword"
                          ng-repeat="keyword in candidacy.candidacyKeywordList"

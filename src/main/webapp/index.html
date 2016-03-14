@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width,height=device-height,user-scalable=0"/>
     <title>index page</title>
     <link rel="stylesheet" href="public/static/css/reset.css">
     <link rel="stylesheet" href="public/static/css/css.css">
@@ -10,18 +10,19 @@
 
     </style>
 </head>
-<body ng-app="webingApp" >
+<body ng-app="webingApp" onload="setTimeout(function() {window.scrollTo(0, 1)}, 100)">
 <div ng-controller="WebingController" class="app-container">
     <div class="btn_side_menu" ng-class="{open_menu : isMenuOpen }">
-        <div class="menu1">a</div>
-        <div class="menu2">b</div>
-        <div class="menu3">c</div>
+        <div class="btn-menu" ng-click="goToAnchor('selectDistrict')">a</div>
+        <div class="btn-menu" ng-click="goToAnchor('webing-intro')">b</div>
+        <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
     </div>
-    <div class="action_bar">
-        <div class="btn_back" ng-click="back()">back</div>
+    <div class="action_bar" >
+        <div class="webing-logo" ng-if="isPathHome()">logo</div>
+        <div class="btn_back" ng-click="back()" ng-if="isPathOther()">back</div>
+        <div class="search-town" ng-if="isPathOther()"><select-town></select-town></div>
         <div class="side_menu_open" ng-click="menuClassToggle()">메뉴열기</div>
     </div>
-
     <div ng-view class="view-container"></div>
 </div>
 

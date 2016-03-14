@@ -1,11 +1,10 @@
-<div class="select-box">
-    <div class="input-box">
+<div id="#test" class="select-box">
         <input class="input-district" type="text" ng-model="townName" >
         <div class="search" ng-click="complete()">선택</div>
     </div>
     <ul class="district-list" >
         <li class="district-name"
-            ng-repeat="town in data.townList | filter:townName"
+            ng-repeat="town in townList | filter:townName"
             ng-click="selectTown(town)"
         >
             <span ng-bind="town.townName"></span>

@@ -3,7 +3,6 @@
  */
 
 webing.controller('CandidacyDetailController', function ($scope, $routeParams, apiService, webingDataService) {
-    $scope.currentCandidacy = {};
     var currentIndex;
     var candidacyListSize = 0;
 
@@ -13,13 +12,11 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     $scope.changeToRight = function() {
         currentIndex = (currentIndex+1) % candidacyListSize;
         updateCandidacy();
-        console.log("love keuroo");
     };
     $scope.changeToLeft = function() {
         currentIndex -= 1;
         if(currentIndex == -1) currentIndex = candidacyListSize - 1;
         updateCandidacy();
-        console.log("keuroo love");
     };
 
     init = function() {
@@ -31,7 +28,6 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
         });
         candidacyListSize = webingDataService.candidacyList.length;
         $scope.currentCandidacy = webingDataService.candidacyList[currentIndex];
-        console.log($scope.currentCandidacy);
     };
     updateCandidacy = function() {
         $scope.currentCandidacy = webingDataService.candidacyList[currentIndex];
