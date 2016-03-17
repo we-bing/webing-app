@@ -76,7 +76,6 @@ position: absolute;
     float: right;
 }
 .select-box {
-    height: 200px;
 }
 .input-box{
     height:20%;
@@ -88,7 +87,7 @@ position: absolute;
 }
 .district-list{
     font-size: 150%;
-    height: 300px;
+    height: 150px;
     width: 250px;
     overflow: auto;
     padding-right: 17px;
@@ -109,8 +108,8 @@ img{
 
 .card_box{
     border: 1px solid black;
+    height: 300px;
 }
-
 
 
 
