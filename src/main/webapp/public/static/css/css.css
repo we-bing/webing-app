@@ -100,22 +100,22 @@ input:focus{
     clear: both;
 }
 .explain-box{
-    padding-top: 3%;
+    padding-top: 2%;
     opacity: 0.5;
-    font-size: 130%;
+    font-size: 120%;
     text-align: center;
     height: 30%;
     border-bottom: 1px solid grey;
 }
 .town-select-box{
-    height: 50%;
+    height: 60%;
     padding: 0 7px 0 7px;
 }
 .explain-box{
     padding-right: 7px;
 }
 .search-icon{
-    margin-top: 2.5%;
+    margin-top: 11px;
 }
 .input-town{
     font-size:150%;
@@ -184,12 +184,16 @@ input:focus{
     display:block;
     clear:both;
 }
-.district-list{
+.select-box{
     font-size: 150%;
-    height: 150px;
+    height: 30%;
+    min-height: 200pxl;
     width: 250px;
-    overflow: auto;
+    overflow: scroll;
     padding-right: 17px;
+}
+.city-name{
+    background-color: #ffff99;
 }
 ::-webkit-scrollbar {
     display: none;

@@ -8,30 +8,37 @@ var webing = angular.module('webingApp', ['ngRoute']);
 webing
     .controller('WebingController', function ($scope, $location, $anchorScroll, apiService, webingDataService) {
         var init;
-        $scope.data = {};
         $scope.isMenuOpen = false;
 
-        var fetchTownList;
+        var fetchCityList;
 
         init = function() {
-            fetchTownList();
+            fetchCityList();
             webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
             $location.path("home");
         };
 
-        fetchTownList = function() {
-            webingDataService.townList = JSON.parse(localStorage.getItem('townList'));
-            if(webingDataService.townList === null) {
+        fetchCityList = function() {
+            $scope.cityList = JSON.parse(localStorage.getItem('cityList'));
+            if($scope.cityList === null) {
                 apiService.districts().success(function(data) {
-                    webingDataService.townList = data;
-                    $scope.data.townList = webingDataService.townList;
-                    localStorage.setItem('townList', JSON.stringify(data));
+                    $scope.cityList= data;
+                    localStorage.setItem('cityList', JSON.stringify(data));
                 });
-            }else{
-                $scope.data.townList = webingDataService.townList;
             }
-
+            console.log($scope.cityList);
         };
+
+        $scope.selectTown = function (town) {
+            $scope.selectedTown = town;
+            $scope.townName = town.townName;
+        };
+        $scope.complete = function () {
+            webingDataService.town = $scope.selectedTown;
+            localStorage.setItem('selectedTown', JSON.stringify($scope.selectedTown));
+            $location.path('candidacyList/' + webingDataService.town.districtCode);
+        };
+
         $scope.back = function() {
             window.history.back();
         };
