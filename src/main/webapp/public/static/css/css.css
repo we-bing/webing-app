@@ -76,7 +76,7 @@ input:focus{
     height: 100%;
     width: 100%;
     max-width: 767px;
-    top: 0;
+    top: 100%;
     background-color: #777EEB;
     z-index: 1;
 }
@@ -85,7 +85,7 @@ input:focus{
     padding-left: 1.6%;
     padding-right: 1.6%;
     left: 7.7%;
-    height: 12%;
+    height: 13.7%;
     width: 82.8%;
     background-color: #ffffff;
     border-radius: 5px;
@@ -104,7 +104,6 @@ input:focus{
     opacity: 0.5;
     font-size: 120%;
     text-align: center;
-    height: 30%;
     border-bottom: 1px solid grey;
 }
 .town-select-box{
@@ -122,6 +121,42 @@ input:focus{
     width: 90%;
     height: 60%;
     margin-top: 7px;
+}
+
+.select-box{
+    position: relative;
+    height: 30%;
+    min-height: 200px;
+    width: 82%;
+    left: 9%;
+    border-radius: 5px;
+    overflow: scroll;
+}
+.city-box{
+    position: relative;
+}
+.town-list{
+    position: relative;
+}
+.town-name{
+    background-color: #ffffff;
+    font-size: 130%;
+    height: 25%;
+    line-height: 250%;
+    padding-left: 5%;
+}
+.city-name{
+    font-size: 100%;
+    color: #cccccc;
+    background-color: #ECEDEE;
+    line-height: 200%;
+    padding-left: 2%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.district-name:hover{
+    color: red;
 }
 /*end*/
 
@@ -168,39 +203,6 @@ input:focus{
     background-size: 100%;
 }
 
-
-.input-box .input-district{
-    float: left;
-}
-.input-box .search{
-    float: right;
-}
-
-.input-box{
-    height:20%;
-}
-.input-box:after {
-    content:"";
-    display:block;
-    clear:both;
-}
-.select-box{
-    font-size: 150%;
-    height: 30%;
-    min-height: 200pxl;
-    width: 250px;
-    overflow: scroll;
-    padding-right: 17px;
-}
-.city-name{
-    background-color: #ffff99;
-}
-::-webkit-scrollbar {
-    display: none;
-}
-.district-name:hover{
-    color: red;
-}
 /*end*/
 
 /* webingIntro*/

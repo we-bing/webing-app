@@ -17,7 +17,7 @@
     <div class="action-bar" >
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
         <div class="btn-back" ng-click="back()" ng-if="isPathOther()">back</div>
-        <div class="search-town" ng-if="isPathOther()"><select-town></select-town></div>
+        <div class="search-town" ng-if="isPathOther()"></div>
         <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()"/>
     </div>
     <div class="btn-side-menu" ng-class="{open_menu : isMenuOpen }">
@@ -26,6 +26,7 @@
         <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
     </div>
     <div ng-view class="view-container"></div>
+
     <div class="select-town">
         <div class="dummy-box"></div>
         <div class="select-wrapper">
@@ -34,10 +35,26 @@
                 <div class="cancel-icon"><i class="fa fa-times"></i> </div>
             </div>
             <div class="select-inner town-select-box">
-                <input class="input-town" type="text">
-                <div class="search-icon"><i class="fa fa-search"></i></div>
+                <input class="input-town" type="text" ng-model="townNameModel">
+                <div class="search-icon" ng-click="complete()"><i class="fa fa-search"></i></div>
             </div>
         </div>
+        <div class="select-box">
+            <div class="city-box" ng-show="(city.townList | filter:townNameModel).length" ng-repeat="city in cityList">
+                <div class="city-name" >
+                    <span ng-bind="city.cityName"></span>
+                </div>
+                <ul class="town-list" >
+                    <li class="town-name"
+                        ng-repeat="town in city.townList | filter:{townName : townNameModel}"
+                        ng-click="selectTown(town)"
+                    >
+                        <span ng-bind="town.townName"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -47,7 +64,6 @@
 <script src="public/static/js/webingApp.js"></script>
 <script src="public/static/js/factory/ApiService.js"></script>
 <script src="public/static/js/factory/WebingDataService.js"></script>
-<script src="public/static/js/directive/SelectTownDirective.js"></script>
 <script src="public/static/js/controller/CandidacyListController.js"></script>
 <script src="public/static/js/controller/HomeController.js"></script>
 <script src="public/static/js/controller/CandidacyDetailController.js"></script>
