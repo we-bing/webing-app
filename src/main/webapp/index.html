@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, width=device-width,height=device-height,user-scalable=0"/>
+    <meta name="mobile-web-app-capable" content="yes">
     <title>index page</title>
     <link rel="stylesheet" href="public/static/css/reset.css">
     <link rel="stylesheet" href="public/static/css/css.css">
@@ -12,18 +13,30 @@
 </head>
 <body ng-app="webingApp" onload="setTimeout(function() {window.scrollTo(0, 1)}, 100)">
 <div ng-controller="WebingController" class="app-container">
-    <div class="btn_side_menu" ng-class="{open_menu : isMenuOpen }">
+    <div class="btn-side-menu" ng-class="{open_menu : isMenuOpen }">
         <div class="btn-menu" ng-click="goToAnchor('selectDistrict')">a</div>
         <div class="btn-menu" ng-click="goToAnchor('webing-intro')">b</div>
         <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
     </div>
-    <div class="action_bar" >
-        <div class="webing-logo" ng-if="isPathHome()">logo</div>
-        <div class="btn_back" ng-click="back()" ng-if="isPathOther()">back</div>
+    <div class="action-bar" >
+        <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
+        <div class="btn-back" ng-click="back()" ng-if="isPathOther()">back</div>
         <div class="search-town" ng-if="isPathOther()"><select-town></select-town></div>
-        <div class="side_menu_open" ng-click="menuClassToggle()">메뉴열기</div>
+        <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()"/>
     </div>
     <div ng-view class="view-container"></div>
+    <div class="select-town">
+        <div class="select-wrapper">
+            <div class="explain-box">
+                <div class="explain-text">동, 읍, 리를 입력해주세요!</div>
+                <div class="cancel-icon"></div>
+            </div>
+            <div class="town-select-box">
+                <input type="text">
+                <div class="search-icon"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

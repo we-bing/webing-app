@@ -3,26 +3,24 @@
         카드 모두 공개
     </div>
     <div class="candidacy_list_container">
-        <div class="candidacy_wrapper">
-            <div class="candidacy_box" ng-repeat="candidacy in candidacise">
-                <div class="card_box secret_info">
-                    <div class="keyword"
-                         ng-repeat="keyword in candidacy.candidacyKeywordList"
-                         ng-bind="keyword.keywordName"
-                    ></div>
+        <div class="candidacy_box" ng-repeat="candidacy in candidacise">
+            <div class="card_box secret_info">
+                <div class="keyword"
+                     ng-repeat="keyword in candidacy.candidacyKeywordList"
+                     ng-bind="keyword.keywordName"
+                ></div>
+            </div>
+            <div class="card_box public_info">
+                <img ng-src="http://info.nec.go.kr/{{candidacy.candidacyImg}}" alt="" class="profile_picture">
+                <div class="career_box">
+                    <span ng-bind="candidacy.experience"></span>
                 </div>
-                <div class="card_box public_info">
-                    <img ng-src="http://info.nec.go.kr/{{candidacy.candidacyImg}}" alt="" class="profile_picture">
-                    <div class="career_box">
-                        <span ng-bind="candidacy.experience"></span>
-                    </div>
-                    <span class="name" ng-bind="candidacy.name"></span>
-                    <div class="pledge" ng-bind="'공약 ' + candidacy.candidacyPledge[0].pledgeTitle"></div>
+                <span class="name" ng-bind="candidacy.name"></span>
+                <div class="pledge" ng-bind="'공약 ' + candidacy.candidacyPledge[0].pledgeTitle"></div>
 
-                </div>
-                <div class="detail_page" ng-click="onClickDetail(candidacy)">
-                    <span>후보자 자세히 살표보기</span>
-                </div>
+            </div>
+            <div class="detail_page" ng-click="onClickDetail(candidacy)">
+                <span>후보자 자세히 살표보기</span>
             </div>
         </div>
     </div>

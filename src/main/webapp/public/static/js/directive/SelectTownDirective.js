@@ -5,7 +5,7 @@
 webing.directive('selectTown', function(webingDataService, $location) {
     return {
         templateUrl : '/public/static/view/selectTownDirective.html',
-        restrict: 'E',
+        restrict: 'AE',
         link : function(scope) {
             if(scope.townList === undefined) {
                 scope.townList = webingDataService.townList;
