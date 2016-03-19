@@ -6,6 +6,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <title>index page</title>
     <link rel="stylesheet" href="public/static/css/reset.css">
+    <link rel="stylesheet" href="public/static/css/font-awesome-4.5.0/css/font-awesome.css">
     <link rel="stylesheet" href="public/static/css/css.css">
     <style>
 
@@ -13,27 +14,28 @@
 </head>
 <body ng-app="webingApp" onload="setTimeout(function() {window.scrollTo(0, 1)}, 100)">
 <div ng-controller="WebingController" class="app-container">
-    <div class="btn-side-menu" ng-class="{open_menu : isMenuOpen }">
-        <div class="btn-menu" ng-click="goToAnchor('selectDistrict')">a</div>
-        <div class="btn-menu" ng-click="goToAnchor('webing-intro')">b</div>
-        <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
-    </div>
     <div class="action-bar" >
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
         <div class="btn-back" ng-click="back()" ng-if="isPathOther()">back</div>
         <div class="search-town" ng-if="isPathOther()"><select-town></select-town></div>
         <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()"/>
     </div>
+    <div class="btn-side-menu" ng-class="{open_menu : isMenuOpen }">
+        <div class="btn-menu" ng-click="goToAnchor('selectDistrict')">a</div>
+        <div class="btn-menu" ng-click="goToAnchor('webing-intro')">b</div>
+        <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
+    </div>
     <div ng-view class="view-container"></div>
     <div class="select-town">
+        <div class="dummy-box"></div>
         <div class="select-wrapper">
-            <div class="explain-box">
-                <div class="explain-text">동, 읍, 리를 입력해주세요!</div>
-                <div class="cancel-icon"></div>
+            <div class="select-inner explain-box">
+                <span class="explain-text">동, 읍, 리를 입력해주세요!</span>
+                <div class="cancel-icon"><i class="fa fa-times"></i> </div>
             </div>
-            <div class="town-select-box">
-                <input type="text">
-                <div class="search-icon"></div>
+            <div class="select-inner town-select-box">
+                <input class="input-town" type="text">
+                <div class="search-icon"><i class="fa fa-search"></i></div>
             </div>
         </div>
     </div>

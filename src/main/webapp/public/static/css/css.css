@@ -24,7 +24,12 @@ body ::-webkit-scrollbar {
     background-color: rgba(255,255,255,.1);
     max-width: 767px;
 }
-
+input{
+    border: none;
+}
+input:focus{
+    outline: none;
+}
 .action-bar:after {
     content:"";
     display:block;
@@ -49,7 +54,7 @@ body ::-webkit-scrollbar {
 
 }
 .btn-side-menu{
-    position: absolute;
+    position: relative;
     height: 90%;
     top: 10%;
     width:40%;
@@ -62,21 +67,61 @@ body ::-webkit-scrollbar {
     left: 60%;
 }
 
+.select-town .dummy-box{
+    height: 15%;
+    min-height: 90px;
+}
 .select-town{
     position: absolute;
     height: 100%;
     width: 100%;
+    max-width: 767px;
     top: 0;
     background-color: #777EEB;
     z-index: 1;
 }
 .select-wrapper{
-    margin-top: 20%;
-    margin-left: 7.5%;
-    top:17%;
+    position: relative;
+    padding-left: 1.6%;
+    padding-right: 1.6%;
+    left: 7.7%;
     height: 12%;
-    width: 85%;
-    background-color: #8ce196;
+    width: 82.8%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    min-height: 80px;
+}
+.cancel-icon, .search-icon{
+    float: right;
+}
+.select-inner:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.explain-box{
+    padding-top: 3%;
+    opacity: 0.5;
+    font-size: 130%;
+    text-align: center;
+    height: 30%;
+    border-bottom: 1px solid grey;
+}
+.town-select-box{
+    height: 50%;
+    padding: 0 7px 0 7px;
+}
+.explain-box{
+    padding-right: 7px;
+}
+.search-icon{
+    margin-top: 2.5%;
+}
+.input-town{
+    font-size:150%;
+    width: 90%;
+    height: 60%;
+    margin-top: 7px;
 }
 /*end*/
 
@@ -87,10 +132,6 @@ body ::-webkit-scrollbar {
     overflow: hidden;
     height: 100%;
 
-}
-
-.input-district:focus{
-    outline: none !important;
 }
 
 #selectDistrict{
