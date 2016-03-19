@@ -6,7 +6,7 @@
 var webing = angular.module('webingApp', ['ngRoute']);
 
 webing
-    .controller('WebingController', function ($scope, $location, $anchorScroll, apiService, webingDataService) {
+    .controller('WebingController', function ($scope, $location, $anchorScroll, apiService, webingDataService, sharedDataService) {
         var init;
         $scope.isMenuOpen = false;
 
@@ -34,11 +34,17 @@ webing
             $scope.townName = town.townName;
         };
         $scope.complete = function () {
+            sharedDataService.canSearchTownOpen = false
             webingDataService.town = $scope.selectedTown;
             localStorage.setItem('selectedTown', JSON.stringify($scope.selectedTown));
             $location.path('candidacyList/' + webingDataService.town.districtCode);
         };
-
+        $scope.canOpenSelectBox = function() {
+            return sharedDataService.canSearchTownOpen === true;
+        };
+        $scope.searchCancel = function() {
+            sharedDataService.canSearchTownOpen = false;
+        };
         $scope.back = function() {
             window.history.back();
         };

@@ -20,26 +20,28 @@
         <div class="search-town" ng-if="isPathOther()"></div>
         <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()"/>
     </div>
-    <div class="btn-side-menu" ng-class="{open_menu : isMenuOpen }">
+    <div ng-view class="view-container">
+
+    </div>
+    <div class="btn-side-menu" ng-class="{'open-menu' : isMenuOpen }">
         <div class="btn-menu" ng-click="goToAnchor('selectDistrict')">a</div>
         <div class="btn-menu" ng-click="goToAnchor('webing-intro')">b</div>
         <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
     </div>
-    <div ng-view class="view-container"></div>
 
-    <div class="select-town">
+    <div class="select-town" ng-class="{'select-town-open' : canOpenSelectBox()}">
         <div class="dummy-box"></div>
         <div class="select-wrapper">
             <div class="select-inner explain-box">
                 <span class="explain-text">동, 읍, 리를 입력해주세요!</span>
-                <div class="cancel-icon"><i class="fa fa-times"></i> </div>
+                <div class="cancel-icon" ng-click="searchCancel()"><i class="fa fa-times"></i> </div>
             </div>
             <div class="select-inner town-select-box">
                 <input class="input-town" type="text" ng-model="townNameModel">
                 <div class="search-icon" ng-click="complete()"><i class="fa fa-search"></i></div>
             </div>
         </div>
-        <div class="select-box">
+        <div class="select-box" >
             <div class="city-box" ng-show="(city.townList | filter:townNameModel).length" ng-repeat="city in cityList">
                 <div class="city-name" >
                     <span ng-bind="city.cityName"></span>
@@ -64,6 +66,7 @@
 <script src="public/static/js/webingApp.js"></script>
 <script src="public/static/js/factory/ApiService.js"></script>
 <script src="public/static/js/factory/WebingDataService.js"></script>
+<script src="public/static/js/factory/SharedDataService.js"></script>
 <script src="public/static/js/controller/CandidacyListController.js"></script>
 <script src="public/static/js/controller/HomeController.js"></script>
 <script src="public/static/js/controller/CandidacyDetailController.js"></script>

@@ -30,6 +30,7 @@ input{
 input:focus{
     outline: none;
 }
+
 .action-bar:after {
     content:"";
     display:block;
@@ -56,14 +57,14 @@ input:focus{
 .btn-side-menu{
     position: relative;
     height: 90%;
-    top: 10%;
+    top: -90%;
     width:40%;
     left: 100%;
     background-color: #ddffdd;
     z-index: 2;
     transition: left 1s;
 }
-.open_menu{
+.open-menu{
     left: 60%;
 }
 
@@ -79,6 +80,10 @@ input:focus{
     top: 100%;
     background-color: #777EEB;
     z-index: 1;
+    transition: top 1s;
+}
+.select-town-open{
+    top: 0;
 }
 .select-wrapper{
     position: relative;
@@ -164,9 +169,7 @@ input:focus{
 
 /*home page*/
 .view-container{
-    overflow: hidden;
     height: 100%;
-
 }
 
 #selectDistrict{
