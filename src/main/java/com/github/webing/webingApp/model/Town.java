@@ -2,9 +2,7 @@ package com.github.webing.webingApp.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by sleepbear on 2016. 3. 4..
@@ -19,6 +17,8 @@ public class Town {
 
     private long districtCode;
     private String districtName;
+
+    @Column(name = "city_code" )
     private long cityCode;
     private String townName;
 }

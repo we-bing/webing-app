@@ -31,10 +31,10 @@ webing
 
         $scope.selectTown = function (town) {
             $scope.selectedTown = town;
-            $scope.townName = town.townName;
+            $scope.townNameModel = town.townName;
         };
         $scope.complete = function () {
-            sharedDataService.canSearchTownOpen = false
+            sharedDataService.canSearchTownOpen = false;
             webingDataService.town = $scope.selectedTown;
             localStorage.setItem('selectedTown', JSON.stringify($scope.selectedTown));
             $location.path('candidacyList/' + webingDataService.town.districtCode);
