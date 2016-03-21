@@ -1,6 +1,11 @@
 <div id="candidacyList">
-    <div class="reverse">
-        카드 모두 공개
+    <div class="dummy-candidacy"></div>
+    <div class="reverse-wrapper">
+        <span class="text-hidden">카드 전체 숨김</span>
+        <div>
+        <label><input type="checkbox" ng-click="aa()" class="ios-switch green  bigswitch"/><div><div></div></div></label>
+        </div>
+        <span class="text-reveal">카드 전체 공개</span>
     </div>
     <div class="candidacy_list_container">
         <div class="candidacy_box" ng-repeat="candidacy in candidacise">

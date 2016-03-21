@@ -12,13 +12,36 @@
 
     </style>
 </head>
-<body ng-app="webingApp" onload="setTimeout(function() {window.scrollTo(0, 1)}, 100)">
+<body ng-app="webingApp" style="background-color: #ffffff">
 <div ng-controller="WebingController" class="app-container">
     <div class="action-bar" >
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
-        <div class="btn-back" ng-click="back()" ng-if="isPathOther()">back</div>
-        <div class="search-town" ng-if="isPathOther()"></div>
-        <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()"/>
+        <div class="btn-back ng-hide" ng-click="back()" ng-show="isPathOther()"><i class="fa fa-angle-left fa-3x"></i></div>
+        <div class="search-town " ng-if="isPathOther()">
+            <input class="nav-search-bar" type="text" ng-model="dataModel.townNameModel"
+                   placeholder="{{selectedTown.townNameArr[1]}}"
+                   ng-focus="focusInput()"
+            >
+            <div class="nav-search-icon" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
+            <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">
+                <div class="city-box" ng-show="(city.townList | filter: dataModel.townNameModel).length" ng-repeat="city in cityList">
+                    <div class="city-name" >
+                        <span ng-bind="city.cityName"></span>
+                    </div>
+                    <ul class="town-list" >
+                        <li class="town-name"
+                            ng-repeat="town in city.townList | filter:{townName : dataModel.townNameModel}"
+                            ng-click="selectTown(town,'townNameModelNavBar')"
+                        >
+                            <span class="town-text" ng-bind="town.townNameArr[1]"></span>
+                            <br>
+                            <span class="city-text" ng-bind="town.townNameArr[0]"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()" />
     </div>
     <div ng-view class="view-container">
 
@@ -37,19 +60,23 @@
                 <div class="cancel-icon" ng-click="searchCancel()"><i class="fa fa-times"></i> </div>
             </div>
             <div class="select-inner town-select-box">
-                <input class="input-town" type="text" ng-model="townNameModel">
+                <input class="input-town" type="text"
+                       ng-model="dataModel.townNameModel"
+                       placeholder="{{selectedTown.townNameArr[1]}}"
+                       ng-focus="focusInput()"
+                >
                 <div class="search-icon" ng-click="complete()"><i class="fa fa-search"></i></div>
             </div>
         </div>
         <div class="select-box" >
-            <div class="city-box" ng-show="(city.townList | filter:townNameModel).length" ng-repeat="city in cityList">
+            <div class="city-box" ng-show="(city.townList | filter:dataModel.townNameModel).length" ng-repeat="city in cityList">
                 <div class="city-name" >
                     <span ng-bind="city.cityName"></span>
                 </div>
                 <ul class="town-list" >
                     <li class="town-name"
-                        ng-repeat="town in city.townList | filter:{townName : townNameModel}"
-                        ng-click="selectTown(town)"
+                        ng-repeat="town in city.townList | filter:{townName : dataModel.townNameModel}"
+                        ng-click="selectTown(town, 'townNameModel')"
                     >
                         <span ng-bind="town.townName"></span>
                     </li>
