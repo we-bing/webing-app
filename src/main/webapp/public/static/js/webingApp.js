@@ -13,10 +13,28 @@ webing
         var fetchCityList;
         var init;
         var divideTownName;
+        var dummyTown = {
+            "townCode": 4739,
+            "districtCode": 2110101,
+            "districtName": "종로구",
+            "cityCode": 1100,
+            "townName": "종로구 사직동",
+            "townNameArr": ["종로구", "사직동"],
+            "$$hashKey": "object:41"
+        };
+
+        function goToTest() {
+            $scope.selectedTown = dummyTown;
+            webingDataService.town = $scope.selectedTown;
+            $location.path('candidacyList/' + webingDataService.town.districtCode);
+        }
+
         init = function() {
             fetchCityList();
             webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
-            $location.path("home");
+            //$location.path("home");
+            goToTest();
+
         };
 
         divideTownName = function (cityList) {
@@ -107,4 +125,4 @@ webing
                 controller: 'CandidacyDetailController'
             });
 
-});
+    });

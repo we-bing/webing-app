@@ -2,32 +2,46 @@
     <div class="dummy-candidacy"></div>
     <div class="reverse-wrapper">
         <span class="text-hidden">카드 전체 숨김</span>
-        <div>
-        <label><input type="checkbox" ng-click="aa()" class="ios-switch green  bigswitch"/><div><div></div></div></label>
+        <div class="toggle-box">
+        <label><input ng-click="changeStatus()" type="checkbox" class="ios-switch green  bigswitch" ng-model="cardChecked" ng-checked="cardChecked"/><div><div></div></div></label>
         </div>
         <span class="text-reveal">카드 전체 공개</span>
     </div>
     <div class="candidacy_list_container">
         <div class="candidacy_box" ng-repeat="candidacy in candidacise">
-            <div class="card_box secret_info">
-                <div class="keyword"
-                     ng-repeat="keyword in candidacy.candidacyKeywordList"
-                     ng-bind="keyword.keywordName"
-                ></div>
-            </div>
-            <div class="card_box public_info">
-                <img ng-src="http://info.nec.go.kr/{{candidacy.candidacyImg}}" alt="" class="profile_picture">
-                <div class="career_box">
-                    <span ng-bind="candidacy.experience"></span>
-                </div>
-                <span class="name" ng-bind="candidacy.name"></span>
-                <div class="pledge" ng-bind="'공약 ' + candidacy.candidacyPledge[0].pledgeTitle"></div>
+            <div class="flip-container" ng-class="{reverse : candidacy.isReverse}">
+                <div class="flipper">
+                    <div class="front" ng-click="candidacy.isReverse = true">
+                        <div class="card_box secret_info">
+                            <div class="anonymous-img">
 
-            </div>
-            <div class="detail_page" ng-click="onClickDetail(candidacy)">
-                <span>후보자 자세히 살표보기</span>
+                            </div>
+                            <div class="keyword"
+                                 ng-repeat="keyword in candidacy.candidacyKeywordList"
+                                 ng-bind="keyword.keywordName"
+                            ></div>
+                        </div>
+                        <div class="detail_page" ng-click="onClickDetail(candidacy)">
+                            <span>후보자 자세히 살표보기</span>
+                        </div>
+                    </div>
+                    <div class="back" ng-click="candidacy.isReverse = false">
+                        <div class="card_box public_info">
+                            <img class="profile-img" ng-src="http://info.nec.go.kr/{{candidacy.candidacyImg}}" alt="" class="profile_picture">
+                            <div class="career_box">
+                                <div ng-bind="candidacy.experienceArr[1]"></div>
+                                <div ng-bind="candidacy.experienceArr[0]"></div>
+                            </div>
+                            <span class="name" ng-bind="candidacy.name"></span>
+                            <span class="pledge" ng-bind="'공약 ' + candidacy.candidacyPledge[0].pledgeTitle"></span>
+                        </div>
+                        <div class="detail_page" ng-click="onClickDetail(candidacy)">
+                            <span>후보자 자세히 살표보기</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
+
