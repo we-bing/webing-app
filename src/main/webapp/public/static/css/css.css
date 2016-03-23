@@ -204,7 +204,7 @@ input:focus{
     color: #ECEDEE;
 }
 ::-webkit-scrollbar {
-display: none;
+    display: none;
 }
 
 /*end*/
@@ -214,11 +214,15 @@ display: none;
 /*home page*/
 .view-container{
     height: 100%;
+    min-height: 576px;
+    max-width: 767px;
 }
 
 #selectDistrict{
     position: relative;
     height: 100%;
+    min-height: 576px;
+    max-width: 767px;
 }
 
 .dummy{
@@ -268,158 +272,159 @@ display: none;
 #candidacyList{
     height: 100%;
     width: 100%;
+    min-height: 576px;
+    max-width: 767px;
 }
 .dummy-candidacy{
     height: 10%;
     min-height: 64px;
 }
-.candidacy_list_container{
-    height: 100%;
-    overflow: scroll;
-}
+
 .reverse-wrapper{
-    overflow: hidden;
+    height: 10%;
+    clear: both;
 }
 .toggle-box, .text-hidden, .text-reveal{
     float: left;
 }
-.candidacy_box:after{
-    content: '';
-    display: block;
+
+.candidacy_list_container {
+    height: 80%;
+    width: 100%;
+    overflow: scroll;
     position: relative;
 }
+.candidacy_box{
+    height: 100%;
+    width: 100%;
+}
+.card-wrapper{
+    position: relative;
+    transition: 0.6s;
+    height: 90%;
+    left: 7.5%;
+    width: 85%;
+    transform-style: preserve-3d;
+    border: 1px solid black;
+    text-align: center;
+
+}
+.reverse .card-wrapper{
+    transform: rotateY(180deg);
+}
+
+
+.front-card , .back-card{
+    position: absolute;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.front-card {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back-card {
+    transform: rotateY(180deg);
+}
+.secret_info{
+    height: 85%;
+    background-color: #4b8aef;
+    overflow: hidden;
+    font-size: 200%;
+    line-height: 150%;
+    color: #ffffff;
+}
+.secret_info+.detail_page {
+    height: 15%;
+}
+.public_info{
+    height: 90%;
+    width: 100%;
+}
+
+.anonymous-img{
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: 75px;
+    width: 75px;
+    background: #ffffff;
+    display: inline-block;
+}
+.front-card .detail_page span{
+    color: #09B7EA;
+    font-size: 1.9em;
+    display: inline-block;
+    padding-top: 5%;
+    font-weight: 200;
+}
+.head-img{
+    background-color: #4b8aef;
+    height: 20%;
+    width: 100%;
+}
+.back-card .detail_page{
+    position: relative;
+    top: -10%;
+}
+.back-card .detail_page span{
+    display: inline-block;
+    background-color: #4b8aef;
+    font-size: 1.5em;
+    padding: 20px 10px 20px 10px;
+    width: 80%;
+    color: white;
+}
+
+.back-card .name{
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1.71px;
+    line-height: 58px;
+}
+
+.back-card .current{
+    color: #9b9b9b;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.99px;
+    line-height: 33px;
+}
+
+.back-card .previous{
+    color: #c8c8c8;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.99px;
+    line-height: 33px;
+}
+.back-card .pledge{
+    color: #9b9b9b;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 51px;
+}
+.profile-box{
+    position: relative;
+    top:-25px;
+}
 .profile-img{
+    position: relative;
+    top:-25px;
     height: 100px;
     width: 100px;
     border-radius: 100%;
 }
-.candidacy_box {
-    position: relative;
-    left: 7%;
-    width: 86%;
-    height: 77%;
-    text-align: center;
-}
-.candidacy_box .front,.candidacy_box .back{
-    background-color: #4b8aef;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
-}
-.candidacy_box:not(:first-child){
-    /*margin-top: 50px;*/
-}
-.card_box{
-    height: 90%;
-    width: 100%;
-}
-.secret_info{
-    color: #ffffff;
-    font-size: 250%;
-    line-height: 130%;
-    overflow: hidden;
-}
-
-.secret_info+.detail_page{
-    background-color: #ffffff;
-    color: #09B7EA;
-    line-height: 300%;
-    height: 10%;
-}
-.anonymous-img{
-    display: inline-block;
-    height: 70px;
-    width: 70px;
-    margin-top: 15%;
-    margin-bottom: 5%;
-    background-color: #ffffff;
-}
-.public_info {
-    position: absolute;
-    height: 80%;
-    width: 100%;
-    background-color: #ffffff;
-    top: 20%;
-}
-
-.profile-img{
-    height: 150px;
-    width: 150px;
-    margin-top: -75px;
-}
-.public_info+.detail_page{
-    position: relative;
-    top: 75%;
-    height: 20%;
-    width: 90%;
-    margin-left: 5%;
-
-    background-color: #4b8aef;
-}
-.public_info+.detail_page span {
-    position: relative;
-    top: 40%;
-    font-size: 150%;
-    color: #ffffff;
-}
-/**/
-
-
-/* 토글*/
-.switch:focus{
-    display: none;
-}
-.cmn-toggle {
-    position: absolute;
-    margin-left: -9999px;
-    visibility: hidden;
-}
-.cmn-toggle + label {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    user-select: none;
-}
-
-input.cmn-toggle-round + label {
-    padding: 2px;
-    width: 120px;
-    height: 60px;
-    background-color: #dddddd;
-    border-radius: 60px;
-}
-input.cmn-toggle-round + label:before,
-input.cmn-toggle-round + label:after {
-    display: block;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    bottom: 1px;
-    content: "";
-}
-input.cmn-toggle-round + label:before {
-    right: 1px;
-    background-color: #f1f1f1;
-    border-radius: 60px;
-    transition: background 0.4s;
-}
-input.cmn-toggle-round + label:after {
-    width: 58px;
-    background-color: #fff;
-    border-radius: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: margin 0.4s;
-}
-input.cmn-toggle-round:checked + label:before {
-    background-color: #8ce196;
-}
-input.cmn-toggle-round:checked + label:after {
-    margin-left: 60px;
-}
-
-
-
-
 /*toggle */
+
 
 input[type="checkbox"] {
     position: absolute;
@@ -502,49 +507,4 @@ input[type="checkbox"].bigswitch.ios-switch:checked + div > div {
 /* Green Knob */
 input[type="checkbox"].green.ios-switch:checked + div > div {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 162, 63,1);
-}
-
-
-/* entire container, keeps perspective */
-.flip-container {
-    /*perspective: 1000px;*/
-}
-/* flip the pane when hovered */
-.reverse .flipper{
-    transform: rotateY(180deg);
-}
-
-.flip-container, .front, .back {
-    width: 100%;
-    height: 95%;
-}
-
-/* flip speed goes here */
-.flipper {
-    height: 100%;
-    transition: 1s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-    backface-visibility: hidden;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateY(0deg) ;
-}
-
-/* back, initially hidden pane */
-.back {
-    transform: rotateY(180deg);
 }

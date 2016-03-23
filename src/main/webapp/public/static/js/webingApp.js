@@ -34,7 +34,6 @@ webing
             webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
             //$location.path("home");
             goToTest();
-
         };
 
         divideTownName = function (cityList) {
