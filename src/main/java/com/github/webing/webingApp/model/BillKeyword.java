@@ -2,6 +2,7 @@ package com.github.webing.webingApp.model;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -17,6 +18,8 @@ public class BillKeyword {
     private long keywordId;
     private float keywordSize;
     private String keywordName;
+
+    @Column(name = "assembly_id")
     private long assemblyId;
     private String birth;
     private String name;

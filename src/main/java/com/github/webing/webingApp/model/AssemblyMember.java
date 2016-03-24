@@ -2,10 +2,8 @@ package com.github.webing.webingApp.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by sleepbear on 2016. 2. 26..
@@ -16,7 +14,7 @@ import javax.persistence.Table;
 public class AssemblyMember {
 
     @Id
-    @Column()
+    @Column(name = "assembly_id")
     private long assemblyId;
 
     @Column(length = 16)
@@ -33,4 +31,8 @@ public class AssemblyMember {
     private String assemblyStatus;
 
     private String completed_pledges_rate;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "assembly_id")
+    private List<BillKeyword> billKeywordList;
 }
