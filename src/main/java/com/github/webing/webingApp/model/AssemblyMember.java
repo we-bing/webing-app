@@ -31,4 +31,6 @@ public class AssemblyMember {
 
     @Column(length = 2)
     private String assemblyStatus;
+
+    private String completed_pledges_rate;
 }

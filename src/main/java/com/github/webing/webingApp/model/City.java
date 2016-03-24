@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
- /**
+/**
  * Created by sleepbear on 2016. 2. 26..
  */
 @Entity

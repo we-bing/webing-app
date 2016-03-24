@@ -21,6 +21,7 @@
             <input class="nav-search-bar" type="text" ng-model="dataModel.townNameModel"
                    placeholder="{{selectedTown.townNameArr[1]}}"
                    ng-focus="focusInput()"
+                   ng-class="{'detail-page' : isDetail()}"
             >
             <div class="nav-search-icon" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
             <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">

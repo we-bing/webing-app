@@ -26,6 +26,7 @@ body ::-webkit-scrollbar {
 }
 input{
     border: none;
+    background-color:transparent;
 }
 input:focus{
     outline: none;
@@ -384,11 +385,12 @@ input:focus{
     color: white;
 }
 
-.back-card .name{
-    font-size: 50px;
+.name{
+    font-size: 40px;
     font-weight: 600;
     letter-spacing: 1.71px;
     line-height: 58px;
+    margin-bottom: 15px;
 }
 
 .back-card .current{
@@ -413,18 +415,76 @@ input:focus{
     line-height: 51px;
 }
 .profile-box{
+    height: 25%;
     position: relative;
-    top:-25px;
+    top:-45px;
+    text-align: center;
 }
 .profile-img{
     position: relative;
-    top:-25px;
+    top:-15px;
     height: 100px;
     width: 100px;
     border-radius: 100%;
 }
 /*toggle */
 
+/*width: 750px;*/
+/*height: 1923px;*/
+/*candidacyDetailPage*/
+#candidacyDetail{
+    height: 100%;
+    width: 100%;
+}
+
+#candidacyDetail .head-box{
+    position: relative;
+    height: 20%;
+    width: 120%;
+    background-color: #4b8aef;
+    left: -10%;
+    border-radius: 0 0 50% 50%;
+}
+#candidacyDetail .profile-box{
+    height: 35%;
+}
+
+.detail-content{
+    position: relative;
+    top: -10%;
+    height: 55%;
+    border: 1px solid black;
+}
+.detail-text-box{
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1.71px;
+    line-height: 58px;
+}
+
+.detail-page{
+    color: #ffffff
+}
+
+.detail-page:focus{
+    color: #ffffff;
+}
+.detail-page::-webkit-input-placeholder {
+    color: #ffffff !important;
+}
+
+.detail-page:-moz-placeholder { /* Firefox 18- */
+    color: #ffffff !important;
+}
+
+.detail-page::-moz-placeholder {  /* Firefox 19+ */
+    color: #ffffff !important;
+}
+
+.detail-page:-ms-input-placeholder {
+    color: #ffffff !important;
+}
+/* end */
 
 input[type="checkbox"] {
     position: absolute;
