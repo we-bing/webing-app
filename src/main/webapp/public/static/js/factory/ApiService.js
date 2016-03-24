@@ -11,6 +11,10 @@ webing.service("apiService", function($http) {
         candidacise: function(districtCode) {
             var url = '/api/candidacies/' + districtCode;
             return $http.get(url);
+        },
+        assemblyMember: function(assemblyMemberId) {
+            var url = '/api/assemblyMember/' + assemblyMemberId;
+            return $http.get(url);
         }
     };
 });

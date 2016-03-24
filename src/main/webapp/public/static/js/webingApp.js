@@ -1420,7 +1420,7 @@ webing
             webingDataService.town = $scope.selectedTown;
             webingDataService.candidacyList = dummyCandidacyList;
             //$location.path('candidacyList/' + webingDataService.town.districtCode);
-            $location.path('candidacyDetail/100118396');
+            $location.path('candidacyDetail/100119321');
         }
 
         init = function() {

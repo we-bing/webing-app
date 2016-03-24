@@ -11,11 +11,103 @@
             <div class="current" ng-bind="currentCandidacy.experienceArr[1]"></div>
             <div class="previous" ng-bind="currentCandidacy.experienceArr[0]"></div>
         </div>
-        <span class="pledge"></span>
+        <span class="candidacy-pledge"></span>
     </div>
-    <div class="detail-content">
-        content
+    <div class="detail-content-container">
+        <div class="detail-tab-box">
+            <div class="menu-box pledge-box">
+                <input type="radio" id="menu-pledge" name="detail-tap" value="pledge" ng-model="selectedTab">
+                <label for="menu-pledge">공약</label>
+            </div>
+            <div class="menu-box course-box">
+                <input type="radio" id="menu-course" name="detail-tap" value="course" ng-model="selectedTab" checked="checked">
+                <label for="menu-course">발자취</label>
+            </div>
+        </div>
+        <div class="detail-content-box">
+            <div class="pledge-content" ng-show="selectedTab === 'pledge'">
+                준비중입니다
+            </div>
+            <div class="course-content" ng-show="selectedTab === 'course'">
+                <div class="content-activity">
+                    <div class="title-wrapper">
+                        <span class="content-number">1</span>
+                        <span class="content-title">19대 국정 활동</span>
+                    </div>
+                    <div class="information-no-data" ng-hide="isPreviousAssembly()">
+                        <div class="info-text">
+                            <span>19대 당선 후보가 아닙니다.</span>
+                        </div>
+                        <div class="info-detail">
+                            <p>19대 당선 후보가 아닙니다. <br>
+                                이전 국정활동에 대한 자세한 정보가 존재하지 않습니다. <br>
+                                후보의 지난 행적을 바탕으로 <br>
+                                다른 후보와 꼼꼼히 비교해주세요!<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content-wrapper" ng-show="isPreviousAssembly()">
+                        <div id="attendance-rate" class="activity-wrapper ">
+                            <span class="sub-title">국회 참가율</span>
+                            <div class="rate-wrapper">
+                                <div class="rate-text">
+                                    <span ng-bind="currentCandidacy.assemblyMember.attendanceRate + '%'"></span>
+                                </div>
+                                <div class="rate-bar">
+                                    <progress value="{{currentCandidacy.assemblyMember.attendanceRate}}" max="100"></progress>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fold-content" ng-hide='isActivityFolding'>
+                            <div id="pledge-rate" class="activity-wrapper">
+                                <span class="sub-title">공약 이행율</span>
+                                <div class="rate-wrapper">
+                                    <div class="rate-text">
+                                        <span ng-bind="currentCandidacy.assemblyMember.completedPledgesRate + '%'"></span>
+                                    </div>
+                                    <div class="rate-bar">
+                                        <progress value="{{currentCandidacy.assemblyMember.completedPledgesRate}}" max="100"></progress>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="bill-keywords" class="activity-wrapper">
+                                <span class="sub-title">주요 발의안 키워드</span>
+                                <div class="keywords-wrapper">
+                                    <div class="keywords-box">
+                                        <span class="bill-keyword-text" ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList" ng-bind="billKeyword.keywordName"></span>
+                                    </div>
+                                    <div class="bill-detail-link">
+                                        <span>주요 발의안 자세히 보기 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-more" ng-click="changeFoldStatus()">
+                            <span class="more-text" ng-show="isActivityFolding">19대 국정활동 자세히 보기</span>
+                            <br>
+                            <span class="more-arrow fa fa-chevron-down" ng-class="{'reverse-arrow' : !isActivityFolding}"></span>
+                            <br>
+                            <span class="more-text" ng-hide="isActivityFolding">상세보기 닫기</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-news">
+                    <div class="title-wrapper">
+                        <span class="content-number">2</span>
+                        <span class="content-title">키워드로 보는 후보 관련 뉴스</span>
+                    </div>
+                    <div class="news-keywords-wrapper">
+                        <div class="news-keywords-box">
+                            <span class="news-keyword-text" ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList" ng-bind="billKeyword.keywordName"></span>
+                        </div>
+                    </div>
+                    <div class="empty-box"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="btn_right" ng-click="changeToRight()">오른쪽</div>
-    <div class="bth_left" ng-click="changeToLeft()">왼쪽</div>
+    <div class="btn-right fa fa-chevron-down fa-3x" ng-click="changeToRight()">
+    </div>
+    <div class="bth-left fa fa-chevron-down fa-3x" ng-click="changeToLeft()">
+    </div>
 </div>

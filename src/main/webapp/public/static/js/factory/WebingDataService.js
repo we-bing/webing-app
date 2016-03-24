@@ -5,6 +5,7 @@ webing.service('webingDataService', function() {
     return {
         townList: null,
         town: null,
-        candidacyList: null
+        candidacyList: null,
+        assemblyList: {}
     };
 });
