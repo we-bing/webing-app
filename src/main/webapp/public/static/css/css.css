@@ -5,6 +5,7 @@ html, body {
     min-height: 576px;
     max-width: 767px;
     overflow: hidden;
+    -moz-overflow: hidden;
 }
 body ::-webkit-scrollbar {
     display: none;
@@ -12,6 +13,7 @@ body ::-webkit-scrollbar {
 .app-container{
     height: 100%;
     overflow: hidden;
+    -moz-overflow: hidden;
 }
 
 /*index page*/
@@ -306,6 +308,7 @@ input:focus{
     left: 7.5%;
     width: 85%;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     border: 1px solid black;
     text-align: center;
 
@@ -318,6 +321,8 @@ input:focus{
 .front-card , .back-card{
     position: absolute;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     height: 100%;
     width: 100%;
     top: 0;
@@ -329,16 +334,21 @@ input:focus{
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
 .back-card {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
 }
 .secret_info{
     height: 85%;
     background-color: #4b8aef;
     overflow: hidden;
+    -moz-overflow: hidden;
     font-size: 200%;
     line-height: 150%;
     color: #ffffff;
@@ -461,26 +471,26 @@ input:focus{
     line-height: 58px;
 }
 .detail-page{
-    color: #ffffff
+    color: black;
 }
 
 .detail-page:focus{
-    color: #ffffff;
+    color: black;
 }
 .detail-page::-webkit-input-placeholder {
-    color: #ffffff !important;
+    color: #bdbdbd; !important;
 }
 
 .detail-page:-moz-placeholder { /* Firefox 18- */
-    color: #ffffff !important;
+    color: #bdbdbd; !important;
 }
 
 .detail-page::-moz-placeholder {  /* Firefox 19+ */
-    color: #ffffff !important;
+    color: #bdbdbd; !important;
 }
 
 .detail-page:-ms-input-placeholder {
-    color: #ffffff !important;
+    color: #bdbdbd; !important;
 }
 .detail-tab-box{
     height: 15%;
@@ -667,6 +677,7 @@ input:focus{
     letter-spacing: 0.07px;
     line-height: 29px;
     overflow: hidden;
+    -moz-overflow: hidden;
 }
 .bill-keyword-text{
     float: left;
@@ -731,6 +742,7 @@ input:focus{
     letter-spacing: 0.07px;
     line-height: 29px;
     overflow: hidden;
+    -moz-overflow: hidden;
 }
 .news-keyword-text{
     float: left;

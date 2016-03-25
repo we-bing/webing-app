@@ -24,7 +24,7 @@ webing.controller('CandidacyListController', function ($scope, $routeParams, $lo
                     member.isReverse = false;
                 });
                 $scope.candidacise = webingDataService.candidacyList = candidacyMembers;
-
+                console.log($scope.candidacise);
             });
     };
     $scope.onClickDetail = function(candidacy) {

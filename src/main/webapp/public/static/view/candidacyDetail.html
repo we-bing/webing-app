@@ -1,7 +1,7 @@
 <div id="candidacyDetail">
     <div class="head-box"></div>
     <div class="profile-box">
-        <img class="profile-img" ng-src="http://info.nec.go.kr/{{currentCandidacy.candidacyImg}}" alt="" class="profile_picture">
+        <img class="profile-img" ng-src="http://info.nec.go.kr/{{currentCandidacy.candidacyImg}}" alt="" >
         <div class="detail-text-box">
             <span class="name" ng-bind="currentCandidacy.name"></span>
             <span class="bar"> | </span>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="news-keywords-wrapper">
                         <div class="news-keywords-box">
-                            <span class="news-keyword-text" ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList" ng-bind="billKeyword.keywordName"></span>
+                            <span class="news-keyword-text" ng-repeat="newsKeyword in currentCandidacy.candidacyKeywordList" ng-bind="newsKeyword.keywordName"></span>
                         </div>
                     </div>
                     <div class="empty-box"></div>
