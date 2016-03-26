@@ -17,13 +17,15 @@
     <div class="action-bar" >
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
         <div class="btn-back ng-hide" ng-click="back()" ng-show="isPathOther()"><i class="fa fa-angle-left fa-3x"></i></div>
-        <div class="search-town " ng-if="isPathOther()">
-            <input class="nav-search-bar" type="text" ng-model="dataModel.townNameModel"
+        <div class="search-town ng-hide" ng-show="isPathOther()">
+            <input class="nav-search-bar " type="text" ng-model="dataModel.townNameModel"
                    placeholder="{{selectedTown.townNameArr[1]}}"
                    ng-focus="focusInput()"
                    ng-class="{'detail-page' : isDetail()}"
+                   ng-cloak
             >
-            <div class="nav-search-icon" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
+            <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
+            <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><i class="fa fa-times fa-2x"></i> </div>
             <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">
                 <div class="city-box" ng-show="(city.townList | filter: dataModel.townNameModel).length" ng-repeat="city in cityList">
                     <div class="city-name" >
@@ -32,7 +34,7 @@
                     <ul class="town-list" >
                         <li class="town-name"
                             ng-repeat="town in city.townList | filter:{townName : dataModel.townNameModel}"
-                            ng-click="selectTown(town,'townNameModelNavBar')"
+                            ng-click="selectAndComplete(town)"
                         >
                             <span class="town-text" ng-bind="town.townNameArr[1]"></span>
                             <br>
@@ -48,9 +50,18 @@
 
     </div>
     <div class="btn-side-menu" ng-class="{'open-menu' : isMenuOpen }">
-        <div class="btn-menu" ng-click="goToAnchor('selectDistrict')">a</div>
-        <div class="btn-menu" ng-click="goToAnchor('webing-intro')">b</div>
-        <div class="btn-menu" ng-click="goToAnchor('webing-contact')">c</div>
+        <div class="btn-menu">
+            <a href="">홈</a>
+        </div>
+        <div class="btn-menu">
+            <a href="">위빙이란</a>
+        </div>
+        <div class="btn-menu">
+            <a href="">위빙에 연락하기</a>
+        </div>
+        <div class="btn-menu">
+            <a href="">페이스북 페이지</a>
+        </div>
     </div>
 
     <div class="select-town" ng-class="{'select-town-open' : canOpenSelectBox()}">

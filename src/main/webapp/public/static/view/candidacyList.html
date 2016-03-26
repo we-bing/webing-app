@@ -1,11 +1,13 @@
 <div id="candidacyList">
     <div class="dummy-candidacy"></div>
     <div class="reverse-wrapper">
-        <span class="text-hidden">카드 전체 숨김</span>
-        <div class="toggle-box">
-            <label><input ng-click="changeStatus()" type="checkbox" class="ios-switch green bigswitch" ng-model="cardChecked" ng-checked="cardChecked"/><div><div></div></div></label>
+        <div class="text-box">
+            <span class="text-hidden">카드 전체 숨김</span>
+            <div class="toggle-box">
+                <label><input ng-click="changeStatus()" type="checkbox" class="ios-switch green bigswitch" ng-model="cardChecked" ng-checked="cardChecked"/><div><div></div></div></label>
+            </div>
+            <span class="text-reveal">카드 전체 공개</span>
         </div>
-        <span class="text-reveal">카드 전체 공개</span>
     </div>
     <div class="candidacy_list_container">
         <div class="candidacy_box" ng-repeat="candidacy in candidacise" ng-class="{reverse : candidacy.isReverse}">

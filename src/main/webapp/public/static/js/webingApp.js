@@ -22,6 +22,7 @@ webing
         //}
 
         init = function() {
+            console.log($location.path());
             fetchCityList();
             webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
             $location.path("home");
@@ -50,6 +51,9 @@ webing
         $scope.focusInput = function() {
             $scope.isSelectBoxOpen = true;
         };
+        $scope.selectBoxClose = function() {
+            $scope.isSelectBoxOpen = false;
+        };
         $scope.blurInput = function() {
         };
         $scope.selectTown = function (town) {
@@ -65,6 +69,10 @@ webing
             webingDataService.town = $scope.selectedTown;
             localStorage.setItem('selectedTown', JSON.stringify($scope.selectedTown));
             $location.path('candidacyList/' + webingDataService.town.districtCode);
+        };
+        $scope.selectAndComplete = function(town) {
+            $scope.selectTown(town);
+            $scope.complete();
         };
 
         $scope.canOpenSelectBox = function() {
