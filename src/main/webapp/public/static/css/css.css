@@ -227,6 +227,10 @@ input:focus{
 .town-name:not(:last-child){
     border-bottom: 1px solid #ECEDEE;
 }
+
+.town-name span:hover{
+    cursor:pointer
+}
 .city-name{
     font-size: 100%;
     color: #cccccc;
