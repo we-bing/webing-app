@@ -9,7 +9,7 @@ import java.util.List;
  * Created by sleepbear on 2016. 2. 26..
  */
 @Entity
-@Table(name = "ASSEMBLY_MEMBERS")
+@Table(name = "`ASSEMBLY_MEMBERS`")
 @Data
 public class AssemblyMember {
 
@@ -30,7 +30,7 @@ public class AssemblyMember {
     @Column(length = 2)
     private String assemblyStatus;
 
-    private String completed_pledges_rate;
+    private String completedPledgesRate;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "assembly_id")
