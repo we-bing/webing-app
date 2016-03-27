@@ -23,7 +23,6 @@ webing
 
         init = function() {
             fetchCityList();
-            webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
             $location.path("home");
             //goToTest();
         };

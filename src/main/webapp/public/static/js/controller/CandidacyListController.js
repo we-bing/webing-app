@@ -23,6 +23,8 @@ webing.controller('CandidacyListController', function ($scope, $routeParams, $lo
                     member.experienceArr = member.experience.split(',');
                     member.isReverse = false;
                 });
+                console.log("hello");
+                console.log(candidacyMembers);
                 $scope.candidacise = webingDataService.candidacyList = candidacyMembers;
             });
     };
