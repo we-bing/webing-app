@@ -22,7 +22,6 @@ webing
         //}
 
         init = function() {
-            console.log($location.path());
             fetchCityList();
             webingDataService.town = JSON.parse(localStorage.getItem('selectedTown'));
             $location.path("home");
@@ -118,6 +117,12 @@ webing
                 templateUrl: 'public/static/view/home.html',
                 controller: 'HomeController'
             })
+            .when('/webingIntro', {
+                templateUrl: 'public/static/view/webingIntro.html'
+            })
+            .when('/webingContact', {
+                templateUrl: 'public/static/view/webingContact.html'
+            })
             .when('/candidacyList/:districtCode', {
                 templateUrl: 'public/static/view/candidacyList.html',
                 controller: 'CandidacyListController'
@@ -128,3 +133,4 @@ webing
             });
 
     });
+
