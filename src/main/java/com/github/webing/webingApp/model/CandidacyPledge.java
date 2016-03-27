@@ -15,10 +15,13 @@ import javax.persistence.Table;
 @Data
 public class CandidacyPledge {
     @Id
+    @Column(name = "pledge_id")
     private long pledgeId;
 
     @Column(name = "candidacy_id")
     private long candidacyId;
+    @Column(name = "pledge_title")
     private String pledgeTitle;
+    @Column(name = "pledge_description")
     private String pledgeDescription;
 }

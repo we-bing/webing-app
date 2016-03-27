@@ -19,7 +19,9 @@ public class District {
     @Column(name = "district_code")
     private long districtCode;
 
+    @Column(name = "district_name")
     private String districtName;
 
-    private long city_code;
+    @Column(name = "city_code")
+    private long cityCode;
 }

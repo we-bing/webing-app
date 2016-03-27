@@ -64,38 +64,6 @@
         </div>
     </div>
 
-    <div class="select-town" ng-class="{'select-town-open' : canOpenSelectBox()}">
-        <div class="dummy-box"></div>
-        <div class="select-wrapper">
-            <div class="select-inner explain-box">
-                <span class="explain-text">동, 읍, 리를 입력해주세요!</span>
-                <div class="cancel-icon" ng-click="searchCancel()"><i class="fa fa-times"></i> </div>
-            </div>
-            <div class="select-inner town-select-box">
-                <input class="input-town" type="text"
-                       ng-model="dataModel.townNameModel"
-                       placeholder="{{selectedTown.townNameArr[1]}}"
-                       ng-focus="focusInput()"
-                >
-                <div class="search-icon" ng-click="complete()"><i class="fa fa-search"></i></div>
-            </div>
-        </div>
-        <div class="select-box" >
-            <div class="city-box" ng-show="(city.townList | filter:dataModel.townNameModel).length" ng-repeat="city in cityList">
-                <div class="city-name" >
-                    <span ng-bind="city.cityName"></span>
-                </div>
-                <ul class="town-list" >
-                    <li class="town-name"
-                        ng-repeat="town in city.townList | filter:{townName : dataModel.townNameModel}"
-                        ng-click="selectTown(town, 'townNameModel')"
-                    >
-                        <span ng-bind="town.townName"></span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
 
 

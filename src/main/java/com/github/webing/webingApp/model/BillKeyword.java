@@ -15,13 +15,17 @@ import javax.persistence.Table;
 @Data
 public class BillKeyword {
     @Id
+    @Column(name = "keyword_id")
     private long keywordId;
+    @Column(name = "keyword_size")
     private float keywordSize;
+    @Column(name = "keyword_name")
     private String keywordName;
 
     @Column(name = "assembly_id")
     private long assemblyId;
     private String birth;
     private String name;
+    @Column(name = "keyword_status")
     private String keywordStatus;
 }

@@ -15,16 +15,20 @@ public class CandidacyMember {
     @Id
     @Column(name = "candidacy_id")
     private long candidacyId;
+    @Column(name = "assembly_id")
     private long assemblyId;
     private String birth;
     private String party;
+    @Column(name = "district_code")
     private long districtCode;
+    @Column(name = "candidacy_img")
     private String candidacyImg;
     private String gender;
     private String address;
     private String education;
     private String criminal;
     private String name;
+    @Column(name = "candidacy_status")
     private String candidacyStatus;
     private String experience;
 

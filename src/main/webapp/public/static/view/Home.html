@@ -1,7 +1,32 @@
 <div id="selectDistrict">
     <div class="box-top dummy"></div>
+    <!--<div class="btn-select-box" ng-click="openSearchBox()"></div>-->
+    <div class="search-town">
+        <input class="nav-search-bar " type="text" ng-model="dataModel.townNameModel"
+               placeholder="{{selectedTown.townNameArr[1]}}"
+               ng-cloak
+        >
+        <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
+        <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><i class="fa fa-times fa-2x"></i> </div>
+        <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">
+            <div class="city-box" ng-show="(city.townList | filter: dataModel.townNameModel).length" ng-repeat="city in cityList">
+                <div class="city-name" >
+                    <span ng-bind="city.cityName"></span>
+                </div>
+                <ul class="town-list" >
+                    <li class="town-name"
+                        ng-repeat="town in city.townList | filter:{townName : dataModel.townNameModel}"
+                        ng-click="selectAndComplete(town)"
+                    >
+                        <span class="town-text" ng-bind="town.townNameArr[1]"></span>
+                        <br>
+                        <span class="city-text" ng-bind="town.townNameArr[0]"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="app-intro"></div>
-    <div class="btn-select-box" ng-click="openSearchBox()"></div>
     <div class="box-bottom dummy" ></div>
 </div>
 

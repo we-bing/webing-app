@@ -15,10 +15,13 @@ import javax.persistence.Table;
 @Data
 public class CandidacyKeyword {
     @Id
+    @Column(name = "keyword_id")
     private long keywordId;
+    @Column(name = "keyword_name")
     private String keywordName;
 
     @Column(name = "candidacy_id")
     private long candidacyId;
+    @Column(name = "keyword_status")
     private String keywordStatus;
 }

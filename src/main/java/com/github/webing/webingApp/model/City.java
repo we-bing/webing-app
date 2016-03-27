@@ -16,7 +16,7 @@ public class City {
     @Id
     @Column(name = "city_code")
     private long cityCode;
-
+    @Column(name = "city_name")
     private String cityName;
 
     @OneToMany(fetch = FetchType.EAGER)

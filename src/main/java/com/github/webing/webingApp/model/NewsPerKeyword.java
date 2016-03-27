@@ -6,6 +6,7 @@ package com.github.webing.webingApp.model;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,9 +16,14 @@ import javax.persistence.Table;
 @Data
 public class NewsPerKeyword {
     @Id
+    @Column(name = "news_id")
     private long newsId;
+    @Column(name = "keyword_id")
     private long keywordId;
+    @Column(name = "news_link")
     private String newsLink;
+    @Column(name = "news_title")
     private String newsTitle;
+    @Column(name = "news_description")
     private String newsDescription;
 }

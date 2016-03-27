@@ -113,6 +113,7 @@ input:focus{
     width: 65%;
     height: 100%;
     left: 15%;
+    top: 13%;
 }
 .open-menu{
     left: 40%;
@@ -278,14 +279,15 @@ input:focus{
     background-color: #FFF1ED;
     height: 63%;
     width: 91%;
-    top: 14%;
     left: 4.5%;
+    top:23%;
+
 }
 .btn-select-box{
     position: absolute;
     height: 7%;
     width: 85%;
-    top:80%;
+    top: 13%;
     left: 7.6%;
     background-color: #FFF1ED;
     background-image: url("../img/Rectangle_240.png");
