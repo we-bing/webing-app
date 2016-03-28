@@ -31,7 +31,7 @@ public class AssemblyMember {
     @Column(name = "assembly_status", length = 2)
     private String assemblyStatus;
 
-    @Column(name = "complete_pledges_rate")
+    @Column(name = "completed_pledges_rate")
     private String completedPledgesRate;
 
     @OneToMany(fetch = FetchType.LAZY)
