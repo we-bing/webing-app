@@ -1,6 +1,11 @@
-<div id="candidacyDetail">
-    <div class="head-box"></div>
+<div id="candidacyDetail" >
+    <div class="dummy"></div>
     <div class="profile-box">
+        <div class="dummy"></div>
+        <div class="btn-arrow btn-right fa fa-chevron-down fa-3x" ng-click="changeToRight()">
+        </div>
+        <div class="bth-left fa fa-chevron-down fa-3x" ng-click="changeToLeft()">
+        </div>
         <img class="profile-img" ng-src="http://info.nec.go.kr/{{currentCandidacy.candidacyImg}}" alt="" >
         <div class="detail-text-box">
             <span class="name" ng-bind="currentCandidacy.name"></span>
@@ -13,7 +18,7 @@
         </div>
         <span class="candidacy-pledge"></span>
     </div>
-    <div class="detail-content-container">
+    <div class="detail-content-container" >
         <div class="detail-tab-box">
             <div class="menu-box pledge-box">
                 <input type="radio" id="menu-pledge" name="detail-tap" value="pledge" ng-model="selectedTab">
@@ -24,7 +29,7 @@
                 <label for="menu-course">발자취</label>
             </div>
         </div>
-        <div class="detail-content-box">
+        <div class="detail-content-box" >
             <div class="pledge-content" ng-show="selectedTab === 'pledge'">
                 준비중입니다
             </div>
@@ -105,9 +110,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="btn-right fa fa-chevron-down fa-3x" ng-click="changeToRight()">
-    </div>
-    <div class="bth-left fa fa-chevron-down fa-3x" ng-click="changeToLeft()">
     </div>
 </div>

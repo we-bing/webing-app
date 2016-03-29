@@ -1,5 +1,28 @@
 <div id="candidacyList">
-    <div class="dummy-candidacy"></div>
+    <div class="popup-box"
+         ng-hide="isPopClosed">
+
+        <div class="popup-wrapper">
+            <div class="popup-close"
+                 ng-click="popClose()">
+            <i class="popup-close-icon fa fa-times fa-4x"></i>
+            </div>
+            <div class="pop-content">
+                <div class="content-img"></div>
+                <div class="content-title">
+                    <span class="title-text">
+                        히든 카드
+                    </span>
+                </div>
+                <div class="content-article">
+                    <p class="article-text">
+                        불라불라불라불라불라
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dummy"></div>
     <div class="reverse-wrapper">
         <div class="text-box">
             <span class="text-hidden">카드 전체 숨김</span>

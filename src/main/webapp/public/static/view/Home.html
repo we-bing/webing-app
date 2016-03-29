@@ -1,9 +1,10 @@
 <div id="selectDistrict">
-    <div class="box-top dummy"></div>
+    <div class="dummy"></div>
     <!--<div class="btn-select-box" ng-click="openSearchBox()"></div>-->
-    <div class="search-town">
+    <div class="home-select-box">
         <input class="nav-search-bar " type="text" ng-model="dataModel.townNameModel"
                placeholder="{{selectedTown.townNameArr[1]}}"
+               ng-focus="focusInput()"
                ng-cloak
         >
         <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
@@ -27,6 +28,5 @@
         </div>
     </div>
     <div class="app-intro"></div>
-    <div class="box-bottom dummy" ></div>
 </div>
 

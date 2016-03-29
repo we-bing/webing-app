@@ -14,7 +14,7 @@
 </head>
 <body ng-app="webingApp" style="background-color: #ffffff">
 <div ng-controller="WebingController" class="app-container">
-    <div class="action-bar" >
+    <div class="action-bar" ng-class="classToPath()">
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
         <div class="btn-back ng-hide" ng-click="back()" ng-show="isPathOther()"><i class="fa fa-angle-left fa-3x"></i></div>
         <div class="search-town ng-hide" ng-show="isPathOther()">
@@ -68,6 +68,7 @@
 
 
 <script src="public/static/node_modules/angular/angular.js"></script>
+<script src="public/static/node_modules/angular-touch/angular-touch.js"></script>
 <script src="public/static/node_modules/angular-route/angular-route.js"></script>
 <script src="public/static/js/webingApp.js"></script>
 <script src="public/static/js/factory/ApiService.js"></script>

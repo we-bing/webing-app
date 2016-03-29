@@ -4,7 +4,10 @@
 
 webing.controller('CandidacyListController', function ($scope, $routeParams, $location, apiService, webingDataService) {
     var init;
-
+    $scope.isPopClosed = false;
+    $scope.popClose = function() {
+        $scope.isPopClosed = true;
+    };
     init = function() {
         $scope.cardChecked = false;
         $scope.district = webingDataService.town;
@@ -23,8 +26,6 @@ webing.controller('CandidacyListController', function ($scope, $routeParams, $lo
                     member.experienceArr = member.experience.split(',');
                     member.isReverse = false;
                 });
-                console.log("hello");
-                console.log(candidacyMembers);
                 $scope.candidacise = webingDataService.candidacyList = candidacyMembers;
             });
     };

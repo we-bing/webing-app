@@ -58,7 +58,20 @@ input:focus{
     display:block;
     clear:both;
 }
+.dummy{
+    position: relative;
+    height: 10%;
+    min-height: 64px;
+    width: 100%;
+    z-index: 0;
+}
+.dummy-home{
+    background-color: RGBA(255, 241, 237, 1.00);
+}
+.dummy-detail {
+    background-color: RGBA(48, 127, 242, 1.00);
 
+}
 
 .btn-back{
     float: left;
@@ -251,6 +264,16 @@ input:focus{
 
 
 /*home page*/
+
+.home-select-box{
+    position: absolute;
+    height: 7%;
+    width: 85%;
+    top: 13%;
+    left: 7.6%;
+    z-index: 3;
+}
+
 .view-container{
     height: 100%;
     min-height: 576px;
@@ -264,15 +287,7 @@ input:focus{
     max-width: 767px;
 }
 
-.dummy{
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    background-color: #FFF1ED;
-}
-.box-bottom{
-    top:90%;
-}
+
 
 .app-intro {
     position: absolute;
@@ -309,6 +324,34 @@ input:focus{
 /* end */
 
 /*candidacyList*/
+.popup-box {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    padding: 20% 10% 0 10%;
+}
+.popup-content{
+    padding: 5% 5% 0 5%;
+}
+.popup-wrapper{
+    width: 80%;
+    background-color: white;
+}
+.popup-close-icon{
+    float: right;
+}
+.popup-close:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.context-img{
+    height: 150px;
+    width: 150px;
+    background-color: aqua;
+}
 #candidacyList{
     height: 100%;
     width: 100%;
@@ -467,14 +510,14 @@ input:focus{
 .profile-box{
     height: 25%;
     position: relative;
-    top:-45px;
     text-align: center;
+    background-color: white;
 }
 .profile-img{
     position: relative;
-    top:-15px;
     height: 100px;
     width: 100px;
+    top: -50px;
     border-radius: 100%;
 }
 /*toggle */
@@ -483,9 +526,19 @@ input:focus{
 /*height: 1923px;*/
 /*candidacyDetailPage*/
 #candidacyDetail{
+    position: relative;
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
+    z-index: 5;
 }
+#candidacyDetail .profile-box .dummy {
+    background-color: RGBA(48, 127, 242, 1.00);
+    border-radius: 0 0 100% 100%;
+    width: 120%;
+    left: -10%;
+}
+
 
 #candidacyDetail .head-box{
     position: relative;
@@ -496,14 +549,25 @@ input:focus{
     border-radius: 0 0 50% 50%;
 }
 #candidacyDetail .profile-box{
-    height: 35%;
+    height: 45%;
 }
 
 .detail-content-container{
     position: relative;
-    top: -10%;
-    height: 55%;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    transition: top 1s;
 }
+.content-fix .detail-content-container{
+    /*overflow: hidden;*/
+    position: fixed;
+    top: 0;
+}
+.content-fix .course-content, .content-fix .pledge-content{
+    overflow: scroll;
+}
+
 .detail-text-box{
     font-size: 36px;
     font-weight: 600;
@@ -533,7 +597,7 @@ input:focus{
     color: #bdbdbd; !important;
 }
 .detail-tab-box{
-    height: 15%;
+    height: 10%;
 }
 .detail-tab-box label{
     display: inline-block;
@@ -556,7 +620,9 @@ input:focus{
     text-align: center;
 }
 .menu-box label{
-    height: calc(100% - 6px);
+    position: relative;
+    top: 50%;
+    margin-top: -1.5em;
 }
 .detail-tab-box input{
     display: none;
@@ -566,19 +632,15 @@ input:focus{
     border-bottom: 6px solid #4b8aef;
 }
 .detail-content-box{
-    overflow: scroll;
-    height: 85%;
     border-top: 1px solid #d7d7d7;
+    background-color: white;
+
 }
 .pledge-content, .course-content{
     position: absolute;
     height: 100%;
     width: 100%;
-    overflow: scroll;
-
 }
-
-
 
 .content-number{
     display: inline-block;
@@ -672,14 +734,14 @@ input:focus{
 }
 .rate-bar{
     line-height: 60px;
-    width: calc(100% - 75px);
+    width: calc(100% - 85px);
 }
 .rate-bar progress{
     -webkit-appearance: none;
     appearance: none;
     line-height: 60px;
-    left: 5%;
-    width: 90%;
+    left: 10%;
+    width: 80%;
     position: relative;
 }
 .rate-bar progress::-webkit-progress-value {
@@ -759,10 +821,11 @@ input:focus{
     border-radius: 100%;
     text-align: center;
     line-height: 75px;
-    top: 15%;
+    top: 70px;
 }
 .btn-right{
     transform: rotate(90deg);
+    right: calc(100% - 75px);
 }
 .bth-left{
     left: calc(100% - 75px);

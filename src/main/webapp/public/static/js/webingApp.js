@@ -3,7 +3,9 @@
  */
 
 'use strict';
-var webing = angular.module('webingApp', ['ngRoute']);
+
+
+var webing = angular.module('webingApp', ['ngRoute', 'ngTouch']);
 
 webing
     .controller('WebingController', function ($scope, $location, $anchorScroll, apiService, webingDataService, sharedDataService) {
@@ -51,6 +53,14 @@ webing
         };
         $scope.selectBoxClose = function() {
             $scope.isSelectBoxOpen = false;
+        };
+        $scope.classToPath = function() {
+            var path = $location.path().split('/')[1];
+            if(path === "home"){
+                return "dummy-home";
+            }else if(path === "candidacyDetail") {
+                return 'dummy-detail';
+            }
         };
         $scope.blurInput = function() {
         };
