@@ -9,8 +9,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     var updateCandidacy;
 
     var scrollEvent;
-    var profileHeight = (window.innerHeight * 0.55) - 30;
-    $scope.isDeatailContentFixed = false;
+    var profileHeight = (window.innerHeight * 0.55) - 20;
     var pledgeContent = document.getElementsByClassName('pledge-content')[0];
     var courseContent = document.getElementsByClassName('course-content')[0];
     var candidacyDetail = document.getElementById('candidacyDetail');
@@ -19,7 +18,6 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
         var scrollPosition = event.target.scrollTop;
         if(scrollPosition > profileHeight){
             candidacyDetail.classList.add('content-fix');
-            $scope.isDeatailContentFixed = true;
         }
     };
     detailContentScrollEvent = function(event) {
@@ -82,4 +80,6 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     };
 
     init();
+
+
 });
