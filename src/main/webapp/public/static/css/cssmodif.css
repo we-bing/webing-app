@@ -1,0 +1,406 @@
+.nav-search-icon {
+    position: absolute;
+    top: 10px;
+    left: 90%;
+}
+.btn-back {
+    position: absolute;
+    top: 15px;
+    left: 6%;
+    float: left;
+    height: 20px;
+}
+.fa-2x {
+    font-size: 1.5em;
+
+}
+.fa-3x {
+  font-size: 2em;
+}
+
+.side-menu-open {
+    position: relative;
+    top: 35%;
+    right: 6%;
+    float: right;
+    height: 20px;
+}
+
+.action-bar {
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    max-width: 767px;}
+
+    span.text-hidden {
+        left: 3%;
+    }
+    span.text-reveal {
+    right: 3%;
+}
+
+.nav-search-bar {
+    position: absolute;
+    height: 100%;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+.city-name {
+    font-size: 100%;
+    font-family: 'Jeju Gothic';
+    background: #f2f2f2;
+    color: #B1B1B3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.town-name {
+    background-color: #ffffff;
+    font-size: 110%;
+    height: 25%;
+    padding: 5%;
+    line-height: 120%;
+}
+
+  .card-wrapper {
+        position: relative;
+        transition: 0.6s;
+        background: transparent;
+        left: 7.5%;
+        width: 85%;
+        border:0px;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 3px rgba(0,0,0,0.10);
+    }
+
+    .anonymous-img {
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    display: inline-block;
+}
+
+    .secret_info {
+        height: 85%;
+        background-color:#4b8aef;
+
+
+        overflow: hidden;
+        -moz-overflow: hidden;
+
+        font-size: 160%;
+        font-family: 'Spoqa Han Sans';
+        font-weight:100;
+        line-height: 150%;
+        color: #ffffff;
+    }
+
+    .secret_info+.detail_page {
+    height: 15%;
+    background-color: white;
+}
+
+.WHITELAYER-img{
+  position:absolute;
+  right:0px;
+  top:0px;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    background: white;
+}
+
+.head-img {
+    background-color: #4b8aef;
+    height: 23%;
+    width: 100%;
+}
+
+.profile-img {
+    position: relative;
+    top: -27px;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f2f2f2;
+}
+
+.name {
+    font-size: 2em;
+    font-family: 'Jeju Gothic', serif;
+    letter-spacing: 1.71px;
+    line-height: 58px;
+    margin-bottom: 15px;
+}
+
+.dummy-candidacy {
+    height: 60px;
+    /* min-height: 64px; */
+}
+
+.back-card .current {
+    color: #9b9b9b;
+    font-size: 1em;
+    font-family: 'Jeju Gothic', serif;
+    /* font-weight: 600; */
+    /* letter-spacing: 0.99px; */
+    /* line-height: 33px; */
+}
+
+.back-card .previous {
+    color: #c8c8c8;
+    font-size: 1em;
+    font-family: 'Jeju Gothic', serif;
+    /* font-weight: 400; */
+    /* letter-spacing: 0.99px; */
+    line-height: 33px;
+}
+.back-card .detail_page span {
+    display: inline-block;
+    background-color: #4b8aef;
+    font-size: 1em;
+    font-family: 'Jeju Gothic', serif;
+    padding: 20px 10px 20px 10px;
+    width: 70%;
+    color: white;
+}
+.candidacy_list_container {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+}
+    .front-card .detail_page span {
+        color: #09B7EA;
+        font-family: 'Jeju Gothic', serif;
+        font-size: 1.4em;
+        display: inline-block;
+        padding-top: 7%;
+        font-weight: 300;
+    }
+
+    .reverse-wrapper {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    clear: both;
+    text-align: center;
+}
+
+input[type="checkbox"].green.ios-switch:checked + div {
+    background-color: #777eeb;
+    border: 1px solid #ecedee;
+    box-shadow: inset 0 0 0 10px #777eeb;
+}
+input[type="checkbox"].green.ios-switch:checked + div > div {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px #777eeb;
+}
+
+input[type="checkbox"].bigswitch.ios-switch + div > div {
+    width: 23px;
+    height: 23px;
+    margin-top: 1px;
+    box-shadow: 0 0 0 1px #a9a9a9;
+}
+input[type="checkbox"].ios-switch + div > div {
+    float: left;
+    width: 18px;
+    height: 18px;
+    border-radius: inherit;
+    background: #ffffff;
+    -webkit-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-property: transform, background-color, box-shadow;
+    -moz-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+    -moz-transition-duration: 0.4s;
+    -moz-transition-property: transform, background-color;
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(0, 0, 0, 0.4); */
+    pointer-events: none;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+input[type="checkbox"].ios-switch + div {
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    border: 1px solid #ecedee;
+    border-radius: 999px;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: .4s;
+    -webkit-transition-property: background-color, box-shadow;
+    box-shadow: inset 0 0 0 0px rgba(0,0,0,0.4);
+    margin: 15px 1.6em 15px 1.6em;
+}
+.text-box span {
+    display: inline-block;
+    position: relative;
+    /* top: calc(50% + 1em); */
+    align-items: center;
+    position: relative;
+    top: 50%;
+    font-family: 'Jeju Gothic', serif;
+    transform: translateY(-50%);
+}
+/*디테일페이지*/
+
+.detail-text-box {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.9px;
+    line-height: 58px;
+}
+
+.current {
+  margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+font-family: 'Jeju Gothic';
+line-height: 22px;
+}
+.previous {
+  margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+font-family: 'Jeju Gothic';
+line-height: 22px;
+}
+.party{
+    font-size: 2em;
+    font-family: 'Jeju Gothic', serif;
+    letter-spacing: 1.71px;
+    line-height: 58px;
+    margin-bottom: 15px;
+}
+
+#candidacyDetail {
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+.detail-content-container {
+    position: relative;
+    clear: both;
+    /* margin-top: 40px; */
+    font-size: 75%;
+    font-family: 'Jeju Gothic';
+    /* top: -5px; */
+}
+
+
+.detail-tab-box {
+    height: 60px;
+}
+
+.menu-box {
+    height: 100%;
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .detail-tab-box label {
+    display: inline-block;
+    color: #4a4a4a;
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0.09px;
+    line-height: 41px;
+    width: 100%;
+        top: 12%;
+}
+
+.info-text span {
+    display: inline-block;
+    margin: 15px;
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.09px;
+    line-height: 20px;
+    font-family: 'Spoqa Han Sans';
+font-size: 1.3em;
+font-weight: 100;
+}
+
+.pledge-box p {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    max-height: 2000px;
+    line-height: 1.5em;
+    font-family: 'Spoqa Han Sans';
+    font-weight: 200;
+        font-size: 1.1em;
+}
+
+.btn-long-folding {
+    color: #4a90e2;
+    font-size: 12px;
+    font-weight: 300;
+    padding-top: 12px;
+}
+
+.info-text {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 50px;
+    background-color: #4b8aef;
+    border-radius: 10px;
+}
+
+.popup-wrapper {
+    width: 80%;
+    background-color: white;
+    height: 400px;
+}
+
+.info-detail {
+    position: relative;
+    margin-top: 20px;
+    color: #4a90e2;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.2em;
+    width: 70%;
+    left: 15%;
+}
+
+.search-town {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    left: 15%;
+    top: 0%;
+}
+
+#candidacyDetail .profile-box {
+    height: 290px;
+}
+
+span.sub-title {
+    font-size: 1.2em;
+    font-color: f2f2f2;
+    font-color: #f2f2f2;
+    color: #5F5F5F;
+    font-weight: 400;
+    font-family: 'Spoqa Han Sans';
+}
