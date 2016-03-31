@@ -10,7 +10,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
 
     var scrollEvent;
     var windowHeight = window.innerHeight;
-    var profileHeight = (window.innerHeight * 0.45) ;
+    var profileHeight = 290 ;
     var pledgeContent = document.getElementsByClassName('pledge-content')[0];
     var courseContent = document.getElementsByClassName('course-content')[0];
     var candidacyDetail = document.getElementById('candidacyDetail');

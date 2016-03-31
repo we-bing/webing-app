@@ -28,8 +28,8 @@
                    ng-class="{'detail-page' : isDetail()}"
                    ng-cloak
             >
-            <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ><i class="fa fa-search fa-2x"></i></div>
-            <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><i class="fa fa-times fa-2x"></i> </div>
+            <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ><img src="/public/static/img/search_icon.png" alt="찾기"></div>
+            <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><img class="cancel-icon" src="/public/static/img/cancel_black.png" alt="취소"> </div>
             <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">
                 <div class="city-box" ng-show="(city.townList | filter: dataModel.townNameModel).length" ng-repeat="city in cityList">
                     <div class="city-name" >
@@ -55,7 +55,7 @@
     </div>
     <div class="btn-side-menu" ng-class="{'open-menu' : isMenuOpen }">
         <div class="btn-close" ng-click="menuClassToggle()">
-            <i class="fa fa-times fa-4x"></i>
+            <img src="/public/static/img/cancel_white.png" alt="닫기">
         </div>
         <div class="btn-menu">
             <a href="#home">홈</a>
