@@ -1,9 +1,7 @@
 <div id="selectDistrict">
-    <div class="dummy"></div>
-    <!--<div class="btn-select-box" ng-click="openSearchBox()"></div>-->
     <div class="home-select-box">
         <input class="nav-search-bar " type="text" ng-model="dataModel.townNameModel"
-               placeholder="{{selectedTown.townNameArr[1]}}"
+               placeholder="동, 읍, 리를 입력해주세요! "
                ng-focus="focusInput()"
                ng-cloak
         >
@@ -27,6 +25,10 @@
             </div>
         </div>
     </div>
-    <div class="app-intro"></div>
+    <div class="app-intro"
+         ng-swipe-left="swipeLeft()"
+         ng-swipe-right="swipeRight()">
+
+    </div>
 </div>
 

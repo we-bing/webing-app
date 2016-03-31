@@ -58,6 +58,9 @@ input:focus{
     display:block;
     clear:both;
 }
+.search-open{
+    z-index: 6;
+}
 .dummy{
     position: relative;
     height: 10%;
@@ -66,7 +69,7 @@ input:focus{
     z-index: 0;
 }
 .dummy-home{
-    background-color: RGBA(255, 241, 237, 1.00);
+    background-color: white;
 }
 .dummy-detail {
     background-color: RGBA(48, 127, 242, 1.00);
@@ -100,19 +103,29 @@ input:focus{
 
 }
 .btn-side-menu{
-    position: relative;
-    height: 90%;
-    top: -90%;
+    position: absolute;
+    height: 100%;
+    top: 0;
     width:60%;
     left: 100%;
     background-color: black;
-    z-index: 2;
+    z-index: 5;
     padding-top: 15%;
     transition: left 1s;
     text-align: center;
 }
 .btn-menu{
     margin: 10%;
+}
+.btn-close {
+    color: white;
+    float: right;
+}
+.btn-close {
+    position: absolute;
+    color: white;
+    top: 0;
+    left: calc(100% - 64px);
 }
 .btn-menu a{
     color: white;
@@ -269,12 +282,15 @@ input:focus{
     position: absolute;
     height: 7%;
     width: 85%;
-    top: 13%;
-    left: 7.6%;
+    top: 5%;
+    left: 7.5%;
     z-index: 3;
+    background-color: white;
 }
 
 .view-container{
+    position: relative;
+    top: 10%;
     height: 100%;
     min-height: 576px;
     max-width: 767px;
@@ -291,11 +307,9 @@ input:focus{
 
 .app-intro {
     position: absolute;
-    background-color: #FFF1ED;
-    height: 63%;
-    width: 91%;
-    left: 4.5%;
-    top:23%;
+    background-color: #F8F5F5;
+    height: 100%;
+    width: 100%;
 
 }
 .btn-select-box{
@@ -324,6 +338,66 @@ input:focus{
 /* end */
 
 /*candidacyList*/
+
+.candidacy_box:nth-child(1n) .secret_info{
+    background-image: url("/public/static/img/hidden_background-01.png");
+    background-size: 100% 100%;
+}
+.candidacy_box:nth-child(2n) .secret_info{
+    background-image: url("/public/static/img/hidden_background-02.png");
+    background-size: 100% 100%;
+}
+.candidacy_box:nth-child(3n) .secret_info{
+    background-image: url("/public/static/img/hidden_background-03.png");
+    background-size: 100% 100%;
+}
+.candidacy_box:nth-child(4n) .secret_info{
+    background-image: url("/public/static/img/hidden_background-04.png");
+    background-size: 100% 100%;
+}
+
+.candidacy_box:nth-child(1n) .public_info .head-img{
+    background-image: url("/public/static/img/reveal_background-01.png");
+    background-size: 100% 100%;
+}
+.candidacy_box:nth-child(2n) .public_info .head-img{
+    background-image: url("/public/static/img/reveal_background-02.png");
+    background-size: 100% 100%;
+}
+.candidacy_box:nth-child(3n) .public_info .head-img{
+    background-image: url("/public/static/img/reveal_background-03.png");
+    background-size: 100% 100%;
+}
+.candidacy_box:nth-child(4n) .public_info .head-img{
+    background-image: url("/public/static/img/reveal_background-04.png");
+    background-size: 100% 100%;
+}
+
+.candidacy_box:nth-child(1n) .front-card .detail_page  span{
+    color: #5580EF
+}
+.candidacy_box:nth-child(2n) .front-card .detail_page span{
+    color: #00CBE6;
+}
+.candidacy_box:nth-child(3n) .front-card .detail_page span{
+    color: #7467E6;
+}
+.candidacy_box:nth-child(4n) .front-card .detail_page span{
+    color: #21A4FF;
+}
+
+.candidacy_box:nth-child(1n) .back-card .detail_page  span{
+    background-color: #5580EF
+}
+.candidacy_box:nth-child(2n) .back-card .detail_page span{
+    background-color: #00CBE6;
+}
+.candidacy_box:nth-child(3n) .back-card .detail_page span{
+    background-color: #7467E6;
+}
+.candidacy_box:nth-child(4n) .back-card .detail_page span{
+    background-color: #21A4FF;
+}
 .popup-box {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
@@ -429,7 +503,7 @@ input:focus{
 }
 .secret_info{
     height: 85%;
-    background-color: #4b8aef;
+    /*background-color: #4b8aef;*/
     overflow: hidden;
     -moz-overflow: hidden;
     font-size: 200%;
@@ -454,7 +528,6 @@ input:focus{
     display: inline-block;
 }
 .front-card .detail_page span{
-    color: #09B7EA;
     font-size: 1.9em;
     display: inline-block;
     padding-top: 5%;
@@ -528,9 +601,11 @@ input:focus{
 #candidacyDetail{
     position: relative;
     overflow-x: hidden;
+    top:0;
     height: 100%;
     width: 100%;
     z-index: 5;
+    transition: top 0.2s;
 }
 #candidacyDetail .profile-box .dummy {
     background-color: RGBA(48, 127, 242, 1.00);
@@ -538,8 +613,10 @@ input:focus{
     width: 120%;
     left: -10%;
 }
-
-
+#candidacyDetail.menu-invisible {
+    /*overflow: hidden;*/
+    top:-10%;
+}
 #candidacyDetail .head-box{
     position: relative;
     height: 20%;
@@ -551,16 +628,17 @@ input:focus{
 #candidacyDetail .profile-box{
     height: 45%;
 }
-
+.menu-invisible .detail-content-container{
+    /*overflow: scroll;*/
+}
 .detail-content-container{
     position: relative;
     background-color: white;
     height: 100%;
     width: 100%;
-    transition: top 1s;
 }
 .content-fix .detail-content-container{
-    /*overflow: hidden;*/
+    overflow: hidden;
     position: fixed;
     top: 0;
 }
@@ -621,7 +699,7 @@ input:focus{
 }
 .menu-box label{
     position: relative;
-    top: 50%;
+    top:  50%;
     margin-top: -1.5em;
 }
 .detail-tab-box input{
@@ -642,6 +720,69 @@ input:focus{
     width: 100%;
 }
 
+.pledge-content .title-left{
+    display: inline-block;
+    width: 90%;
+    float: left;
+}
+
+.pledge-content .title-left .pledge-title{
+    display: inline-block;
+    float: left;
+    width: 80%;
+    margin-top: 0.5em;
+    line-height: 2em;
+}
+.pledge-content .title-left .pledge-title span {
+    color: #4a4a4a;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 39px;
+}
+.pledge-content .title-left .content-number{
+    float: left;
+}
+.pledge-content .title-right{
+    display: inline-block;
+    width: 10%;
+    margin-top: 0.75em;
+    clear: both;
+    color: #4b8aef;
+}
+
+.pledge-content .title-right label {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
+.pledge-content .title-right .folding-status{
+    transform: rotate(180deg);
+}
+
+.pledge-content .disabled-input{
+    color: grey; !important;
+}
+.pledge-box p{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    max-height: 2000px;
+    line-height: 1.5em;
+}
+.folding-pledge .pledge-box p{
+    overflow:hidden;
+    max-height: calc(1.5em * 2);
+    transition: max-height 0.5s;
+}
+.btn-long-folding{
+    display: block;
+    text-align: center;
+}
+.btn-long-folding{
+    color: #4a90e2;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1em;
+}
 .content-number{
     display: inline-block;
     margin: 10px;
@@ -658,6 +799,10 @@ input:focus{
     letter-spacing: 0.09px;
     line-height: 39px;
 }
+.course-content .title-wrapper{
+
+}
+
 .information-no-data{
     text-align: center;
 }

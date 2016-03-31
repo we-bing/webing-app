@@ -48,6 +48,12 @@ webing
             }
         };
 
+        $scope.swipeLeft = function() {
+            console.log("left");
+        };
+        $scope.swipeRight = function() {
+            console.log("right");
+        };
         $scope.focusInput = function() {
             $scope.isSelectBoxOpen = true;
         };
@@ -59,6 +65,7 @@ webing
             if(path === "home"){
                 return "dummy-home";
             }else if(path === "candidacyDetail") {
+                if($scope.isSelectBoxOpen) return 'dummy-detail ' + 'search-open';
                 return 'dummy-detail';
             }
         };

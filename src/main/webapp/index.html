@@ -24,7 +24,7 @@
                    ng-class="{'detail-page' : isDetail()}"
                    ng-cloak
             >
-            <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ng-click="complete()"><i class="fa fa-search fa-2x"></i></div>
+            <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ><i class="fa fa-search fa-2x"></i></div>
             <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><i class="fa fa-times fa-2x"></i> </div>
             <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">
                 <div class="city-box" ng-show="(city.townList | filter: dataModel.townNameModel).length" ng-repeat="city in cityList">
@@ -50,6 +50,9 @@
 
     </div>
     <div class="btn-side-menu" ng-class="{'open-menu' : isMenuOpen }">
+        <div class="btn-close" ng-click="menuClassToggle()">
+            <i class="fa fa-times fa-4x"></i>
+        </div>
         <div class="btn-menu">
             <a href="#home">홈</a>
         </div>
