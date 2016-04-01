@@ -3,7 +3,7 @@ html, body {
     width: 100%;
     margin: 0;
     min-height: 576px;
-    max-width: 767px;
+    background-color: #f2f2f3;
     overflow: hidden;
     -moz-overflow: hidden;
 }
@@ -13,7 +13,6 @@ body ::-webkit-scrollbar {
 
 a {
     text-decoration: none !important;
-
 }
 .fa-2x {
     font-size: 1.5em;
@@ -40,11 +39,12 @@ a {
 .text-box span{
     display: inline-block;
     position: relative;
-    /*top: calc(50% + 1em); */
     align-items: center;
     top: 50%;
     font-family: 'Jeju Gothic', serif;
     transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 /*index page*/
 .action-bar{
@@ -53,7 +53,6 @@ a {
     width: 100%;
     min-height: 64px;
     background-color: rgba(255,255,255,1);
-    max-width: 767px;
     height: 60px;
 }
 input{
@@ -82,11 +81,6 @@ input:focus{
 .dummy-home{
     background-color: white;
 }
-.dummy-detail {
-    background-color: RGBA(48, 127, 242, 0.85);
-
-}
-
 
 .side-menu-open{
     position: relative;
@@ -121,6 +115,8 @@ input:focus{
     z-index: 5;
     padding-top: 15%;
     transition: left 0.4s;
+    -webkit-transition: left 0.4s;
+    -moz-transition: left 0.4s;
     text-align: center;
     font-family: 'Spoqa Han Sans';
 }
@@ -164,11 +160,9 @@ input:focus{
     height: 100%;
     width: 100%;
     min-height: 576px;
-    max-width: 767px;
     top: 110%;
     background-color: #777EEB;
     z-index: 1;
-    /*transition: top 0s;*/
 }
 .select-town-open{
     top: 0;
@@ -306,14 +300,12 @@ input:focus{
     top: 59px;
     height: 100%;
     min-height: 576px;
-    max-width: 767px;
 }
 
 #selectDistrict{
     position: relative;
     height: 100%;
     min-height: 576px;
-    max-width: 767px;
 }
 
 #selectDistrict .nav-search-icon {
@@ -459,7 +451,6 @@ img.popup-image {
     height: 100%;
     width: 100%;
     min-height: 576px;
-    max-width: 767px;
 }
 .dummy-candidacy{
     height: 60px;
@@ -691,12 +682,15 @@ span.text-reveal {
 #candidacyDetail{
     position: relative;
     overflow-x: hidden;
-    top:0;
+    top: 0;
     height: 100%;
     width: 100%;
     z-index: 5;
     transition: top 0.2s;
+    -webkit-transition: top 0.2s;
+    -moz-transition: top 0.2s;
     background: white;
+    margin-top: -1px;
 }
 #candidacyDetail .profile-box .dummy {
     border-radius: 0 0 100% 100%;
@@ -704,7 +698,6 @@ span.text-reveal {
     left: -10%;
 }
 #candidacyDetail.menu-invisible {
-    /*overflow: hidden;*/
     top:-10%;
 }
 #candidacyDetail .head-box{
@@ -718,9 +711,7 @@ span.text-reveal {
 #candidacyDetail .profile-box{
     height: 222px;
 }
-.menu-invisible .detail-content-container{
-    /*overflow: scroll;*/
-}
+
 .detail-content-container{
     position: relative;
     background-color: white;
@@ -866,15 +857,22 @@ span.bar {
     width: 10%;
     margin-top: 0.75em;
     clear: both;
-    color: #4b8aef;
 }
 
 .pledge-content .title-right label {
     font-size: 1.8em;
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
 }
 .pledge-content .title-right .folding-status{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);;
+    -o-transform: rotate(180deg);;
     transform: rotate(180deg);
 }
 
@@ -908,9 +906,6 @@ span.bar {
 .btn-long-folding{
     display: block;
     text-align: center;
-}
-.btn-long-folding{
-    color: #4a90e2;
     font-weight: 300;
     line-height: 1em;
     font-size: 12px;
@@ -919,7 +914,6 @@ span.bar {
 .content-number{
     display: inline-block;
     margin: 10px;
-    color: #4b8aef;
     font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0.09px;
@@ -954,7 +948,6 @@ span.bar {
 }
 .info-detail{
     position: relative;
-    color: #4a90e2;
     font-size: 1em;
     font-weight: 300;
     margin-top: 20px;
@@ -1039,7 +1032,6 @@ span.bar {
 }
 .content-more {
     text-align: center;
-    color: #4a90e2;
     font-size: 1.2em;
     font-weight: 300;
     letter-spacing: 0.07px;
@@ -1181,16 +1173,16 @@ span.bar {
 }
 
 .first-card-text {
-    background-color: #5580EF;
+    color: #5580EF;
 }
 .second-card-text {
-    background-color: #00CBE6;
+    color: #00CBE6;
 }
 .third-card-text {
-    background-color: #7467E6;
+    color: #7467E6;
 }
 .fourth-card-text {
-    background-color: #21A4FF;
+    color: #21A4FF;
 }
 /* end */
 

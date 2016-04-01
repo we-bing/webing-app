@@ -3,6 +3,18 @@
  */
 webing.service('sharedDataService', function() {
     return {
-        canSearchTownOpen: false
+        canSearchTownOpen: false,
+        currentDetailCardIndex : null,
+        getDetailPageClass : function(){
+            var detailColorClass = [
+                'first-card-',
+                'second-card-',
+                'third-card-',
+                'fourth-card-'
+            ];
+            console.log(this.currentDetailCardIndex);
+            return detailColorClass[this.currentDetailCardIndex % 4] + "background";
+        }
+
     };
 });

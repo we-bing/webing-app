@@ -65,8 +65,8 @@ webing
             if(path === "home"){
                 return "dummy-home";
             }else if(path === "candidacyDetail") {
-                if($scope.isSelectBoxOpen) return 'dummy-detail ' + 'search-open';
-                return 'dummy-detail';
+                if($scope.isSelectBoxOpen) return sharedDataService.getDetailPageClass() + 'search-open';
+                return sharedDataService.getDetailPageClass();
             }
         };
         $scope.blurInput = function() {

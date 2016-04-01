@@ -2,7 +2,7 @@
  * Created by sleepbear on 2016. 3. 6..
  */
 
-webing.controller('CandidacyDetailController', function ($scope, $routeParams, apiService, webingDataService) {
+webing.controller('CandidacyDetailController', function ($scope, $routeParams, apiService, webingDataService, sharedDataService) {
     var currentIndex;
     var candidacyListSize = 0;
     var init;
@@ -10,7 +10,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
 
     var scrollEvent;
     var windowHeight = window.innerHeight;
-    var profileHeight = 290 ;
+    var profileHeight = 222 ;
     var pledgeContent = document.getElementsByClassName('pledge-content')[0];
     var courseContent = document.getElementsByClassName('course-content')[0];
     var candidacyDetail = document.getElementById('candidacyDetail');
@@ -22,7 +22,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     scrollEvent = function (event) {
 
         var currentScrollPosition = event.target.scrollTop;
-        if(!isMenuInvisible && currentScrollPosition < windowHeight * 0.02){
+        if(!isMenuInvisible && currentScrollPosition < windowHeight * 0.01){
             candidacyDetail.classList.add('menu-invisible');
             isMenuInvisible = true;
             event.target.scrollTop = 0;
@@ -59,7 +59,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
         var selectedCandidacyId = $routeParams.candidacyId;
         webingDataService.candidacyList.forEach(function(candidacy, index){
             if(candidacy.candidacyId == selectedCandidacyId){
-                currentIndex = index;
+                currentIndex = sharedDataService.currentDetailCardIndex = index
             }
         });
         candidacyListSize = webingDataService.candidacyList.length;
@@ -72,12 +72,13 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     };
 
     $scope.changeToRight = function() {
-        currentIndex = (currentIndex+1) % candidacyListSize;
+        sharedDataService.currentDetailCardIndex = currentIndex = (currentIndex+1) % candidacyListSize;
         updateCandidacy();
     };
     $scope.changeToLeft = function() {
         currentIndex -= 1;
         if(currentIndex == -1) currentIndex = candidacyListSize - 1;
+        sharedDataService.currentDetailCardIndex = currentIndex;
         updateCandidacy();
     };
 

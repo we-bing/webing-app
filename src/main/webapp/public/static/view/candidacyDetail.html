@@ -37,7 +37,7 @@
                 <div class="pledge-wrapper" ng-repeat="pledge in dummyPledgeList"
                      ng-class="{'folding-pledge' : pledgeToggle[pledge.pledgeId] }"
                 >
-                    <div class="title-wrapper">
+                    <div class="title-wrapper" ng-class="detailColorChange('text')">
                         <div class="title-left">
                             <span class="content-number" ng-bind=" $index + 1 "></span>
                             <div class="pledge-title">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="pledge-box">
                         <p class="" ng-bind="pledge.pledgeDescription"></p>
-                        <label for="{{pledge.pledgeId}}" ng-show="isTextTooLong(pledge)" class="btn-long-folding">
+                        <label for="{{pledge.pledgeId}}" ng-class="detailColorChange('text')" ng-show="isTextTooLong(pledge)" class="btn-long-folding">
                             <span>상세 공약 접기</span>
                         </label>
                     </div>
@@ -66,14 +66,14 @@
             <div class="course-content" ng-show="selectedTab === 'course'">
                 <div class="content-activity">
                     <div class="title-wrapper">
-                        <span class="content-number">1</span>
+                        <span class="content-number" ng-class="detailColorChange('text')">1</span>
                         <span class="content-title">19대 국정 활동</span>
                     </div>
                     <div class="information-no-data" ng-hide="isPreviousAssembly()">
                         <div class="info-text" ng-class="detailColorChange('background')">
                             <span>19대 당선 후보가 아닙니다.</span>
                         </div>
-                        <div class="info-detail">
+                        <div class="info-detail" ng-class="detailColorChange('text')">
                             <p>19대 당선 후보가 아닙니다. <br>
                                 이전 국정활동에 대한 자세한 데이터가 존재하지 않아 <br>
                                 국정 활동에 대한 정보를 제공해드릴 수 없습니다. <br>
@@ -97,7 +97,7 @@
                         <div class="fold-content" ng-hide='isActivityFolding'>
                             <div id="pledge-rate" class="activity-wrapper">
                                 <span class="sub-title">공약 이행율</span>
-                                <div class="rate-wrapper">
+                                <div class="rate-wrapper" ng-class="detailColorChange('background')">
                                     <div class="rate-text">
                                         <span ng-bind="currentCandidacy.assemblyMember.completedPledgesRate + '%'"></span>
                                     </div>
@@ -108,7 +108,7 @@
                             </div>
                             <div id="bill-keywords" class="activity-wrapper">
                                 <span class="sub-title">주요 발의안 키워드</span>
-                                <div class="keywords-wrapper">
+                                <div class="keywords-wrapper" ng-class="detailColorChange('background')">
                                     <div class="keywords-box">
                                         <span class="bill-keyword-text" ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList" ng-bind="billKeyword.keywordName"></span>
                                     </div>
@@ -118,7 +118,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-more" ng-click="changeFoldStatus()">
+                        <div class="content-more" ng-click="changeFoldStatus()" ng-class="detailColorChange('text')">
                             <span class="more-text" ng-show="isActivityFolding">19대 국정활동 자세히 보기</span>
                             <br>
                             <span class="more-arrow fa fa-chevron-down" ng-class="{'reverse-arrow' : !isActivityFolding}"></span>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="content-news">
                     <div class="title-wrapper">
-                        <span class="content-number">2</span>
+                        <span class="content-number" ng-class="detailColorChange('text')">2</span>
                         <span class="content-title">키워드로 보는 후보 관련 뉴스</span>
                     </div>
                     <div class="news-keywords-wrapper">
