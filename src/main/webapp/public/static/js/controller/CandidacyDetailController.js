@@ -100,6 +100,16 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
             $scope.currentCandidacy.assemblyMember = webingDataService.assemblyList[assemblyId];
         }
     };
+
+    $scope.detailColorChange = function (type) {
+        var detailColorClass = [
+            'first-card-',
+            'second-card-',
+            'third-card-',
+            'fourth-card-'
+        ];
+        return detailColorClass[currentIndex % 4] + type;
+    };
     $scope.indexNumber = function(index) {
         return index + 1;
     };

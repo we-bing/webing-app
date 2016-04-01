@@ -1,15 +1,19 @@
 <div id="candidacyDetail" >
-    <div class="profile-box">
-        <div class="dummy"></div>
+    <div class="profile-box" >
+        <div class="dummy" ng-class="detailColorChange('background')"></div>
         <div class="btn-arrow btn-right fa fa-chevron-down fa-3x" ng-click="changeToRight()">
         </div>
         <div class="bth-left fa fa-chevron-down fa-3x" ng-click="changeToLeft()">
         </div>
         <img class="profile-img" ng-src="http://info.nec.go.kr/{{currentCandidacy.candidacyImg}}" alt="" >
-        <div class="detail-text-box">
-            <span class="name" ng-bind="currentCandidacy.name"></span>
-            <span class="bar"> | </span>
-            <span class="party" ng-bind="currentCandidacy.party"></span>
+        <div class="detail-text-box-position">
+            <div class="detail-text-box-center">
+                <div class="detail-text-box">
+                    <span class="name" ng-bind="currentCandidacy.name"></span>
+                    <span class="bar"> | </span>
+                    <span class="party" ng-bind="currentCandidacy.party"></span>
+                </div>
+            </div>
         </div>
         <div class="career_box">
             <div class="current" ng-bind="currentCandidacy.experienceArr[1]"></div>
@@ -21,11 +25,11 @@
         <div class="detail-tab-box">
             <div class="menu-box pledge-box">
                 <input type="radio" id="menu-pledge" name="detail-tap" value="pledge" ng-model="selectedTab">
-                <label for="menu-pledge">공약</label>
+                <label for="menu-pledge" ng-class="detailColorChange('checked')">공약</label>
             </div>
             <div class="menu-box course-box">
                 <input type="radio" id="menu-course" name="detail-tap" value="course" ng-model="selectedTab" checked="checked">
-                <label for="menu-course">발자취</label>
+                <label for="menu-course" ng-class="detailColorChange('checked')">발자취</label>
             </div>
         </div>
         <div class="detail-content-box" >
@@ -66,7 +70,7 @@
                         <span class="content-title">19대 국정 활동</span>
                     </div>
                     <div class="information-no-data" ng-hide="isPreviousAssembly()">
-                        <div class="info-text">
+                        <div class="info-text" ng-class="detailColorChange('background')">
                             <span>19대 당선 후보가 아닙니다.</span>
                         </div>
                         <div class="info-detail">
@@ -81,7 +85,7 @@
                     <div class="content-wrapper" ng-show="isPreviousAssembly()">
                         <div id="attendance-rate" class="activity-wrapper ">
                             <span class="sub-title">국회 참가율</span>
-                            <div class="rate-wrapper">
+                            <div class="rate-wrapper" ng-class="detailColorChange('background')">
                                 <div class="rate-text">
                                     <span ng-bind="currentCandidacy.assemblyMember.attendanceRate + '%'"></span>
                                 </div>

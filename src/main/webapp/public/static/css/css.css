@@ -122,6 +122,7 @@ input:focus{
     padding-top: 15%;
     transition: left 0.4s;
     text-align: center;
+    font-family: 'Spoqa Han Sans';
 }
 .btn-menu{
     margin: 10%;
@@ -133,8 +134,8 @@ input:focus{
 .btn-close {
     position: absolute;
     color: white;
-    top: 0;
-    calc(100% - 47px);
+    top:20px;
+    left: 86%;
 }
 .btn-menu a{
     color: white;
@@ -426,13 +427,23 @@ input:focus{
 .popup-content{
     padding: 5% 5% 0 5%;
 }
+
+img.popup-image {
+    width: 60%;
+    height: 60%;
+}
+
 .popup-wrapper{
     width: 80%;
-    background-color: white;
+    background-color: #09b7ea;
     height: 400px;
+    text-align:center;
+    font-family:'Spoqa Han Sans';
+    color:white;
 }
 .popup-close-icon{
     float: right;
+    margin: 5%;
 }
 .popup-close:after{
     display: block;
@@ -538,9 +549,8 @@ span.text-reveal {
     background-color:#4b8aef;
     overflow: hidden;
     -moz-overflow: hidden;
-    font-size: 160%;
+    font-size: 140%;
     font-family: 'Spoqa Han Sans';
-    font-weight:100;
 }
 .secret_info+.detail_page {
     height: 15%;
@@ -568,8 +578,7 @@ span.text-reveal {
     display: inline-block;
     color: #09B7EA;
     padding-top: 7%;
-    font-weight: 300;
-    font-family: 'Spoka Han Sans';
+    font-family: 'Spoqa Han Sans';
     font-size: 1.2em;
 }
 .head-img{
@@ -588,25 +597,29 @@ span.text-reveal {
     width: 70%;
     padding: 20px 20px 20px 20px;
     font-size: 1.2em;
-    font-family:’Spoka Han Sans’;
-    font-weight:100
+    font-family: 'Spoqa Han Sans';
+    font-weight:400;
 }
 
 .name{
     font-weight: 600;
     letter-spacing: 1.71px;
     line-height: 58px;
-    font-size: 1.8em;
-    font-family: “Spoqa Han Sans’;
+    font-size: 1.5em;
+    font-family: 'Spoqa Han Sans';
 }
 
 .back-card .current{
     color: #9b9b9b;
-    font-weight: 600;
     letter-spacing: 0.99px;
-    line-height: 33px;
-    font-size: 1.2em;
-    font-family: 'Spoka Han Sans’;
+    line-height: 20px;
+    font-size: 1em;
+    font-family: 'Spoqa Han Sans';
+}
+
+.career_box {
+    margin-top: 13px;
+    color:#b5b5b5;
 }
 
 .current {
@@ -614,17 +627,15 @@ span.text-reveal {
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
-    font-family: “Spoqa Han Sans’;
-    font-weight: 100;
+    font-size: 0.9em;
+    font-family: 'Spoqa Han Sans';
     line-height: 22px;
 }
 .back-card .previous{
     line-height: 33px;
-    font-weight: 400;
     letter-spacing: 0.99px;
-    font-size: 1.2em;
-    font-family: “Spoqa Han Sans’;
+    font-size: 1em;
+    font-family: 'Spoqa Han Sans';
     color:#9b9b9b;
 }
 .previous {
@@ -632,15 +643,14 @@ span.text-reveal {
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
-    font-weight: 100;
-    font-family: “Spoqa Han Sans’;
+    font-size: 0.9em;
+    font-family: 'Spoqa Han Sans';
     line-height: 22px;
 }
 
 .party {
-    font-family: “Spoqa Han Sans’;
-    font-size: 1.8em;
+    font-family: 'Spoqa Han Sans';
+    font-size: 1.5em;
     letter-spacing: 1.71px;
     line-height: 58px;
     margin-bottom: 15px;
@@ -658,18 +668,25 @@ span.text-reveal {
     text-align: center;
     background-color: white;
 }
+
+.card-profile {
+    float: top;
+    position: absolute;
+    z-index: 5;
+    top: 57px;
+    left: 38%;
+}
+
 .profile-img{
     position: relative;
     border-radius: 100%;
-    top: -27px;
+    top: -43px;
     height: 90px;
     width: 90px;
     border: 3px solid #f2f2f2;
 }
 /*toggle */
 
-/*width: 750px;*/
-/*height: 1923px;*/
 /*candidacyDetailPage*/
 #candidacyDetail{
     position: relative;
@@ -682,7 +699,6 @@ span.text-reveal {
     background: white;
 }
 #candidacyDetail .profile-box .dummy {
-    background-color: RGBA(48, 127, 242, 1.00);
     border-radius: 0 0 100% 100%;
     width: 120%;
     left: -10%;
@@ -700,7 +716,7 @@ span.text-reveal {
     border-radius: 0 0 50% 50%;
 }
 #candidacyDetail .profile-box{
-    height: 290px;
+    height: 222px;
 }
 .menu-invisible .detail-content-container{
     /*overflow: scroll;*/
@@ -713,6 +729,7 @@ span.text-reveal {
     clear: both;
     font-size: 75%;
     top: -5px;
+    font-family: 'Spoqa Han Sans';
 }
 
 span.sub-title {
@@ -736,6 +753,23 @@ span.sub-title {
     font-size: 1em;
     letter-spacing: 1.9px;
 }
+
+span.bar {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.detail-text-box-position{
+    position: absolute;
+    top: 121px;
+    width: 100%;
+}
+
+.detail-text-box-center{
+    text-align:center;
+}
+
+
 .detail-page{
     color: black;
 }
@@ -764,7 +798,7 @@ span.sub-title {
 .detail-tab-box label{
     display: inline-block;
     color: #4a4a4a;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0.09px;
     width: 100%;
@@ -792,7 +826,7 @@ span.sub-title {
 }
 .detail-tab-box input:checked + label{
     color: #4a90e2;
-    border-bottom: 6px solid #4b8aef;
+    border-bottom: 4px solid #4b8aef;
 }
 .detail-content-box{
     border-top: 1px solid #d7d7d7;
@@ -815,12 +849,12 @@ span.sub-title {
     display: inline-block;
     float: left;
     width: 80%;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 .pledge-content .title-left .pledge-title span {
     color: #4a4a4a;
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 1.3em;
+    font-weight: 400;
     line-height: 25px;
 }
 .pledge-content .title-left .content-number{
@@ -849,17 +883,22 @@ span.sub-title {
 }
 
 .pledge-wrapper {
-    margin-bottom: 10px;
+    border-bottom: 1px solid #f2f2f2;
 }
+
+.pledge-box {
+    margin-bottom: 13px;
+}
+
 .pledge-box p{
     position: relative;
     width: 80%;
-    left: 10%;
+    left: 7%;
     max-height: 2000px;
     line-height: 1.5em;
     font-family: 'Spoqa Han Sans';
     font-weight: 200;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 .folding-pledge .pledge-box p{
     overflow:hidden;
@@ -881,18 +920,20 @@ span.sub-title {
     display: inline-block;
     margin: 10px;
     color: #4b8aef;
-    font-size: 2em;
-    font-weight: 300;
+    font-size: 1.3em;
+    font-weight: 400;
     letter-spacing: 0.09px;
     line-height: 39px;
 }
 .content-title{
     color: #4a4a4a;
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 1.3em;
+    font-weight: 400;
     letter-spacing: 0.09px;
     line-height: 39px;
 }
+
+
 .pledge-content .title-wrapper:after{
     content: "";
     display: block;
@@ -919,8 +960,8 @@ span.sub-title {
     margin-top: 20px;
     letter-spacing: 1px;
     line-height: 1.3em;
-    width:80%;
-    left:12%
+    width:90%;
+    left:7%
 
 }
 .content-wrapper{
@@ -1035,17 +1076,18 @@ span.sub-title {
     left: 1%;
     margin: 5px;
     color: white;
-    font-size: 0.9em;
-    font-weight: 700;
+    font-size: 1.1em;
+    font-weight: 200;
     line-height: 39px;
     background-color: #3b75d3;
 }
 .bill-detail-link{
     color: white;
-    font-size: 1em;
+    font-size: 1.1em;
     letter-spacing: 0.07px;
     line-height: 29px;
     font-weight: 200;
+    padding:5px;
 }
 
 .reverse-arrow{
@@ -1107,6 +1149,48 @@ span.sub-title {
 }
 .empty-box{
     height: 100px;
+}
+.first-card-background {
+    background-color: #5580EF;
+}
+.second-card-background {
+    background-color: #00CBE6;
+}
+.third-card-background {
+    background-color: #7467E6;
+}
+.fourth-card-background {
+    background-color: #21A4FF;
+}
+
+.detail-tab-box input:checked + label.first-card-checked {
+    color: #5580EF;
+    border-color: #5580EF;
+}
+.detail-tab-box input:checked + label.second-card-checked {
+    color: #00CBE6;
+    border-color: #00CBE6;
+}
+.detail-tab-box input:checked + label.third-card-checked {
+    color: #7467E6;
+    border-color: #7467E6;
+}
+.detail-tab-box input:checked + label.fourth-card-checked {
+    color: #21A4FF;
+    border-color: #21A4FF;
+}
+
+.first-card-text {
+    background-color: #5580EF;
+}
+.second-card-text {
+    background-color: #00CBE6;
+}
+.third-card-text {
+    background-color: #7467E6;
+}
+.fourth-card-text {
+    background-color: #21A4FF;
 }
 /* end */
 
