@@ -35,8 +35,9 @@
                     </div>
                     <ul class="town-list" >
                         <li class="town-name"
-                            ng-repeat="town in city.townList | filter:{townName : dataModel.townNameModel}"
+                            ng-repeat="town in city.townList "
                             ng-click="selectAndComplete(town)"
+                            ng-show="([town] | filter:{townName : dataModel.townNameModel}).length"
                         >
                             <span class="town-text" ng-bind="town.townNameArr[1]"></span>
                             <br>

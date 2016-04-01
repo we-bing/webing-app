@@ -12,7 +12,6 @@ webing.service('sharedDataService', function() {
                 'third-card-',
                 'fourth-card-'
             ];
-            console.log(this.currentDetailCardIndex);
             return detailColorClass[this.currentDetailCardIndex % 4] + "background";
         }
 

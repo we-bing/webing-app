@@ -2,10 +2,12 @@
  * Created by sleepbear on 2016. 3. 1..
  */
 
-webing.controller('HomeController', function ($scope, $routeParams, apiService ,$location, webingDataService, sharedDataService) {
+webing.controller('HomeController', function ($scope, $routeParams, apiService ,$location, webingDataService, sharedDataService, $filter) {
     var fetchCityList;
     var init;
     var divideTownName;
+    $scope.dataModel = {};
+    $scope.dataModel.townNameModel = "";
     $scope.openSearchBox = function() {
         sharedDataService.canSearchTownOpen = true;
     };
@@ -55,6 +57,14 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
     $scope.canOpenSelectBox = function() {
         return sharedDataService.canSearchTownOpen === true;
     };
-
+    $scope.townNameFilter = function(town) {
+        var filteredSize = $filter("filter")([town.townName], $scope.dataModel.townNameModel).length;
+        return filteredSize === 0;
+    };
+    $scope.modelLengthTwo = function() {
+        return function() {
+            return $scope.dataModel.townNameModel.length != 1;
+        };
+    };
     init();
 });

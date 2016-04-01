@@ -110,14 +110,14 @@ input:focus{
     height: 100%;
     top: 0;
     width:100%;
-    left: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 5;
+    z-index: -1;
     padding-top: 15%;
     transition: left 0.4s;
-    -webkit-transition: left 0.4s;
-    -moz-transition: left 0.4s;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
     text-align: center;
+    opacity: 0;
     font-family: 'Spoqa Han Sans';
 }
 .btn-menu{
@@ -148,7 +148,9 @@ input:focus{
     top: 0;
 }
 .open-menu{
-    left:0%;
+    opacity: 1;
+    z-index: 5;
+    display: block;
 }
 
 .select-town .dummy-box{
@@ -499,7 +501,10 @@ span.text-reveal {
 }
 .reverse .card-wrapper{
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
 }
+
 
 
 .front-card , .back-card{
