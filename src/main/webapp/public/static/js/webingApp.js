@@ -52,7 +52,7 @@ webing
             console.log("left");
         };
         $scope.swipeRight = function() {
-            console.log("right");
+            console.log("rightx");
         };
         $scope.focusInput = function() {
             $scope.isSelectBoxOpen = true;

@@ -15,6 +15,13 @@ a {
     text-decoration: none !important;
 
 }
+.fa-2x {
+    font-size: 1.5em;
+
+}
+.fa-3x {
+    font-size: 2em;
+}
 .btn-menu a:visited{
     color: white;
 }
@@ -33,17 +40,21 @@ a {
 .text-box span{
     display: inline-block;
     position: relative;
-    top: calc(50% - 1em);
+    /*top: calc(50% + 1em); */
+    align-items: center;
+    top: 50%;
+    font-family: 'Jeju Gothic', serif;
+    transform: translateY(-50%);
 }
 /*index page*/
 .action-bar{
     z-index: 2;
     position: fixed;
     width: 100%;
-    height: 10%;
     min-height: 64px;
-    background-color: rgba(255,255,255,.1);
+    background-color: rgba(255,255,255,1);
     max-width: 767px;
+    height: 60px;
 }
 input{
     border: none;
@@ -72,17 +83,15 @@ input:focus{
     background-color: white;
 }
 .dummy-detail {
-    background-color: RGBA(48, 127, 242, 1.00);
+    background-color: RGBA(48, 127, 242, 0.85);
 
 }
 
-.btn-back{
-    float: left;
-}
+
 .side-menu-open{
     position: relative;
     top: 35%;
-    right: 7.5%;
+    right: 6%;
     float: right;
     height: 20px;
 }
@@ -95,24 +104,24 @@ input:focus{
 }
 
 .btn-back{
-    position: relative;
-    top: 10%;
-    left: 7.5%;
+    position: absolute;
+    top: 15px;
+    left: 6%;
     float: left;
     height: 20px;
-
 }
 .btn-side-menu{
     position: absolute;
     height: 100%;
     top: 0;
-    width:60%;
+    width:100%;
     left: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 5;
     padding-top: 15%;
-    transition: left 1s;
+    transition: left 0.4s;
     text-align: center;
+    font-family: 'Spoqa Han Sans';
 }
 .btn-menu{
     margin: 10%;
@@ -124,13 +133,13 @@ input:focus{
 .btn-close {
     position: absolute;
     color: white;
-    top: 0;
-    left: calc(100% - 64px);
+    top:20px;
+    left: 86%;
 }
 .btn-menu a{
     color: white;
     font-size: 1.5em;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.14px;
     line-height: 57px;
 }
@@ -139,10 +148,10 @@ input:focus{
     width: 65%;
     height: 100%;
     left: 15%;
-    top: 13%;
+    top: 0;
 }
 .open-menu{
-    left: 40%;
+    left:0%;
 }
 
 .select-town .dummy-box{
@@ -208,10 +217,10 @@ input:focus{
 .nav-search-bar{
     position: absolute;
     height: 100%;
-    font-size: 25px;
     width: 100%;
     text-align: center;
     padding: 0;
+    font-size: 1.2em;
 }
 .nav-town-list{
     position: relative;
@@ -220,7 +229,7 @@ input:focus{
 }
 .nav-search-icon{
     position: absolute;
-    top:25%;
+    top: 20px;
     left: 90%;
 }
 .select-box-open{
@@ -245,10 +254,10 @@ input:focus{
 
 .town-name{
     background-color: #ffffff;
-    font-size: 130%;
     height: 25%;
     padding: 5%;
     line-height: 120%;
+    font-size: 110%;
 }
 
 .town-name:not(:last-child){
@@ -260,10 +269,13 @@ input:focus{
 }
 .city-name{
     font-size: 100%;
-    color: #cccccc;
-    background-color: #ECEDEE;
     line-height: 200%;
     padding-left: 2%;
+    font-family: 'Jeju Gothic';
+    background: #f2f2f2;
+    color: #B1B1B3;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .city-text{
     color: #ECEDEE;
@@ -290,7 +302,7 @@ input:focus{
 
 .view-container{
     position: relative;
-    top: 10%;
+    top: 59px;
     height: 100%;
     min-height: 576px;
     max-width: 767px;
@@ -303,8 +315,13 @@ input:focus{
     max-width: 767px;
 }
 
-
-
+#selectDistrict .nav-search-icon {
+    top: 14px;
+}
+#selectDistrict .home-select-box .cancel-icon {
+    height: 18px;
+    width: 18px;
+}
 .app-intro {
     position: absolute;
     background-color: #F8F5F5;
@@ -409,12 +426,23 @@ input:focus{
 .popup-content{
     padding: 5% 5% 0 5%;
 }
+
+img.popup-image {
+    width: 60%;
+    height: 60%;
+}
+
 .popup-wrapper{
     width: 80%;
-    background-color: white;
+    background-color: #09b7ea;
+    height: 400px;
+    text-align:center;
+    font-family:'Spoqa Han Sans';
+    color:white;
 }
 .popup-close-icon{
     float: right;
+    margin: 5%;
 }
 .popup-close:after{
     display: block;
@@ -433,29 +461,35 @@ input:focus{
     max-width: 767px;
 }
 .dummy-candidacy{
-    height: 10%;
-    min-height: 64px;
+    height: 60px;
 }
 
 .reverse-wrapper{
     position: relative;
     width: 100%;
-    height: 10%;
     clear: both;
     text-align: center;
+    height: 60px;
+}
+
+span.text-hidden {
+    left: 3%;
+}
+span.text-reveal {
+    right: 3%;
 }
 .toggle-box, .text-hidden, .text-reveal{
     float: left;
 }
 
 .candidacy_list_container {
-    height: 80%;
     width: 100%;
     overflow: scroll;
     position: relative;
+    height: 100%;
 }
 .candidacy_box{
-    height: 100%;
+    height: 72%;
     width: 100%;
 }
 .card-wrapper{
@@ -466,9 +500,10 @@ input:focus{
     width: 85%;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    border: 1px solid black;
     text-align: center;
-
+    background: transparent;
+    border:0px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 3px rgba(0,0,0,0.10);
 }
 .reverse .card-wrapper{
     transform: rotateY(180deg);
@@ -500,42 +535,54 @@ input:focus{
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
+    background: white;
+
 }
 .secret_info{
     height: 85%;
     /*background-color: #4b8aef;*/
     overflow: hidden;
     -moz-overflow: hidden;
-    font-size: 200%;
     line-height: 150%;
     color: #ffffff;
+    background-color:#4b8aef;
+    overflow: hidden;
+    -moz-overflow: hidden;
+    font-size: 140%;
+    font-family: 'Spoqa Han Sans';
 }
 .secret_info+.detail_page {
     height: 15%;
+    background-color: white;
 }
 .public_info{
     height: 90%;
     width: 100%;
 }
-
+.WHITELAYER-img{
+    position:absolute;
+    right:0px;
+    top:0px;
+}
 .anonymous-img{
     position: relative;
     margin-top: 10%;
     margin-bottom: 5%;
-    height: 75px;
-    width: 75px;
-    background: #ffffff;
     display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: transparent;
 }
 .front-card .detail_page span{
-    font-size: 1.9em;
     display: inline-block;
-    padding-top: 5%;
-    font-weight: 200;
+    color: #09B7EA;
+    padding-top: 7%;
+    font-family: 'Spoqa Han Sans';
+    font-size: 1.2em;
 }
 .head-img{
     background-color: #4b8aef;
-    height: 20%;
+    height: 23%;
     width: 100%;
 }
 .back-card .detail_page{
@@ -545,34 +592,68 @@ input:focus{
 .back-card .detail_page span{
     display: inline-block;
     background-color: #4b8aef;
-    font-size: 1.5em;
-    padding: 20px 10px 20px 10px;
-    width: 80%;
     color: white;
+    width: 70%;
+    padding: 20px 20px 20px 20px;
+    font-size: 1.2em;
+    font-family: 'Spoqa Han Sans';
+    font-weight:400;
 }
 
 .name{
-    font-size: 40px;
     font-weight: 600;
     letter-spacing: 1.71px;
     line-height: 58px;
-    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-family: 'Spoqa Han Sans';
 }
 
 .back-card .current{
     color: #9b9b9b;
-    font-size: 20px;
-    font-weight: 600;
     letter-spacing: 0.99px;
-    line-height: 33px;
+    line-height: 20px;
+    font-size: 1em;
+    font-family: 'Spoqa Han Sans';
 }
 
+.career_box {
+    margin-top: 13px;
+    color:#b5b5b5;
+}
+
+.current {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 0.9em;
+    font-family: 'Spoqa Han Sans';
+    line-height: 22px;
+}
 .back-card .previous{
-    color: #c8c8c8;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0.99px;
     line-height: 33px;
+    letter-spacing: 0.99px;
+    font-size: 1em;
+    font-family: 'Spoqa Han Sans';
+    color:#9b9b9b;
+}
+.previous {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 0.9em;
+    font-family: 'Spoqa Han Sans';
+    line-height: 22px;
+}
+
+.party {
+    font-family: 'Spoqa Han Sans';
+    font-size: 1.5em;
+    letter-spacing: 1.71px;
+    line-height: 58px;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 .back-card .pledge{
     color: #9b9b9b;
@@ -586,17 +667,25 @@ input:focus{
     text-align: center;
     background-color: white;
 }
+
+.card-profile {
+    float: top;
+    position: absolute;
+    z-index: 5;
+    top: 57px;
+    left: 38%;
+}
+
 .profile-img{
     position: relative;
-    height: 100px;
-    width: 100px;
-    top: -50px;
     border-radius: 100%;
+    top: -43px;
+    height: 90px;
+    width: 90px;
+    border: 3px solid #f2f2f2;
 }
 /*toggle */
 
-/*width: 750px;*/
-/*height: 1923px;*/
 /*candidacyDetailPage*/
 #candidacyDetail{
     position: relative;
@@ -606,9 +695,9 @@ input:focus{
     width: 100%;
     z-index: 5;
     transition: top 0.2s;
+    background: white;
 }
 #candidacyDetail .profile-box .dummy {
-    background-color: RGBA(48, 127, 242, 1.00);
     border-radius: 0 0 100% 100%;
     width: 120%;
     left: -10%;
@@ -626,7 +715,7 @@ input:focus{
     border-radius: 0 0 50% 50%;
 }
 #candidacyDetail .profile-box{
-    height: 45%;
+    height: 222px;
 }
 .menu-invisible .detail-content-container{
     /*overflow: scroll;*/
@@ -636,6 +725,18 @@ input:focus{
     background-color: white;
     height: 100%;
     width: 100%;
+    clear: both;
+    font-size: 75%;
+    top: -5px;
+    font-family: 'Spoqa Han Sans';
+}
+
+span.sub-title {
+    font-size: 1.2em;
+    font-color: #f2f2f2;
+    color: #5F5F5F;
+    font-weight: 400;
+    font-family: 'Spoqa Han Sans';
 }
 .content-fix .detail-content-container{
     overflow: hidden;
@@ -647,11 +748,27 @@ input:focus{
 }
 
 .detail-text-box{
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: 1.71px;
     line-height: 58px;
+    font-size: 1em;
+    letter-spacing: 1.9px;
 }
+
+span.bar {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.detail-text-box-position{
+    position: absolute;
+    top: 121px;
+    width: 100%;
+}
+
+.detail-text-box-center{
+    text-align:center;
+}
+
+
 .detail-page{
     color: black;
 }
@@ -675,16 +792,17 @@ input:focus{
     color: #bdbdbd; !important;
 }
 .detail-tab-box{
-    height: 10%;
+    height: 60px;
 }
 .detail-tab-box label{
     display: inline-block;
     color: #4a4a4a;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0.09px;
-    line-height: 39px;
     width: 100%;
+    line-height: 41px;
+    top: 12%;
 }
 .detail-tab-box:after{
     display: block;
@@ -696,10 +814,10 @@ input:focus{
     width: 50%;
     float: left;
     text-align: center;
+    line-height: 60px;
 }
 .menu-box label{
     position: relative;
-    top:  50%;
     margin-top: -1.5em;
 }
 .detail-tab-box input{
@@ -707,7 +825,7 @@ input:focus{
 }
 .detail-tab-box input:checked + label{
     color: #4a90e2;
-    border-bottom: 6px solid #4b8aef;
+    border-bottom: 4px solid #4b8aef;
 }
 .detail-content-box{
     border-top: 1px solid #d7d7d7;
@@ -730,16 +848,16 @@ input:focus{
     display: inline-block;
     float: left;
     width: 80%;
-    margin-top: 0.5em;
-    line-height: 2em;
+    margin-top: 8px;
 }
 .pledge-content .title-left .pledge-title span {
     color: #4a4a4a;
-    font-size: 1.5em;
-    font-weight: 300;
-    line-height: 39px;
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 25px;
 }
 .pledge-content .title-left .content-number{
+    margin: 0 10px 0 10px;
     float: left;
 }
 .pledge-content .title-right{
@@ -751,6 +869,7 @@ input:focus{
 }
 
 .pledge-content .title-right label {
+    font-size: 1.8em;
     transform: rotate(0deg);
     transition: transform 0.5s;
 }
@@ -761,12 +880,24 @@ input:focus{
 .pledge-content .disabled-input{
     color: grey; !important;
 }
+
+.pledge-wrapper {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.pledge-box {
+    margin-bottom: 13px;
+}
+
 .pledge-box p{
     position: relative;
     width: 80%;
-    left: 10%;
+    left: 7%;
     max-height: 2000px;
     line-height: 1.5em;
+    font-family: 'Spoqa Han Sans';
+    font-weight: 200;
+    font-size: 1em;
 }
 .folding-pledge .pledge-box p{
     overflow:hidden;
@@ -779,28 +910,33 @@ input:focus{
 }
 .btn-long-folding{
     color: #4a90e2;
-    font-size: 24px;
     font-weight: 300;
     line-height: 1em;
+    font-size: 12px;
+    padding-top: 12px;
 }
 .content-number{
     display: inline-block;
     margin: 10px;
     color: #4b8aef;
-    font-size: 2em;
-    font-weight: 300;
+    font-size: 1.3em;
+    font-weight: 400;
     letter-spacing: 0.09px;
     line-height: 39px;
 }
 .content-title{
     color: #4a4a4a;
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 1.3em;
+    font-weight: 400;
     letter-spacing: 0.09px;
     line-height: 39px;
 }
-.course-content .title-wrapper{
 
+
+.pledge-content .title-wrapper:after{
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .information-no-data{
@@ -813,16 +949,18 @@ input:focus{
     width: 80%;
     background-color: #4b8aef;
     border-radius: 10px;
+    height: 50px;
 }
 .info-detail{
     position: relative;
     color: #4a90e2;
     font-size: 1em;
     font-weight: 300;
-    letter-spacing: 0.07px;
-    line-height: 1.2em;
-    width: 70%;
-    left: 15%;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    line-height: 1.3em;
+    width:90%;
+    left:7%
 
 }
 .content-wrapper{
@@ -832,10 +970,10 @@ input:focus{
     display: inline-block;
     margin: 15px;
     color: white;
-    font-size: 1.4em;
-    font-weight: 700;
     letter-spacing: 0.09px;
-    line-height: 39px;
+    line-height: 20px;
+    font-size: 1.3em;
+    font-weight: 100;
 }
 .activity-wrapper{
     position: relative;
@@ -901,12 +1039,16 @@ input:focus{
 .content-more {
     text-align: center;
     color: #4a90e2;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 300;
     letter-spacing: 0.07px;
-    line-height: 29px;;
+    line-height: 8px;
+    margin-bottom: 15px;
 }
 
+.content-more .more-arrow{
+    margin: 10px 0 10px 0;
+}
 .keywords-wrapper{
     position: relative;
     background-color: #4b8aef;
@@ -933,17 +1075,18 @@ input:focus{
     left: 1%;
     margin: 5px;
     color: white;
-    font-size: 0.9em;
-    font-weight: 700;
+    font-size: 1.1em;
+    font-weight: 200;
     line-height: 39px;
     background-color: #3b75d3;
 }
 .bill-detail-link{
     color: white;
-    font-size: 1em;
+    font-size: 1.1em;
     letter-spacing: 0.07px;
     line-height: 29px;
     font-weight: 200;
+    padding:5px;
 }
 
 .reverse-arrow{
@@ -997,14 +1140,56 @@ input:focus{
     color: white;
     position: relative;
     background-color: #d7d5d7;
-    font-size: 1em;
-    font-weight: 700;
     line-height: 39px;
     margin: 5px;
     padding: 10px 20px 10px 20px;
+    font-size: 1.2em;
+    font-weight: 200;
 }
 .empty-box{
     height: 100px;
+}
+.first-card-background {
+    background-color: #5580EF;
+}
+.second-card-background {
+    background-color: #00CBE6;
+}
+.third-card-background {
+    background-color: #7467E6;
+}
+.fourth-card-background {
+    background-color: #21A4FF;
+}
+
+.detail-tab-box input:checked + label.first-card-checked {
+    color: #5580EF;
+    border-color: #5580EF;
+}
+.detail-tab-box input:checked + label.second-card-checked {
+    color: #00CBE6;
+    border-color: #00CBE6;
+}
+.detail-tab-box input:checked + label.third-card-checked {
+    color: #7467E6;
+    border-color: #7467E6;
+}
+.detail-tab-box input:checked + label.fourth-card-checked {
+    color: #21A4FF;
+    border-color: #21A4FF;
+}
+
+.first-card-text {
+    background-color: #5580EF;
+}
+.second-card-text {
+    background-color: #00CBE6;
+}
+.third-card-text {
+    background-color: #7467E6;
+}
+.fourth-card-text {
+    background-color: #21A4FF;
 }
 /* end */
 
@@ -1023,7 +1208,7 @@ input[type="checkbox"].ios-switch + div {
     -webkit-transition-duration: .4s;
     -webkit-transition-property: background-color, box-shadow;
     box-shadow: inset 0 0 0 0px rgba(0,0,0,0.4);
-    margin: 15px 1.2em 15px 2.5em;
+    margin: 15px 1.6em 15px 1.6em;
 }
 
 /* Checked Track (Blue) */
@@ -1042,9 +1227,9 @@ input[type="checkbox"].bigswitch.ios-switch + div {
 
 /* Green Track */
 input[type="checkbox"].green.ios-switch:checked + div {
-    background-color: #00e359;
-    border: 1px solid rgba(0, 162, 63,1);
-    box-shadow: inset 0 0 0 10px rgba(0,227,89,1);
+    background-color: #777eeb;
+    border: 1px solid #ecedee;
+    box-shadow: inset 0 0 0 10px #777eeb;
 }
 
 /* Normal Knob */
@@ -1075,8 +1260,10 @@ input[type="checkbox"].ios-switch:checked + div > div {
 
 /* Big Knob */
 input[type="checkbox"].bigswitch.ios-switch + div > div {
-    width: 23px; height: 23px;
+    width: 23px;
+    height: 23px;
     margin-top: 1px;
+    box-shadow: 0 0 0 1px #a9a9a9;
 }
 
 /* Checked Big Knob (Blue Style) */
@@ -1088,5 +1275,5 @@ input[type="checkbox"].bigswitch.ios-switch:checked + div > div {
 
 /* Green Knob */
 input[type="checkbox"].green.ios-switch:checked + div > div {
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 162, 63,1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px #777eeb;
 }

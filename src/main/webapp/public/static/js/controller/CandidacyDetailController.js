@@ -10,7 +10,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
 
     var scrollEvent;
     var windowHeight = window.innerHeight;
-    var profileHeight = (window.innerHeight * 0.45) ;
+    var profileHeight = 290 ;
     var pledgeContent = document.getElementsByClassName('pledge-content')[0];
     var courseContent = document.getElementsByClassName('course-content')[0];
     var candidacyDetail = document.getElementById('candidacyDetail');
@@ -99,6 +99,16 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
         }else if (webingDataService.assemblyList[assemblyId] !== undefined) {
             $scope.currentCandidacy.assemblyMember = webingDataService.assemblyList[assemblyId];
         }
+    };
+
+    $scope.detailColorChange = function (type) {
+        var detailColorClass = [
+            'first-card-',
+            'second-card-',
+            'third-card-',
+            'fourth-card-'
+        ];
+        return detailColorClass[currentIndex % 4] + type;
     };
     $scope.indexNumber = function(index) {
         return index + 1;
