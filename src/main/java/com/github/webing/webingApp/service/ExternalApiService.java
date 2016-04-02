@@ -12,7 +12,6 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
@@ -26,7 +25,7 @@ import java.util.List;
 @Service
 public class ExternalApiService {
     public List<NewsPerKeyword> parseNewsContentsXml(String xmlString) throws ParserConfigurationException, IOException, SAXException {
-        List<NewsPerKeyword> newsPerKeywords = new ArrayList<NewsPerKeyword>();
+        List<NewsPerKeyword> newsPerKeywords = new ArrayList<>();
         InputSource is = new InputSource(new StringReader(xmlString));
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
         document.getDocumentElement().normalize();
@@ -45,15 +44,15 @@ public class ExternalApiService {
                 NodeList titleNodeList = itemElement.getElementsByTagName("title");
                 Element titleElement = (Element)titleNodeList.item(0);
                 NodeList childTitleNodeList = titleElement.getChildNodes();
-                newsPerKeyword.setNewsTitle(((Node)childTitleNodeList.item(0)).getNodeValue());
+                newsPerKeyword.setNewsTitle(childTitleNodeList.item(0).getNodeValue());
                 NodeList linkNodeList = itemElement.getElementsByTagName("link");
                 Element linkElement = (Element) linkNodeList.item(0);
                 NodeList childLinkNodeList = linkElement.getChildNodes();
-                newsPerKeyword.setNewsLink(((Node)childLinkNodeList.item(0)).getNodeValue());
+                newsPerKeyword.setNewsLink(childLinkNodeList.item(0).getNodeValue());
                 NodeList descriptionNodeList = itemElement.getElementsByTagName("description");
                 Element descriptionElement = (Element) descriptionNodeList.item(0);
                 NodeList childDescriptionNodeList = descriptionElement.getChildNodes();
-                newsPerKeyword.setNewsDescription(((Node)childDescriptionNodeList.item(0)).getNodeValue());
+                newsPerKeyword.setNewsDescription(childDescriptionNodeList.item(0).getNodeValue());
 
                 newsPerKeywords.add(newsPerKeyword);
             }
