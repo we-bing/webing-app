@@ -12,7 +12,6 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
@@ -26,7 +25,7 @@ import java.util.List;
 @Service
 public class ExternalApiService {
     public List<NewsPerKeyword> parseNewsContentsXml(String xmlString) throws ParserConfigurationException, IOException, SAXException {
-        List<NewsPerKeyword> newsPerKeywords = new ArrayList<NewsPerKeyword>();
+        List<NewsPerKeyword> newsPerKeywords = new ArrayList<>();
         InputSource is = new InputSource(new StringReader(xmlString));
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
         document.getDocumentElement().normalize();
@@ -54,7 +53,6 @@ public class ExternalApiService {
                 Element descriptionElement = (Element) descriptionNodeList.item(0);
                 NodeList childDescriptionNodeList = descriptionElement.getChildNodes();
                 newsPerKeyword.setNewsDescription(((Node)childDescriptionNodeList.item(0)).getNodeValue().replaceAll("(<b>)|(</b>)",""));
-
                 newsPerKeywords.add(newsPerKeyword);
             }
 
