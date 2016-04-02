@@ -134,8 +134,40 @@
                     </div>
                     <div class="news-keywords-wrapper">
                         <div class="news-keywords-box">
-                            <span class="news-keyword-text" ng-repeat="newsKeyword in currentCandidacy.candidacyKeywordList" ng-bind="newsKeyword.keywordName"></span>
+                            <div ng-repeat="newsKeyword in currentCandidacy.candidacyKeywordList"
+                            >
+                                <input class="news-radio" type="radio" id="{{'newsKeyword' + $index}}" name="newsKeyword"/>
+                                <label for="{{'newsKeyword' + $index}}" class="news-keyword-text"
+                                       ng-class="detailColorChange('checked')"
+                                       ng-bind="newsKeyword.keywordName"
+                                       ng-click="selectNewsKeyword(newsKeyword.keywordName)"
+                                >
+                                </label>
+                            </div>
                         </div>
+                    </div>
+                    <div class="news-list-wrapper">
+                        <ul class="news-list">
+                            <li class="news-box" ng-repeat="news in fetchedNews">
+                                <a ng-href="{{news.newsLink}}" target="_blank" >
+                                    <div class="title-wrapper" ng-class="detailColorChange('text')">
+                                        <div class="title-left">
+                                            <span class="content-number" ng-bind=" $index + 1 "></span>
+                                            <div class="news-title">
+                                                <span class="content-title" ng-bind="news.newsTitle"></span>
+                                            </div>
+                                        </div>
+                                        <div class="title-right" >
+                                        <span class="fa fa-angle-down fa-2x" >
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <div class="news" >
+                                        <p ng-bind="news.newsDescription"></p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="empty-box"></div>
                 </div>

@@ -18,7 +18,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     var isMenuInvisible = false;
 
     $scope.pledgeToggle = {};
-
+    $scope.fetchedNews = [];
     scrollEvent = function (event) {
 
         var currentScrollPosition = event.target.scrollTop;
@@ -113,6 +113,15 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     };
     $scope.indexNumber = function(index) {
         return index + 1;
+    };
+
+    $scope.selectNewsKeyword = function(newKeyword) {
+        var candidacyName = $scope.currentCandidacy.name;
+        apiService.news(candidacyName, newKeyword)
+            .success(function(result) {
+                console.log(result);
+                $scope.fetchedNews = result;
+            });
     };
     init();
 

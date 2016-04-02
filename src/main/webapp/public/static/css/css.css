@@ -11,8 +11,12 @@ body ::-webkit-scrollbar {
     display: none;
 }
 
-a {
+a, a:visited, a:hover {
     text-decoration: none !important;
+    color: inherit;
+}
+li{
+    list-style-type: none;
 }
 .fa-2x {
     font-size: 1.5em;
@@ -645,12 +649,10 @@ span.text-reveal {
 }
 .secret_info{
     height: 85%;
-    /*background-color: #4b8aef;*/
     overflow: hidden;
     -moz-overflow: hidden;
     line-height: 150%;
     color: #ffffff;
-    background-color:#4b8aef;
     overflow: hidden;
     -moz-overflow: hidden;
     font-size: 140%;
@@ -1037,9 +1039,17 @@ span.bar {
     font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0.09px;
-    line-height: 39px;
+    line-height: 25px;
 }
-
+.news-list-wrapper .news p {
+    position: relative;
+    width: 80%;
+    left: 7%;
+    line-height: 1.5em;
+    font-family: 'Spoqa Han Sans';
+    font-weight: 200;
+    font-size: 1em;
+}
 
 .pledge-content .title-wrapper:after{
     content: "";
@@ -1233,6 +1243,7 @@ span.bar {
     text-align: center;
 }
 .news-keywords-box{
+    display: inline-block;
     width: 100%;
     font-size: 1em;
     font-weight: 700;
@@ -1251,6 +1262,60 @@ span.bar {
     padding: 10px 20px 10px 20px;
     font-size: 1.2em;
     font-weight: 200;
+}
+
+.news-radio:checked + .news-keyword-text.first-card-checked {
+    background-color: #5580EF;
+}
+.news-radio:checked + .news-keyword-text.second-card-checked {
+    background-color: #00CBE6;
+}
+.news-radio:checked + .news-keyword-text.third-card-checked {
+    background-color: #7467E6;
+}
+.news-radio:checked + .news-keyword-text.fourth-card-checked {
+    background-color: #21A4FF;
+}
+
+.news-list-wrapper {
+
+}
+.news-box {
+    border-bottom: 1px solid #f2f2f2;
+}
+.news-list .title-left:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.news-list .title-right {
+    display: inline-block;
+    width: 10%;
+    margin-top: 0.75em;
+    clear: both;
+}
+.news-list .title-right span {
+    transform: rotate(270deg);
+    -moz-transform:rotate(270deg);
+    -webkit-transform:rotate(270deg);
+}
+.news-list .title-left {
+    display: inline-block;
+    width: 90%;
+    float: left;
+}
+.news-title {
+    display: inline-block;
+    width: 80%;
+    margin-top: 8px;
+    float: left;
+}
+.news-radio {
+    display: none;
+}
+.news-box .content-number {
+    float: left;
+    margin: 0 10px 0 10px;
 }
 .empty-box{
     height: 100px;

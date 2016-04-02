@@ -15,6 +15,15 @@ webing.service("apiService", function($http) {
         assemblyMember: function(assemblyMemberId) {
             var url = 'http://117.17.102.241:8080/api/assemblyMember/' + assemblyMemberId;
             return $http.get(url);
+        },
+        news : function(candidacyName, newsKeyword) {
+            var url = 'http://117.17.102.241:8080/api/newsKeywords';
+            var config = {
+                params: {
+                    query: candidacyName + " " + newsKeyword
+                }
+            };
+            return $http.get(url, config);
         }
     };
 });
