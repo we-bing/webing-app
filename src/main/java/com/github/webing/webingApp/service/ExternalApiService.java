@@ -45,15 +45,15 @@ public class ExternalApiService {
                 NodeList titleNodeList = itemElement.getElementsByTagName("title");
                 Element titleElement = (Element)titleNodeList.item(0);
                 NodeList childTitleNodeList = titleElement.getChildNodes();
-                newsPerKeyword.setNewsTitle(((Node)childTitleNodeList.item(0)).getNodeValue());
+                newsPerKeyword.setNewsTitle(((Node)childTitleNodeList.item(0)).getNodeValue().replaceAll("(<b>)|(</b>)",""));
                 NodeList linkNodeList = itemElement.getElementsByTagName("link");
                 Element linkElement = (Element) linkNodeList.item(0);
                 NodeList childLinkNodeList = linkElement.getChildNodes();
-                newsPerKeyword.setNewsLink(((Node)childLinkNodeList.item(0)).getNodeValue());
+                newsPerKeyword.setNewsLink(((Node)childLinkNodeList.item(0)).getNodeValue().replaceAll("(<b>)|(</b>)",""));
                 NodeList descriptionNodeList = itemElement.getElementsByTagName("description");
                 Element descriptionElement = (Element) descriptionNodeList.item(0);
                 NodeList childDescriptionNodeList = descriptionElement.getChildNodes();
-                newsPerKeyword.setNewsDescription(((Node)childDescriptionNodeList.item(0)).getNodeValue());
+                newsPerKeyword.setNewsDescription(((Node)childDescriptionNodeList.item(0)).getNodeValue().replaceAll("(<b>)|(</b>)",""));
 
                 newsPerKeywords.add(newsPerKeyword);
             }
