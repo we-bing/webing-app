@@ -8,6 +8,8 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
     var divideTownName;
     $scope.dataModel = {};
     $scope.dataModel.townNameModel = "";
+    $scope.currentContentIndex = 0;
+
     $scope.openSearchBox = function() {
         sharedDataService.canSearchTownOpen = true;
     };
@@ -65,6 +67,33 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
         return function() {
             return $scope.dataModel.townNameModel.length != 1;
         };
+    };
+    $scope.swipeLeft = function() {
+        $scope.currentContentIndex = ($scope.currentContentIndex + 1 ) % 4;
+        console.log("left");
+        console.log("current content" + $scope.currentContentIndex);
+    };
+    $scope.swipeRight = function() {
+        $scope.currentContentIndex = ($scope.currentContentIndex - 1 );
+        if($scope.currentContentIndex === -1)
+            $scope.currentContentIndex = 3;
+        console.log("rightx");
+        console.log("current content" + $scope.currentContentIndex);
+
+    };
+    $scope.contentStatus = function(index) {
+        if($scope.currentContentIndex === index) {
+            return "current-home-content";
+        }else if(($scope.currentContentIndex + 1 === index)
+            || ($scope.currentContentIndex === 3 && index === 0)) {
+            return "next-home-content";
+        }else if($scope.currentContentIndex - 1 === index ||
+            ($scope.currentContentIndex === 0 && index === 3)) {
+            return "previous-home-content";
+        }
+    };
+    $scope.isCurrentPosition = function(index) {
+        return $scope.currentContentIndex === index;
     };
     init();
 });

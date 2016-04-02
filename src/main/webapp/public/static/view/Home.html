@@ -29,7 +29,82 @@
     <div class="app-intro"
          ng-swipe-left="swipeLeft()"
          ng-swipe-right="swipeRight()">
-
+        <div class="intro-text-container">
+            <div class="intro-text-box"
+                 ng-class="{ 'current-text-box' : isCurrentPosition(0) } ">
+                <div class="intro-title">
+                    <span>재미고 똑똑한 선거</span>
+                </div>
+                <div class="intro-content">
+                    <p>
+                        2016년 4월 13, 제 20대 총선 <br>
+                        위빙은 여려분의 후보를 <br>
+                        보다 수비고 재미있게 소개해드리겠습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="intro-text-box"
+                 ng-class="{ 'current-text-box' : isCurrentPosition(1) } ">
+                <div class="intro-title">
+                    <span>키워드로 만나는 후보자</span>
+                </div>
+                <div class="intro-content">
+                    <p>
+                        얼굴과 이름 정당에 대한 선입견없이<br>
+                        관심 가는 후보를 만나보세요.<br>
+                        카드를 뒤집으면 어떤 후보인지 알 수 있어요.
+                    </p>
+                </div>
+            </div>
+            <div class="intro-text-box"
+                 ng-class="{ 'current-text-box' : isCurrentPosition(2) } ">
+                <div class="intro-title">
+                    <span>내 선거구는 어디?</span>
+                </div>
+                <div class="intro-content">
+                    <p>
+                        여러분이 사는 동네를 입력해주세요.<br>
+                        내 선거구와 그에 속한 후보자들을 <br>
+                        알려드립니다.
+                    </p>
+                </div>
+            </div>
+            <div class="intro-text-box"
+                 ng-class="{ 'current-text-box' : isCurrentPosition(3) } ">
+                <div class="intro-title">
+                    <span>필요한 정보만 쏙쏙</span>
+                </div>
+                <div class="intro-content">
+                    <p>
+                        어려운 용어들 대신 알짜 정보만 모아왔어요.<br>
+                        '후보자 상세보기'를 통해 공약과 공약 이행률,<br>
+                        그리고 후보자의 발자취를 확인해보세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="intro-dot-container">
+            <div class="intro-dot-box">
+                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(0)}"></div>
+                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(1)}"></div>
+                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(2)}"></div>
+                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(3)}"></div>
+            </div>
+        </div>
+        <div class="intro-image-container">
+            <div class="intro-image " ng-class="contentStatus(0)">
+                <img class="first-image" src="/public/static/img/front1.png" alt="img">
+            </div>
+            <div class="intro-image" ng-class="contentStatus(1)">
+                <img src="/public/static/img/front2.png" alt="img">
+            </div>
+            <div class="intro-image" ng-class="contentStatus(2)">
+                <img src="/public/static/img/front3.png" alt="img">
+            </div>
+            <div class="intro-image" ng-class="contentStatus(3)">
+                <img src="/public/static/img/front4.png" alt="img">
+            </div>
+        </div>
     </div>
 </div>
 

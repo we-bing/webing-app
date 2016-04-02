@@ -8,14 +8,14 @@
 var webing = angular.module('webingApp', ['ngRoute', 'ngTouch']);
 
 webing
-    .controller('WebingController', function ($scope, $location, $anchorScroll, apiService, webingDataService, sharedDataService) {
+    .controller('WebingController', function ($http, $scope, $location, $anchorScroll, apiService, webingDataService, sharedDataService) {
         $scope.isMenuOpen = false;
         $scope.isSelectBoxOpen = false;
         $scope.dataModel = {};
         var fetchCityList;
         var init;
         var divideTownName;
-
+        var testNaverApi
         //function goToTest() {
         //    $scope.selectedTown = dummyTown;
         //    webingDataService.town = $scope.selectedTown;
@@ -28,7 +28,6 @@ webing
             $location.path("home");
             //goToTest();
         };
-
         divideTownName = function (cityList) {
             cityList.forEach(function(city){
                 city.townList.forEach(function (town) {
@@ -48,12 +47,7 @@ webing
             }
         };
 
-        $scope.swipeLeft = function() {
-            console.log("left");
-        };
-        $scope.swipeRight = function() {
-            console.log("rightx");
-        };
+
         $scope.focusInput = function() {
             $scope.isSelectBoxOpen = true;
         };
