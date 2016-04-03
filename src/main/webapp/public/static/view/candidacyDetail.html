@@ -85,6 +85,7 @@
                     <div class="content-wrapper" ng-show="isPreviousAssembly()">
                         <div id="attendance-rate" class="activity-wrapper ">
                             <span class="sub-title">국회 참가율</span>
+                            <span class="sub-title-source">자료 출처:<a href="http://watch.peoplepower21.org/">열려라 국회</a></span>
                             <div class="rate-wrapper" ng-class="detailColorChange('background')">
                                 <div class="rate-text">
                                     <span ng-bind="currentCandidacy.assemblyMember.attendanceRate + '%'"></span>
@@ -97,6 +98,7 @@
                         <div class="fold-content" ng-hide='isActivityFolding'>
                             <div id="pledge-rate" class="activity-wrapper">
                                 <span class="sub-title">공약 이행율</span>
+                                <span class="sub-title-source">자료 출처:<a href="http://www.manifesto.or.kr/">한국 매니페스토</a></span>
                                 <div class="rate-wrapper" ng-class="detailColorChange('background')">
                                     <div class="rate-text">
                                         <span ng-bind="currentCandidacy.assemblyMember.completedPledgesRate + '%'"></span>
@@ -108,6 +110,7 @@
                             </div>
                             <div id="bill-keywords" class="activity-wrapper">
                                 <span class="sub-title">주요 발의안 키워드</span>
+                                <span class="sub-title-source">자료 출처:<a href="http://popong.com/">팀포퐁</a></span>
                                 <div class="keywords-wrapper" ng-class="detailColorChange('background')">
                                     <div class="keywords-box">
                                         <span class="bill-keyword-text" ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList" ng-bind="billKeyword.keywordName"></span>
@@ -131,6 +134,7 @@
                     <div class="title-wrapper">
                         <span class="content-number" ng-class="detailColorChange('text')">2</span>
                         <span class="content-title">키워드로 보는 후보 관련 뉴스</span>
+                        <span class="content-title-source">자료 출처:<a href="http://www.naver.com">네이버</a></span>
                     </div>
                     <div class="news-keywords-wrapper">
                         <div class="news-keywords-box">

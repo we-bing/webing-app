@@ -845,6 +845,19 @@ span.sub-title {
     font-weight: 400;
     font-family: 'Spoqa Han Sans';
 }
+
+span.sub-title-source{
+    font-size: 0.8em;
+    float: right;
+    color: #5F5F5F;
+    font-weight: 400;
+    font-family: 'Spoqa Han Sans';
+}
+
+.sub-title-source a{
+    font-weight: bold;
+}
+
 .content-fix .detail-content-container{
     overflow: hidden;
     position: fixed;
@@ -1041,6 +1054,18 @@ span.bar {
     letter-spacing: 0.09px;
     line-height: 25px;
 }
+
+.content-title-source{
+    float: right;
+    margin: 10px;
+    line-height: 39px;
+    font-size: 0.9em;
+}
+
+.content-title-source a{
+    font-weight: bold;
+}
+
 .news-list-wrapper .news p {
     position: relative;
     width: 80%;
