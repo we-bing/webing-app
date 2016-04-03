@@ -8,6 +8,10 @@ webing.service("apiService", function($http) {
             var url = 'http://117.17.102.241:8080/api/townList';
             return $http.get(url);
         },
+        cityList: function () {
+            var url = 'http://117.17.102.241:8080/api/cityList';
+            return $http.get(url);
+        },
         candidacise: function(districtCode) {
             var url = 'http://117.17.102.241:8080/api/candidacies/' + districtCode;
             return $http.get(url);

@@ -16,7 +16,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     var candidacyDetail = document.getElementById('candidacyDetail');
     var detailContentScrollEvent;
     var isMenuInvisible = false;
-
+    var fetchFirstNews;
     $scope.pledgeToggle = {};
     $scope.fetchedNews = [];
     scrollEvent = function (event) {
@@ -45,6 +45,11 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     courseContent.addEventListener('scroll', detailContentScrollEvent);
     candidacyDetail.addEventListener('scroll', scrollEvent);
 
+    fetchFirstNews = function() {
+        var firstCandidacyKeyword = $scope.currentCandidacy.candidacyKeywordList[0].keywordName;
+        $scope.selectNewsKeyword(firstCandidacyKeyword);
+    };
+
 
     $scope.isActivityFolding = true;
     $scope.selectedTab = 'course';
@@ -72,10 +77,13 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
     };
 
     $scope.changeToRight = function() {
+        $scope.fetchedNews = [];
         sharedDataService.currentDetailCardIndex = currentIndex = (currentIndex+1) % candidacyListSize;
         updateCandidacy();
+
     };
     $scope.changeToLeft = function() {
+        $scope.fetchedNews = [];
         currentIndex -= 1;
         if(currentIndex == -1) currentIndex = candidacyListSize - 1;
         sharedDataService.currentDetailCardIndex = currentIndex;
@@ -100,6 +108,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, a
         }else if (webingDataService.assemblyList[assemblyId] !== undefined) {
             $scope.currentCandidacy.assemblyMember = webingDataService.assemblyList[assemblyId];
         }
+        fetchFirstNews();
     };
 
     $scope.detailColorChange = function (type) {
