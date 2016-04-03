@@ -15,7 +15,7 @@ webing
         var fetchCityList;
         var init;
         var divideTownName;
-        var testNaverApi
+
         //function goToTest() {
         //    $scope.selectedTown = dummyTown;
         //    webingDataService.town = $scope.selectedTown;
@@ -26,6 +26,12 @@ webing
         init = function() {
             fetchCityList();
             $location.path("home");
+            apiService.cityList().success(
+                function (data) {
+                    console.log(data);
+                }
+            );
+
             //goToTest();
         };
         divideTownName = function (cityList) {

@@ -34,7 +34,7 @@
         </div>
         <div class="detail-content-box" >
             <div class="pledge-content" ng-show="selectedTab === 'pledge'">
-                <div class="pledge-wrapper" ng-repeat="pledge in dummyPledgeList"
+                <div class="pledge-wrapper" ng-repeat="pledge in currentCandidacy.candidacyPledge"
                      ng-class="{'folding-pledge' : pledgeToggle[pledge.pledgeId] }"
                 >
                     <div class="title-wrapper" ng-class="detailColorChange('text')">
@@ -87,11 +87,13 @@
                             <span class="sub-title">국회 참가율</span>
                             <span class="sub-title-source">자료 출처:<a href="http://watch.peoplepower21.org/">열려라 국회</a></span>
                             <div class="rate-wrapper" ng-class="detailColorChange('background')">
-                                <div class="rate-text">
+                                <div class="rate-text" ng-class="detailColorChange('inner')">
                                     <span ng-bind="currentCandidacy.assemblyMember.attendanceRate + '%'"></span>
                                 </div>
-                                <div class="rate-bar">
-                                    <progress value="{{currentCandidacy.assemblyMember.attendanceRate}}" max="100"></progress>
+                                <div class="rate-bar" >
+                                    <progress value="{{currentCandidacy.assemblyMember.attendanceRate}}" max="100"
+                                              ng-class="detailColorChange('progress')"
+                                    ></progress>
                                 </div>
                             </div>
                         </div>
@@ -100,11 +102,13 @@
                                 <span class="sub-title">공약 이행율</span>
                                 <span class="sub-title-source">자료 출처:<a href="http://www.manifesto.or.kr/">한국 매니페스토</a></span>
                                 <div class="rate-wrapper" ng-class="detailColorChange('background')">
-                                    <div class="rate-text">
+                                    <div class="rate-text" ng-class="detailColorChange('inner')">
                                         <span ng-bind="currentCandidacy.assemblyMember.completedPledgesRate + '%'"></span>
                                     </div>
-                                    <div class="rate-bar">
-                                        <progress value="{{currentCandidacy.assemblyMember.completedPledgesRate}}" max="100"></progress>
+                                    <div class="rate-bar" >
+                                        <progress value="{{currentCandidacy.assemblyMember.completedPledgesRate}}" max="100"
+                                                  ng-class="detailColorChange('progress')"
+                                        ></progress>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +117,11 @@
                                 <span class="sub-title-source">자료 출처:<a href="http://popong.com/">팀포퐁</a></span>
                                 <div class="keywords-wrapper" ng-class="detailColorChange('background')">
                                     <div class="keywords-box">
-                                        <span class="bill-keyword-text" ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList" ng-bind="billKeyword.keywordName"></span>
+                                        <span class="bill-keyword-text"
+                                              ng-repeat="billKeyword in currentCandidacy.assemblyMember.billKeywordList"
+                                              ng-bind="billKeyword.keywordName"
+                                              ng-class="detailColorChange('inner')"
+                                        ></span>
                                     </div>
                                     <div class="bill-detail-link">
                                         <span>주요 발의안 자세히 보기 </span>
@@ -140,7 +148,9 @@
                         <div class="news-keywords-box">
                             <div ng-repeat="newsKeyword in currentCandidacy.candidacyKeywordList"
                             >
-                                <input class="news-radio" type="radio" id="{{'newsKeyword' + $index}}" name="newsKeyword"/>
+                                <input class="news-radio" type="radio" id="{{'newsKeyword' + $index}}" name="newsKeyword"
+                                    ng-checked="$first"
+                                />
                                 <label for="{{'newsKeyword' + $index}}" class="news-keyword-text"
                                        ng-class="detailColorChange('checked')"
                                        ng-bind="newsKeyword.keywordName"
@@ -156,7 +166,9 @@
                                 <a ng-href="{{news.newsLink}}" target="_blank" >
                                     <div class="title-wrapper" ng-class="detailColorChange('text')">
                                         <div class="title-left">
-                                            <span class="content-number" ng-bind=" $index + 1 "></span>
+                                            <span class="content-number" >
+                                                <i class="fa fa-circle-o"></i>
+                                            </span>
                                             <div class="news-title">
                                                 <span class="content-title" ng-bind="news.newsTitle"></span>
                                             </div>

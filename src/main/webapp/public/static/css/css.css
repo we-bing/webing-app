@@ -498,29 +498,29 @@ input:focus{
 }
 
 .candidacy_box:nth-child(1n) .front-card .detail_page  span{
-    color: #5580EF
+    color: #4B8AEF
 }
 .candidacy_box:nth-child(2n) .front-card .detail_page span{
     color: #00CBE6;
 }
 .candidacy_box:nth-child(3n) .front-card .detail_page span{
-    color: #7467E6;
+    color: #8086BC;
 }
 .candidacy_box:nth-child(4n) .front-card .detail_page span{
-    color: #21A4FF;
+    color: #01AFF9;
 }
 
 .candidacy_box:nth-child(1n) .back-card .detail_page  span{
-    background-color: #5580EF
+    background-color: #4B8AEF
 }
 .candidacy_box:nth-child(2n) .back-card .detail_page span{
     background-color: #00CBE6;
 }
 .candidacy_box:nth-child(3n) .back-card .detail_page span{
-    background-color: #7467E6;
+    background-color: #8086BC;
 }
 .candidacy_box:nth-child(4n) .back-card .detail_page span{
-    background-color: #21A4FF;
+    background-color: #01AFF9;
 }
 .popup-box {
     position: absolute;
@@ -1138,10 +1138,23 @@ span.bar {
     display: block;
     clear: both;
 }
+
+.first-card-inner {
+    background-color: #3E77D0;
+}
+.second-card-inner {
+    background-color: #1EAABE;
+}
+.third-card-inner {
+    background-color: #566BBB;
+}
+.fourth-card-inner {
+    background-color: #1489C9;
+}
+
 .rate-text{
     display: inline-block;
     position: relative;
-    background-color: #3b75d3;
     border-radius: 7px;
     padding: 5px;
     margin: 5px;
@@ -1174,9 +1187,21 @@ span.bar {
     border-radius: 10px 0 0 10px;
 
 }
-.rate-bar progress::-webkit-progress-bar {
-    background-color: #3b75d3;
+ progress::-webkit-progress-bar {
     border-radius: 10px;
+}
+
+.rate-bar .first-card-progress::-webkit-progress-bar {
+    background-color: #3E77D0;
+}
+.rate-bar .second-card-progress::-webkit-progress-bar {
+    background-color: #1EAABE;
+}
+.rate-bar .third-card-progress::-webkit-progress-bar {
+    background-color: #566BBB;
+}
+.rate-bar .fourth-card-progress::-webkit-progress-bar {
+    background-color: #1489C9;
 }
 .content-more {
     text-align: center;
@@ -1219,7 +1244,6 @@ span.bar {
     font-size: 1.1em;
     font-weight: 200;
     line-height: 39px;
-    background-color: #3b75d3;
 }
 .bill-detail-link{
     color: white;
@@ -1290,16 +1314,16 @@ span.bar {
 }
 
 .news-radio:checked + .news-keyword-text.first-card-checked {
-    background-color: #5580EF;
+    background-color: #4B8AEF;
 }
 .news-radio:checked + .news-keyword-text.second-card-checked {
     background-color: #00CBE6;
 }
 .news-radio:checked + .news-keyword-text.third-card-checked {
-    background-color: #7467E6;
+    background-color: #8086BC;
 }
 .news-radio:checked + .news-keyword-text.fourth-card-checked {
-    background-color: #21A4FF;
+    background-color: #01AFF9;
 }
 
 .news-list-wrapper {
@@ -1346,47 +1370,49 @@ span.bar {
     height: 100px;
 }
 .first-card-background {
-    background-color: #5580EF;
+    background-color: #4B8AEF;
 }
 .second-card-background {
     background-color: #00CBE6;
 }
 .third-card-background {
-    background-color: #7467E6;
+    background-color: #8086BC;
 }
 .fourth-card-background {
-    background-color: #21A4FF;
+    background-color: #01AFF9;
 }
 
 .detail-tab-box input:checked + label.first-card-checked {
-    color: #5580EF;
-    border-color: #5580EF;
+    color: #4B8AEF;
+    border-color: #4B8AEF;
 }
 .detail-tab-box input:checked + label.second-card-checked {
     color: #00CBE6;
     border-color: #00CBE6;
 }
 .detail-tab-box input:checked + label.third-card-checked {
-    color: #7467E6;
-    border-color: #7467E6;
+    color: #8086BC;
+    border-color: #8086BC;
 }
 .detail-tab-box input:checked + label.fourth-card-checked {
-    color: #21A4FF;
-    border-color: #21A4FF;
+    color: #01AFF9;
+    border-color: #01AFF9;
 }
 
 .first-card-text {
-    color: #5580EF;
+    color: #4B8AEF;
 }
 .second-card-text {
     color: #00CBE6;
 }
 .third-card-text {
-    color: #7467E6;
+    color: #8086BC;
 }
 .fourth-card-text {
-    color: #21A4FF;
+    color: #01AFF9;
 }
+
+
 /* end */
 
 input[type="checkbox"] {

@@ -8,16 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Created by sleepbear on 2016. 2. 26..
+ * Created by sleepbear on 2016. 4. 3..
  */
 @Entity
-@Table(name = "CITIES")
+@Table(name = "COUNTYS")
 @Data
-public class City {
+public class County {
 
     @Id
+    @Column(name = "county_code")
+    private Long countyCode;
+
+    @Column(name = "county_name")
+    private String countyName;
+
     @Column(name = "city_code")
-    private long cityCode;
-    @Column(name = "city_name")
-    private String cityName;
+    private Long cityCode;
+
 }
