@@ -19,34 +19,6 @@
     <div class="action-bar" ng-class="classToPath()">
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
         <div class="btn-back ng-hide" ng-click="back()" ng-show="isPathOther()"><i class="fa fa-angle-left fa-3x"></i></div>
-        <div class="search-town ng-hide" ng-show="isPathOther()">
-            <input class="nav-search-bar " type="text" ng-model="dataModel.townNameModel"
-                   placeholder="{{selectedTown.townNameArr[1]}}"
-                   ng-focus="focusInput()"
-                   ng-class="{'detail-page' : isDetail()}"
-                   ng-cloak
-            >
-            <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ><img src="/public/static/img/search_icon.png" alt="찾기"></div>
-            <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><img class="cancel-icon" src="/public/static/img/cancel_black.png" alt="취소"> </div>
-            <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}">
-                <div class="city-box" ng-show="(city.townList | filter: dataModel.townNameModel).length" ng-repeat="city in cityList">
-                    <div class="city-name" >
-                        <span ng-bind="city.cityName"></span>
-                    </div>
-                    <ul class="town-list" >
-                        <li class="town-name"
-                            ng-repeat="town in city.townList "
-                            ng-click="selectAndComplete(town)"
-                            ng-show="([town] | filter:{townName : dataModel.townNameModel}).length"
-                        >
-                            <span class="town-text" ng-bind="town.townNameArr[1]"></span>
-                            <br>
-                            <span class="city-text" ng-bind="town.townNameArr[0]"></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()" />
     </div>
     <div ng-view class="view-container">

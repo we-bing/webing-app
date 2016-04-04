@@ -10,56 +10,13 @@ var webing = angular.module('webingApp', ['ngRoute', 'ngTouch']);
 webing
     .controller('WebingController', function ($http, $scope, $location, $anchorScroll, apiService, webingDataService, sharedDataService) {
         $scope.isMenuOpen = false;
-        $scope.isSelectBoxOpen = false;
-        $scope.dataModel = {};
-        var fetchCityList;
-        var init;
-        var divideTownName;
 
-        //function goToTest() {
-        //    $scope.selectedTown = dummyTown;
-        //    webingDataService.town = $scope.selectedTown;
-        //    //$location.path('candidacyList/' + webingDataService.town.districtCode);
-        //    $location.path('candidacyDetail/100119321');
-        //}
+        var init;
 
         init = function() {
-            fetchCityList();
             $location.path("home");
-            apiService.cityList().success(
-                function (data) {
-                    console.log(data);
-                }
-            );
-
-            //goToTest();
-        };
-        divideTownName = function (cityList) {
-            cityList.forEach(function(city){
-                city.townList.forEach(function (town) {
-                    town.townNameArr = town.townName.split(" ");
-                });
-            });
         };
 
-        fetchCityList = function() {
-            $scope.cityList = JSON.parse(localStorage.getItem('cityList'));
-            if($scope.cityList === null) {
-                apiService.districts().success(function(data) {
-                    divideTownName(data);
-                    $scope.cityList= data;
-                    localStorage.setItem('cityList', JSON.stringify(data));
-                });
-            }
-        };
-
-
-        $scope.focusInput = function() {
-            $scope.isSelectBoxOpen = true;
-        };
-        $scope.selectBoxClose = function() {
-            $scope.isSelectBoxOpen = false;
-        };
         $scope.classToPath = function() {
             var path = $location.path().split('/')[1];
             if(path === "home"){
@@ -69,34 +26,7 @@ webing
                 return sharedDataService.getDetailPageClass();
             }
         };
-        $scope.blurInput = function() {
-        };
-        $scope.selectTown = function (town) {
-            $scope.dataModel.townNameModel = town.townNameArr[1];
-            $scope.isSelectBoxOpen = false;
-            $scope.selectedTown = town;
-        };
 
-        $scope.complete = function () {
-            $scope.dataModel.townNameModel = '';
-            $scope.isSelectBoxOpen = false;
-            sharedDataService.canSearchTownOpen = false;
-            webingDataService.town = $scope.selectedTown;
-            localStorage.setItem('selectedTown', JSON.stringify($scope.selectedTown));
-            $location.path('candidacyList/' + webingDataService.town.districtCode);
-        };
-        $scope.selectAndComplete = function(town) {
-            $scope.selectTown(town);
-            $scope.complete();
-        };
-
-        $scope.canOpenSelectBox = function() {
-            return sharedDataService.canSearchTownOpen === true;
-        };
-
-        $scope.searchCancel = function() {
-            sharedDataService.canSearchTownOpen = false;
-        };
 
         $scope.back = function() {
             window.history.back();
@@ -117,13 +47,6 @@ webing
             return $location.path() !== "/candidacyDetail";
         };
 
-        $scope.goToAnchor = function(anchorName) {
-            if($location.path() !== "/home"){
-                $location.path("home");
-            }
-            $location.hash(anchorName);
-            $anchorScroll();
-        };
         init();
 
     })

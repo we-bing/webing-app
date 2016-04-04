@@ -1,108 +1,62 @@
 <div id="selectDistrict">
-    <div class="home-select-box">
-        <input class="nav-search-bar " type="text" ng-model="dataModel.townNameModel"
-               placeholder="동, 읍, 리를 입력해주세요! "
-               ng-focus="focusInput()"
-               ng-cloak
-        >
-        <div class="nav-search-icon" ng-hide="isSelectBoxOpen" ><img src="/public/static/img/search_icon.png" alt="찾기"></div>
-        <div class="nav-search-icon" ng-show="isSelectBoxOpen" ng-click="selectBoxClose()"><img class="ㄷ" src="/public/static/img/cancel_black.png" alt="취소"> </div>
-        <div class="select-box nav-town-list" ng-class="{'select-box-open' : isSelectBoxOpen}" >
-            <div class="city-box" ng-show="(city.townList | filter: {townName : dataModel.townNameModel}).length" ng-repeat="city in cityList | filter:modelLengthTwo()">
-                <div class="city-name" >
-                    <span ng-bind="city.cityName"></span>
-                </div>
-                <ul class="town-list" >
-                    <li class="town-name"
-                        ng-repeat="town in city.townList"
-                        ng-click="selectAndComplete(town)"
-                        ng-show="([town] | filter:{townName : dataModel.townNameModel}).length"
-                    >
-                        <span class="town-text" ng-bind="town.townNameArr[1]"></span>
-                        <br>
-                        <span class="city-text" ng-bind="town.townNameArr[0]"></span>
-                    </li>
-                </ul>
-            </div>
+    <div id="select-list-popup" ng-show="isSelectPopupOpen">
+        <div class="popup-container">
+            <ul class="region-list">
+                <li class="item-box"
+                    ng-repeat="item in currentListItemObject.items"
+                    ng-click="selectRegion(item)"
+                >
+                    <div class="text-outer">
+                        <span ng-bind="item[currentListItemObject.type + 'Name']"></span>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="app-intro"
-         ng-swipe-left="swipeLeft()"
-         ng-swipe-right="swipeRight()">
-        <div class="intro-text-container">
-            <div class="intro-text-box"
-                 ng-class="{ 'current-text-box' : isCurrentPosition(0) } ">
-                <div class="intro-title">
-                    <span>재미고 똑똑한 선거</span>
+    <div class="home-logo-container">
+        <img src="/public/static/img/frontpage_logo.png" alt="로고">
+    </div>
+    <div class="select-region-container">
+        <div class="select-inner-box">
+            <div class="select-text-wrapper">
+                <div class="title-box">
+                    <h3>거주 지역을 선택해주세요</h3>
                 </div>
-                <div class="intro-content">
-                    <p>
-                        2016년 4월 13, 제 20대 총선 <br>
-                        위빙은 여려분의 후보를 <br>
-                        보다 수비고 재미있게 소개해드리겠습니다.
-                    </p>
-                </div>
-            </div>
-            <div class="intro-text-box"
-                 ng-class="{ 'current-text-box' : isCurrentPosition(1) } ">
-                <div class="intro-title">
-                    <span>키워드로 만나는 후보자</span>
-                </div>
-                <div class="intro-content">
-                    <p>
-                        얼굴과 이름 정당에 대한 선입견없이<br>
-                        관심 가는 후보를 만나보세요.<br>
-                        카드를 뒤집으면 어떤 후보인지 알 수 있어요.
-                    </p>
+                <div class="hint-box">
+                <span class="hint">
+                    잠깐! 혹시 살고 계신 "동/읍/리"가 리스트에 없나요?
+                </span>
+                    <span class="tip">Tip!</span>
                 </div>
             </div>
-            <div class="intro-text-box"
-                 ng-class="{ 'current-text-box' : isCurrentPosition(2) } ">
-                <div class="intro-title">
-                    <span>내 선거구는 어디?</span>
+            <div class="select-button-wrapper">
+                <div class="button-box top-box">
+                    <div class="btn-select city" ng-click="cityOpen()">
+                        <div class="text-outer">
+                            <span ng-bind="regionName.city"></span>
+                        </div>
+                    </div>
+                    <div class="btn-select county" ng-click="hasRegion('city') && countyOpen()">
+                        <div class="text-outer">
+                            <span ng-bind="regionName.county"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="intro-content">
-                    <p>
-                        여러분이 사는 동네를 입력해주세요.<br>
-                        내 선거구와 그에 속한 후보자들을 <br>
-                        알려드립니다.
-                    </p>
+                <div class="button-box bottom-box" >
+                    <div class="btn-select town" ng-click="hasRegion('county') && townOpen()">
+                        <div class="text-outer">
+                            <span ng-bind="regionName.town"></span>
+                        </div>
+                    </div>
+                    <div class="btn-select search"
+                         ng-class="{'selected-region' : region.town.districtCode}"
+                        ng-click="region.town.districtCode && districtFind()"
+                    >
+                        <div class="text-outer">
+                            <img src="/public/static/img/white_zoom.png" alt="찾기">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="intro-text-box"
-                 ng-class="{ 'current-text-box' : isCurrentPosition(3) } ">
-                <div class="intro-title">
-                    <span>필요한 정보만 쏙쏙</span>
-                </div>
-                <div class="intro-content">
-                    <p>
-                        어려운 용어들 대신 알짜 정보만 모아왔어요.<br>
-                        '후보자 상세보기'를 통해 공약과 공약 이행률,<br>
-                        그리고 후보자의 발자취를 확인해보세요.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="intro-dot-container">
-            <div class="intro-dot-box">
-                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(0)}"></div>
-                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(1)}"></div>
-                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(2)}"></div>
-                <div class="intro-dot" ng-class="{'current-dot' : isCurrentPosition(3)}"></div>
-            </div>
-        </div>
-        <div class="intro-image-container">
-            <div class="intro-image " ng-class="contentStatus(0)">
-                <img class="first-image" src="/public/static/img/front1.png" alt="img">
-            </div>
-            <div class="intro-image" ng-class="contentStatus(1)">
-                <img src="/public/static/img/front2.png" alt="img">
-            </div>
-            <div class="intro-image" ng-class="contentStatus(2)">
-                <img src="/public/static/img/front3.png" alt="img">
-            </div>
-            <div class="intro-image" ng-class="contentStatus(3)">
-                <img src="/public/static/img/front4.png" alt="img">
             </div>
         </div>
     </div>

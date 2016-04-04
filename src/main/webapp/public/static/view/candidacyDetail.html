@@ -34,31 +34,33 @@
         </div>
         <div class="detail-content-box" >
             <div class="pledge-content" ng-show="selectedTab === 'pledge'">
-                <div class="pledge-wrapper" ng-repeat="pledge in currentCandidacy.candidacyPledge"
-                     ng-class="{'folding-pledge' : pledgeToggle[pledge.pledgeId] }"
-                >
-                    <div class="title-wrapper" ng-class="detailColorChange('text')">
-                        <div class="title-left">
-                            <span class="content-number" ng-bind=" $index + 1 "></span>
-                            <div class="pledge-title">
-                                <span class="content-title" ng-bind="pledge.pledgeTitle"></span>
+                <div class="pledge-container">
+                    <div class="pledge-wrapper" ng-repeat="pledge in currentCandidacy.candidacyPledge"
+                         ng-class="{'folding-pledge' : pledgeToggle[pledge.pledgeId] }"
+                    >
+                        <div class="title-wrapper" ng-class="detailColorChange('text')">
+                            <div class="title-left">
+                                <span class="content-number" ng-bind=" $index + 1 "></span>
+                                <div class="pledge-title">
+                                    <span class="content-title" ng-bind="pledge.pledgeTitle"></span>
+                                </div>
+                            </div>
+                            <div class="title-right" ng-class="{'disabled-input' : isTextTooShort(pledge)}">
+                                <label for="{{pledge.pledgeId}}" class="fa fa-angle-down fa-2x" ng-class="{'folding-status' : !pledgeToggle[pledge.pledgeId]}">
+                                    <input type="checkbox" id="{{pledge.pledgeId}}" checked
+                                           ng-init="pledgeToggle[pledge.pledgeId] = true"
+                                           ng-model="pledgeToggle[pledge.pledgeId]"
+                                           ng-disabled="isTextTooShort(pledge)"
+                                    >
+                                </label>
                             </div>
                         </div>
-                        <div class="title-right" ng-class="{'disabled-input' : isTextTooShort(pledge)}">
-                            <label for="{{pledge.pledgeId}}" class="fa fa-angle-down fa-2x" ng-class="{'folding-status' : !pledgeToggle[pledge.pledgeId]}">
-                                <input type="checkbox" id="{{pledge.pledgeId}}" checked
-                                       ng-init="pledgeToggle[pledge.pledgeId] = true"
-                                       ng-model="pledgeToggle[pledge.pledgeId]"
-                                       ng-disabled="isTextTooShort(pledge)"
-                                >
+                        <div class="pledge-box">
+                            <p ng-bind-html="renderHtml(pledge.pledgeDescription)"></p>
+                            <label for="{{pledge.pledgeId}}" ng-class="detailColorChange('text')" ng-show="isTextTooLong(pledge)" class="btn-long-folding">
+                                <span>상세 공약 접기</span>
                             </label>
                         </div>
-                    </div>
-                    <div class="pledge-box">
-                        <p class="" ng-bind="pledge.pledgeDescription"></p>
-                        <label for="{{pledge.pledgeId}}" ng-class="detailColorChange('text')" ng-show="isTextTooLong(pledge)" class="btn-long-folding">
-                            <span>상세 공약 접기</span>
-                        </label>
                     </div>
                 </div>
                 <div class="empty-box"></div>
@@ -149,7 +151,7 @@
                             <div ng-repeat="newsKeyword in currentCandidacy.candidacyKeywordList"
                             >
                                 <input class="news-radio" type="radio" id="{{'newsKeyword' + $index}}" name="newsKeyword"
-                                    ng-checked="$first"
+                                       ng-checked="$first"
                                 />
                                 <label for="{{'newsKeyword' + $index}}" class="news-keyword-text"
                                        ng-class="detailColorChange('checked')"
