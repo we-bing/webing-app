@@ -8,12 +8,13 @@
 var webing = angular.module('webingApp', ['ngRoute', 'ngTouch']);
 
 webing
-    .controller('WebingController', function ($http, $scope, $location, $anchorScroll, apiService, webingDataService, sharedDataService) {
+    .controller('WebingController', function ($http, $scope, $location,$templateCache, apiService, webingDataService, sharedDataService) {
         $scope.isMenuOpen = false;
 
         var init;
 
         init = function() {
+            $templateCache.removeAll();
             $location.path("home");
         };
 

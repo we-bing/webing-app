@@ -835,6 +835,7 @@ span.text-reveal {
     clear: both;
     font-size: 75%;
     top: -5px;
+    max-width: 650px;
     font-family: 'Spoqa Han Sans';
 }
 
@@ -1093,7 +1094,8 @@ span.bar {
 }
 
 .pledge-container{
-    height: 105%;
+    height: 101%;
+    overflow: scroll;
 }
 .information-no-data{
     text-align: center;
