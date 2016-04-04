@@ -46,8 +46,10 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, $
     candidacyDetail.addEventListener('scroll', scrollEvent);
 
     fetchFirstNews = function() {
-        var firstCandidacyKeyword = $scope.currentCandidacy.candidacyKeywordList[0].keywordName;
-        $scope.selectNewsKeyword(firstCandidacyKeyword);
+        if($scope.currentCandidacy.candidacyKeywordList) {
+            var firstCandidacyKeyword = $scope.currentCandidacy.candidacyKeywordList[0].keywordName;
+            $scope.selectNewsKeyword(firstCandidacyKeyword);
+        }
     };
 
 

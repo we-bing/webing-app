@@ -18,6 +18,12 @@ a, a:visited, a:hover {
 li{
     list-style-type: none;
 }
+
+button:focus {
+    outline: 0;
+    box-shadow: none;
+}
+button { border:0;}
 .fa-2x {
     font-size: 1.5em;
 
@@ -405,7 +411,7 @@ span.tip {
 .btn-select .text-outer {
     top: calc(50% - 0.5em);
 }
-#select-list-popup {
+#my-region-popup, #select-list-popup {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -441,6 +447,52 @@ span.tip {
 }
 .region-list .text-outer {
     top: calc(50% - 0.5em);
+}
+
+#my-region-popup .popup-container{
+    height: 70%;
+    top:15%;
+}
+.my-region-inner {
+    height: 100%;
+    width: 100%;
+}
+.popup-content-box {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    top: 10%;
+}
+.popup-title h3 {
+    font-size: 1.2em;
+}
+
+.popup-info{
+    margin-top: 15px;
+}
+.popup-info p {
+    font-size: 0.7em;
+    line-height: 1.3em;
+}
+.popup-img{
+    margin-top: 20px;
+}
+.popup-img img{
+    width: 80%;
+}
+
+.btn-check-region {
+    margin-top: 15px;
+    height: 10%;
+    width: 100%;
+}
+
+.btn-check-region button{
+    position: relative;
+    width: 50%;
+    height: 90%;
+    background-color: #20A9FA;
+    color: white;
 }
 /*end*/
 
@@ -536,7 +588,7 @@ img.popup-image {
 
 .popup-wrapper{
     width: 80%;
-    background-color: #09b7ea;
+    background-color: white;
     height: 400px;
     text-align:center;
     font-family:'Spoqa Han Sans';

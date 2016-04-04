@@ -10,6 +10,8 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
     var init;
     var listItemObjectInit;
     var fetchedCityList = [];
+
+    $scope.isMyRegionPopOpen = false;
     $scope.isSelectPopupOpen = false;
     $scope.region = {};
     $scope.regionName = {
