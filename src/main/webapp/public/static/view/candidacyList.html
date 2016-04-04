@@ -1,21 +1,41 @@
 <div id="candidacyList" >
-    <div class="popup-box"
-         ng-hide="isPopClosed">
-
-        <div class="popup-wrapper">
-            <div class="pop-content">
+    <div id="candidacy-list-popup"
+         ng-hide="isPopClosed"
+         data-ng-model="popupContent"
+         ng-init="popupContent = currentPopup()"
+    >
+        <div class="popup-container">
+            <div class="popup-content">
                 <div class="content-img">
-                    <img src="/public/static/img/popup_1.png" alt="">
+                    <img ng-src="{{popupContent.img}}" alt="popimage">
                 </div>
                 <div class="content-title">
-                    <span class="title-text">
+                    <h3 class="title-text" ng-bind="popupContent.title">
                         히든 카드
-                    </span>
+                    </h3>
                 </div>
                 <div class="content-article">
-                    <p class="article-text">
-                        불라불라불라불라불라
+                    <p class="article-text"
+                       ng-bind-html="renderHtml(popupContent.text)"
+                    >
+
                     </p>
+                </div>
+                <div class="btn-check-content "
+                     ng-click="nextContent()"
+                    ng-hide="isLastContent()"
+                >
+                    <div class="text-wrapper text-check">
+                        <span>확인했어요</span>
+                    </div>
+                </div>
+                <div class="btn-check-content webing-start"
+                     ng-click="popClose()"
+                     ng-show="isLastContent()"
+                >
+                    <div class="text-wrapper text-start">
+                        <span>위빙 시작하기</span>
+                    </div>
                 </div>
             </div>
         </div>

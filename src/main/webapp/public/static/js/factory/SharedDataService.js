@@ -5,6 +5,7 @@ webing.service('sharedDataService', function() {
     return {
         canSearchTownOpen: false,
         currentDetailCardIndex : null,
+        visited : false,
         getDetailPageClass : function(){
             var detailColorClass = [
                 'first-card-',
@@ -14,6 +15,5 @@ webing.service('sharedDataService', function() {
             ];
             return detailColorClass[this.currentDetailCardIndex % 4] + "background";
         }
-
     };
 });

@@ -411,7 +411,7 @@ span.tip {
 .btn-select .text-outer {
     top: calc(50% - 0.5em);
 }
-#my-region-popup, #select-list-popup {
+#my-region-popup, #select-list-popup,#candidacy-list-popup {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -569,34 +569,24 @@ span.tip {
 .candidacy_box:nth-child(4n) .back-card .detail_page span{
     background-color: #01AFF9;
 }
-.popup-box {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 5;
-    height: 100%;
-    width: 100%;
-    padding: 70px 10% 0 10%;
+
+#candidacy-list-popup .content-img img{
+    position: relative;
+    width: 90%;
 }
 .popup-content{
-    padding: 5% 5% 0 5%;
+    padding: 5%;
+    width: 90%;
 }
-
-img.popup-image {
-    width: 60%;
-    height: 60%;
-}
-
-.popup-wrapper{
-    width: 80%;
-    background-color: white;
-    height: 400px;
-    text-align:center;
-    font-family:'Spoqa Han Sans';
-    color:white;
+#candidacy-list-popup .content-title{
+    padding: 10px;
 }
 .popup-close-icon{
     float: right;
     margin: 5%;
+}
+.btn-check-content{
+    height: 50px;
 }
 .popup-close:after{
     display: block;
@@ -607,6 +597,33 @@ img.popup-image {
     height: 150px;
     width: 150px;
     background-color: aqua;
+}
+
+.btn-check-content{
+    height: 50px;
+    width: 100%;
+    margin-top: 15px;
+}
+.btn-check-content .text-wrapper{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    left: 15%;
+    color: white;
+}
+.text-check{
+    background-color: #1EABFB;
+}
+.text-start{
+    background-color: #F84045;
+}
+.btn-check-content .text-wrapper span {
+    font-size: 2em;
+    line-height: 50px;
+}
+.content-article p{
+    font-size: 0.8em;
+    line-height: 1.3em;
 }
 #candidacyList{
     height: 100%;
