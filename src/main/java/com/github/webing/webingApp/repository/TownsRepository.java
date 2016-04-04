@@ -15,4 +15,6 @@ public interface TownsRepository extends JpaRepository<Town, Long> {
 
     @Override
     List<Town> findAll();
+
+    List<Town> findByCountyCodeOrderByTownNameAsc(long countyCode);
 }

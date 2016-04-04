@@ -1,11 +1,11 @@
 package com.github.webing.webingApp.controller;
 
 
-import com.github.webing.webingApp.model.AssemblyMember;
-import com.github.webing.webingApp.model.CandidacyMember;
-import com.github.webing.webingApp.model.City;
-import com.github.webing.webingApp.model.NewsPerKeyword;
-import com.github.webing.webingApp.service.*;
+import com.github.webing.webingApp.model.*;
+import com.github.webing.webingApp.service.AssemblyMemberService;
+import com.github.webing.webingApp.service.CandidacyService;
+import com.github.webing.webingApp.service.ExternalApiService;
+import com.github.webing.webingApp.service.RegionService;
 import org.springframework.web.bind.annotation.*;
 import org.xml.sax.SAXException;
 
@@ -25,10 +25,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class WebingApiController {
 
     @Inject
-    TownService townService;
-
-    @Inject
-    CityService cityService;
+    RegionService regionService;
 
     @Inject
     CandidacyService candidacyService;
@@ -39,13 +36,28 @@ public class WebingApiController {
     @Inject
     ExternalApiService externalApiService;
 
-    @RequestMapping(value = "townList", method = GET)
-    public List<City> region() {
-        return cityService.fetchTown();
+    @RequestMapping(value = "cityList",
+            method = GET)
+    public List<City> cityList() {
+        return regionService.getCityList();
     }
 
-    @RequestMapping(value = "candidacies/{districtCode}", method = GET)
+    @RequestMapping(value = "countyList/{cityCode}",
+            method = GET)
+    public List<County> countyList(@PathVariable("cityCode") long cityCode) {
+        return regionService.getCounyList(cityCode);
+    }
+
+    @RequestMapping(value = "townList/{countyCode}",
+            method = GET)
+    public List<Town> townList(@PathVariable("countyCode") long countyCode) {
+        return regionService.getTownList(countyCode);
+    }
+
+    @RequestMapping(value = "candidacies/{districtCode}",
+            method = GET)
     public List<CandidacyMember> candidacyMembers(@PathVariable("districtCode") long districtCode) {
+
         System.out.println(districtCode);
         return candidacyService.getCandidacyMembers(districtCode);
     }
@@ -55,7 +67,7 @@ public class WebingApiController {
         return assemblyMemberService.getAssemblyMember(assemblyId);
     }
 
-    @RequestMapping(value = "newsKeywords")
+    @RequestMapping(value = "newsKeywords" )
     public List<NewsPerKeyword> getNewsWithQuery(@RequestParam(value = "query") String query) throws IOException, ParserConfigurationException, SAXException {
 
         // query를 검색어로 naver 검색 API 호출. 호출 후 본문을 xml 형식의 String으로 변환해서 가져옴.
