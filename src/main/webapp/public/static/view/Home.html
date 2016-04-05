@@ -13,6 +13,36 @@
             </ul>
         </div>
     </div>
+    <div id="my-region-popup" ng-show="isMyRegionPopOpen">
+        <div class="popup-container">
+            <div class="my-region-inner">
+                <div class="btn-close" ng-click="isMyRegionPopOpen = false">
+                    <img src="/public/static/img/cancel_black.png" alt="">
+                </div>
+                <div class="popup-content-box">
+                    <div class="popup-title">
+                        <h3>살고 계신 지역이 리스트에 없나요?</h3>
+                    </div>
+                    <div class="popup-info">
+                        <p>
+                            선거구는 자신의 '행정동'을 기준으로 나뉘어 있습니다.<br>
+                            행정동은 이전에 알고 있던 '법정동'의 명칭과 조금 다를 수 있어요!<br>
+                            아래의 링크에 접속해서 거주지 주소를 입력하면 <br>
+                            자신의 관할지역센터 동이름을 통해 행정동을 알 수 있습니다!<br>
+                        </p>
+                    </div>
+                    <div class="popup-img">
+                        <img src="/public/static/img/popup_notown.png" alt="사진">
+                    </div>
+                    <div class="btn-check-region">
+                        <button >
+                            <a href="http://www.juso.go.kr/support/ AddressMainSearch.do?searchType=TOTAL#self" target="_blank">행정동 확인하러 가기</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="home-logo-container">
         <img src="/public/static/img/frontpage_logo.png" alt="로고">
     </div>
@@ -26,7 +56,7 @@
                 <span class="hint">
                     잠깐! 혹시 살고 계신 "동/읍/리"가 리스트에 없나요?
                 </span>
-                    <span class="tip">Tip!</span>
+                    <span class="tip" ng-click="isMyRegionPopOpen = true" >Tip!</span>
                 </div>
             </div>
             <div class="select-button-wrapper">

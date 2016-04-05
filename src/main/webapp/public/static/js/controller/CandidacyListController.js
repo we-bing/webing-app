@@ -27,7 +27,7 @@ webing.controller('CandidacyListController', function ($scope, $routeParams, $lo
         apiService.candidacise(districtCode)
             .success(function(candidacyMembers) {
                 candidacyMembers.forEach(function (member) {
-                    member.experienceArr = member.experience.split(',');
+                    member.experienceArr = member.experience.split('&');
                     member.isReverse = false;
                 });
                 $scope.candidacise = webingDataService.candidacyList = candidacyMembers;
