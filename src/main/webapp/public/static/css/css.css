@@ -430,6 +430,7 @@ span.tip {
     background-color: white;
     font-size: 0.95em;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .region-list{
@@ -462,6 +463,22 @@ span.tip {
     width: 100%;
     height: 90%;
     top: 10%;
+}
+
+.popup-container .content-title{
+    color: #4a4a4a;
+    font-size: 1.3em;
+    font-weight: 400;
+    letter-spacing: 0.09px;
+    line-height: 25px;
+    top: 54%;
+    position: absolute;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    display: block;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 .popup-title h3 {
     font-size: 1.2em;
@@ -572,11 +589,30 @@ span.tip {
 
 #candidacy-list-popup .content-img img{
     position: relative;
-    width: 90%;
+    padding: 5%;
+    width: 65%;
+    max-height: 230px;
+    top: 50%;
+    margin-bottom: -50%;
+    transform: translate(0%,-50%);
 }
+.content-img {
+    top: 25%;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    height: 48%;
+}
+
 .popup-content{
     padding: 5%;
     width: 90%;
+    /* display: block; */
+    text-align: center;
+    position: relative;
+    height: 100%;
 }
 #candidacy-list-popup .content-title{
     padding: 10px;
@@ -587,6 +623,17 @@ span.tip {
 }
 .btn-check-content{
     height: 50px;
+    width: 100%;
+    margin-top: 15px;
+    position: absolute;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 81%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
 }
 .popup-close:after{
     display: block;
@@ -605,11 +652,11 @@ span.tip {
     margin-top: 15px;
 }
 .btn-check-content .text-wrapper{
-    position: relative;
     height: 100%;
     width: 70%;
-    left: 15%;
     color: white;
+    margin-right: auto;
+    margin-left: auto;
 }
 .text-check{
     background-color: #1EABFB;
@@ -618,8 +665,18 @@ span.tip {
     background-color: #F84045;
 }
 .btn-check-content .text-wrapper span {
-    font-size: 2em;
+    font-size: 1.2em;
     line-height: 50px;
+}
+
+.content-article {
+    position: absolute;
+    top: 65%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 .content-article p{
     font-size: 0.8em;
