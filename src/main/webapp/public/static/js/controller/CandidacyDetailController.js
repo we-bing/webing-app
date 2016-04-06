@@ -54,7 +54,7 @@ webing.controller('CandidacyDetailController', function ($scope, $routeParams, $
 
 
     $scope.isActivityFolding = true;
-    $scope.selectedTab = 'course';
+    $scope.selectedTab = 'pledge';
 
     $scope.isTextTooShort = function(pledge) {
         return pledge.pledgeDescription.length < 50;
