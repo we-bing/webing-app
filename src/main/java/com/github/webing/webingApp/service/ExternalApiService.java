@@ -1,6 +1,8 @@
 package com.github.webing.webingApp.service;
 
 import com.github.webing.webingApp.model.NewsPerKeyword;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -24,6 +26,10 @@ import java.util.List;
 
 @Service
 public class ExternalApiService {
+
+    private static final Logger logger =
+            LoggerFactory.getLogger(ExternalApiService.class);
+
     public List<NewsPerKeyword> parseNewsContentsXml(String xmlString) throws ParserConfigurationException, IOException, SAXException {
         List<NewsPerKeyword> newsPerKeywords = new ArrayList<>();
         InputSource is = new InputSource(new StringReader(xmlString));
@@ -40,7 +46,6 @@ public class ExternalApiService {
             if (itemNode.getNodeType() == Node.ELEMENT_NODE) {
 
                 Element itemElement = (Element)itemNode;
-
                 NodeList titleNodeList = itemElement.getElementsByTagName("title");
                 Element titleElement = (Element)titleNodeList.item(0);
                 NodeList childTitleNodeList = titleElement.getChildNodes();
@@ -69,7 +74,7 @@ public class ExternalApiService {
         urlConnection.setRequestProperty("X-Naver-Client-Id","TsshNF_3sY3pu9gOkU7d");
         urlConnection.setRequestProperty("X-Naver-Client-Secret","5FOHV3Ysqo");
         InputStream ist = urlConnection.getInputStream();
-        InputStreamReader isr = new InputStreamReader(ist);
+        InputStreamReader isr = new InputStreamReader(ist ,"UTF-8");
         BufferedReader br = new BufferedReader(isr);
         String xmlString = "";
         while(true){
