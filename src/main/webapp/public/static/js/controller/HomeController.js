@@ -16,6 +16,9 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
     }, {
         "cityCode": 4100,
         "cityName": "경기도"
+    }, {
+        "cityCode": 4900,
+        "cityName": "제주특별자치도"
     }];
     $scope.isMyRegionPopOpen = false;
     $scope.isSelectPopupOpen = false;

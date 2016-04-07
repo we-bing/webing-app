@@ -21,6 +21,12 @@
     <div class="action-bar" ng-class="classToPath()">
         <img class="webing-logo" src="public/static/img/Group_3.png" ng-if="isPathHome()"/>
         <div class="btn-back ng-hide" ng-click="back()" ng-show="isPathOther()"><i class="fa fa-angle-left fa-3x"></i></div>
+        <div class="text-selected-district" ng-show="isPathOther()">
+            <div class="selected-district-box">
+                    <span class="selected-name" ng-bind="getSelectedDistrictName()">
+                    </span>
+            </div>
+        </div>
         <img class="side-menu-open" src="public/static/img/Group_2.png" ng-click="menuClassToggle()" />
     </div>
     <div ng-view class="view-container">

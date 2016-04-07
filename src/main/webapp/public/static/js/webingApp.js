@@ -10,14 +10,19 @@ var webing = angular.module('webingApp', ['ngRoute', 'ngTouch']);
 webing
     .controller('WebingController', function ($http, $scope, $location,$templateCache, apiService, webingDataService, sharedDataService) {
         $scope.isMenuOpen = false;
-
+        $scope.selectedTown = {};
         var init;
 
         init = function() {
+            $scope.selectedTown = webingDataService.town;
             $templateCache.removeAll();
             $location.path("home");
         };
-
+        $scope.getSelectedDistrictName = function() {
+            if(webingDataService.town) {
+                return webingDataService.town.districtName;
+            }
+        };
         $scope.classToPath = function() {
             var path = $location.path().split('/')[1];
             if(path === "home"){
