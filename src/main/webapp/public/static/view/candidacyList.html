@@ -52,7 +52,7 @@
     <div class="candidacy_list_container">
         <div class="candidacy_box" ng-repeat="candidacy in candidacise" ng-class="{reverse : candidacy.isReverse}">
             <div class="card-wrapper">
-                <div class="front-card" ng-click="candidacy.isReverse = true">
+                <div class="front-card" ng-click="candidacy.isReverse = false">
                     <div class="card_box secret_info">
                         <img class="anonymous-img" src="/public/static/img/anonymous.png">
                         <div class="keyword"
@@ -64,7 +64,7 @@
                         <span>후보자 자세히 살펴보기</span>
                     </div>
                 </div>
-                <div class="back-card" ng-click="candidacy.isReverse = false">
+                <div class="back-card" ng-click="candidacy.isReverse = true">
                     <div class="card_box public_info">
                         <div class="head-img">
                         </div>
