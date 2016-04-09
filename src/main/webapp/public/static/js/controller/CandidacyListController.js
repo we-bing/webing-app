@@ -11,8 +11,8 @@ webing.controller('CandidacyListController', function ($scope, $routeParams, $lo
         $scope.fetchCandidacies($scope.district.districtCode);
     };
 
-    $scope.isPopClosed = webingDataService.visited;
-
+    //$scope.isPopClosed = webingDataService.visited;
+    $scope.isPopClosed = true;
     $scope.popupContent = {};
     $scope.popClose = function() {
         $scope.isPopClosed = webingDataService.visited = true;

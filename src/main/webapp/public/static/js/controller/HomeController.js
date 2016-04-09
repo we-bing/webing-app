@@ -10,16 +10,7 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
     var init;
     var listItemObjectInit;
     var fetchedCityList = [];
-    var cityList = [{
-        "cityCode": 1100,
-        "cityName": "서울특별시"
-    }, {
-        "cityCode": 4100,
-        "cityName": "경기도"
-    }, {
-        "cityCode": 4900,
-        "cityName": "제주특별자치도"
-    }];
+
     $scope.isMyRegionPopOpen = false;
     $scope.isSelectPopupOpen = false;
     $scope.region = {};
@@ -46,14 +37,12 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
     };
 
     fetchCityList = function() {
-        $scope.currentListItemObject.type = 'city';
-        $scope.currentListItemObject.items = cityList;
-        //apiService.cityList().success(
-        //    function (data) {
-        //        $scope.currentListItemObject.type = 'city';
-        //        $scope.currentListItemObject.items = data;
-        //    }
-        //);
+        apiService.cityList().success(
+            function (data) {
+                $scope.currentListItemObject.type = 'city';
+                $scope.currentListItemObject.items = data;
+            }
+        );
     };
     fetchCountyList = function(code) {
         apiService.countyList(code).success(
@@ -81,8 +70,7 @@ webing.controller('HomeController', function ($scope, $routeParams, apiService ,
 
     $scope.cityOpen = function() {
         $scope.isSelectPopupOpen = true;
-        $scope.currentListItemObject.type = 'city';
-        $scope.currentListItemObject.items = cityList;
+        fetchCityList();
         $scope.region = {};
         $scope.regionName = {
             county : "구/시/군",

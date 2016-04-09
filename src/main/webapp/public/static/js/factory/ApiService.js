@@ -3,6 +3,7 @@
  */
 
 webing.service("apiService", function($http) {
+
     return {
         districts: function () {
             var url = '/api/townList';

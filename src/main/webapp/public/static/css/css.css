@@ -11,6 +11,10 @@ body ::-webkit-scrollbar {
     display: none;
 }
 
+.fa-circle-o:before {
+    content: "\f10c";
+    font-size: x-small;
+}
 a, a:visited, a:hover {
     text-decoration: none !important;
     color: inherit;
@@ -138,6 +142,12 @@ input:focus{
     top:20px;
     left: 86%;
 }
+
+.popup-container .btn-close {
+    left: 88%;
+}
+
+
 .btn-menu a{
     color: white;
     font-size: 1.5em;
@@ -285,21 +295,7 @@ input:focus{
 ::-webkit-scrollbar {
     display: none;
 }
-.text-selected-district{
-    position: absolute;
-    height: 100%;
-    width: 70%;
-    left: 15%;
-}
-.selected-district-box{
-    position: relative;
-    text-align: center;
-    line-height: 60px;
-}
-.selected-name{
-    font-size: 2em;
-    font-family: 'Jeju Gothic';
-}
+
 /*end*/
 
 
@@ -344,6 +340,7 @@ input:focus{
 }
 .select-region-container{
     height: 30%;
+    margin-top: 10%;
 }
 
 .select-text-wrapper {
@@ -426,13 +423,14 @@ span.tip {
     top: calc(50% - 0.5em);
 }
 #my-region-popup, #select-list-popup,#candidacy-list-popup {
-    position: absolute;
+    position: relative;
     height: 100%;
     width: 100%;
     top: -60px;
     background-color: RGBA(0, 0, 0, 0.8);
     z-index: 7;
     text-align: center;
+
 }
 .popup-container {
     position: relative;
@@ -464,13 +462,16 @@ span.tip {
     top: calc(50% - 0.5em);
 }
 
-#my-region-popup .popup-container{
-    height: 70%;
-    top:15%;
+#my-region-popup .popup-container {
+    top: 10%;
+    height: initial;
+    padding: 5%;
+    width: 75%;
 }
 .my-region-inner {
     height: 100%;
     width: 100%;
+    margin-top: 15%;
 }
 .popup-content-box {
     position: relative;
@@ -499,7 +500,7 @@ span.tip {
 }
 
 .popup-info{
-    margin-top: 15px;
+    margin-top: 7%;
 }
 .popup-info p {
     font-size: 0.7em;
@@ -513,18 +514,27 @@ span.tip {
 }
 
 .btn-check-region {
-    margin-top: 15px;
+    margin-top: 7%;
+    margin-bottom: 2%;
     height: 10%;
     width: 100%;
 }
 
+
 .btn-check-region button{
-    position: relative;
-    width: 50%;
-    height: 90%;
+    width: 60%;
     background-color: #20A9FA;
     color: white;
 }
+
+.btn-check-region a{
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
 /*end*/
 
 /* webingIntro*/
@@ -615,13 +625,22 @@ span.tip {
 .content-img {
     top: 25%;
     position: absolute;
+    height: 48%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
-    overflow: hidden;
-    height: 48%;
+}
+#candidacy-list-popup .content-img img {
+    position: relative;
+    padding: 5%;
+    width: 65%;
+    max-height: 230px;
+    top: 50%;
+    margin-bottom: -50%;
+    transform: translate(0%,-50%);
 }
 
 .popup-content{
@@ -644,6 +663,7 @@ span.tip {
     width: 100%;
     margin-top: 15px;
     position: absolute;
+    top: 81%;
     /* margin-left: auto; */
     /* margin-right: auto; */
     left: 50%;
@@ -651,9 +671,6 @@ span.tip {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
-    top: 81%;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
 }
 .popup-close:after{
     display: block;
@@ -734,6 +751,7 @@ span.text-reveal {
     overflow: scroll;
     position: relative;
     height: 100%;
+    padding-top: 40px;
 }
 .candidacy_box{
     height: 72%;
@@ -788,6 +806,8 @@ span.text-reveal {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
+
+
 }
 .secret_info{
     height: 85%;
@@ -861,7 +881,7 @@ span.text-reveal {
     color: #9b9b9b;
     letter-spacing: 0.99px;
     line-height: 20px;
-    font-size: 1em;
+    font-size: 0.8em;
     font-family: 'Spoqa Han Sans';
 }
 
@@ -875,14 +895,14 @@ span.text-reveal {
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Spoqa Han Sans';
     line-height: 22px;
 }
 .back-card .previous{
-    line-height: 33px;
-    letter-spacing: 1px;
-    font-size: 1em;
+    line-height: 20px;
+    letter-spacing: 0.99px;
+    font-size: 0.8em;
     font-family: 'Spoqa Han Sans';
     color:#9b9b9b;
 }
@@ -891,7 +911,7 @@ span.text-reveal {
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Spoqa Han Sans';
     line-height: 22px;
 }
@@ -934,6 +954,30 @@ span.text-reveal {
     border: 3px solid #f2f2f2;
 }
 /*toggle */
+
+/*selected-district*/
+
+.text-selected-district {
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    left: 15%;
+}
+
+.selected-district-box {
+    position: relative;
+    text-align: center;
+    line-height: 60px;
+}
+
+.selected-name {
+    font-size: 1em;
+    font-family: 'Jeju Gothic';
+    color: rgba(0,0,0,0.5);
+}
+
+
+
 
 /*candidacyDetailPage*/
 #candidacyDetail{
@@ -998,6 +1042,8 @@ span.sub-title-source{
     color: #5F5F5F;
     font-weight: 400;
     font-family: 'Spoqa Han Sans';
+    color: rgba(0,0,0,0.5);
+    line-height: 20px;
 }
 
 .sub-title-source a{
@@ -1015,7 +1061,7 @@ span.sub-title-source{
 
 .detail-text-box{
     line-height: 58px;
-    font-size: 1em;
+    font-size: 0.9em;
     letter-spacing: 1.9px;
 }
 
@@ -1111,7 +1157,7 @@ span.bar {
 
 .pledge-content .title-left{
     display: inline-block;
-    width: 90%;
+    width: 92%;
     float: left;
 }
 
@@ -1120,6 +1166,7 @@ span.bar {
     float: left;
     width: 80%;
     margin-top: 8px;
+    margin-bottom: 7px;
 }
 .pledge-content .title-left .pledge-title span {
     color: #4a4a4a;
@@ -1128,12 +1175,12 @@ span.bar {
     line-height: 25px;
 }
 .pledge-content .title-left .content-number{
-    margin: 0 10px 0 10px;
+    margin: 13px 10px 0 10px;
     float: left;
 }
 .pledge-content .title-right{
     display: inline-block;
-    width: 10%;
+    width: 8%;
     margin-top: 0.75em;
     clear: both;
 }
@@ -1164,19 +1211,23 @@ span.bar {
 }
 
 .pledge-box {
-    margin-bottom: 13px;
+    margin-bottom: 9px;
 }
 
 .pledge-box p{
     position: relative;
-    width: 80%;
+    width: 87%;
     max-height: 2000px;
     line-height: 1.5em;
     font-family: 'Spoqa Han Sans';
-    font-weight: 200;
-    font-size: 1em;
-    left: 29px;
+    font-weight: 400;
+    font-size: 1.1em;
+    left: 33px;
+    color: rgba(0,0,0,0.5);
 }
+
+
+
 .folding-pledge .pledge-box p{
     overflow:hidden;
     max-height: calc(1.5em * 2);
@@ -1194,10 +1245,10 @@ span.bar {
 .content-number{
     display: inline-block;
     margin: 10px;
+    margin-top: 13px;
     font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0.09px;
-    line-height: 39px;
 }
 .content-title{
     color: #4a4a4a;
@@ -1205,13 +1256,16 @@ span.bar {
     font-weight: 400;
     letter-spacing: 0.09px;
     line-height: 25px;
+    margin-top: 8px;
 }
 
 .content-title-source{
-    float: right;
     margin: 10px;
-    line-height: 39px;
-    font-size: 0.9em;
+    line-height: 25px;
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.5);
+    position: absolute;
+    right: 7px;
 }
 
 .content-title-source a{
@@ -1220,12 +1274,17 @@ span.bar {
 
 .news-list-wrapper .news p {
     position: relative;
-    width: 80%;
-    left: 7%;
+    width: 84%;
+    left: 38px;
     line-height: 1.5em;
     font-family: 'Spoqa Han Sans';
-    font-weight: 200;
-    font-size: 1em;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: rgba(0,0,0,0.5);
+    display: inline-block;
+    overflow: hidden;
+    max-height: 4.5em;
+    margin-bottom: 9px;
 }
 
 .pledge-content .title-wrapper:after{
@@ -1244,6 +1303,9 @@ span.bar {
 }
 .information-no-data{
     text-align: center;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .info-text{
@@ -1257,18 +1319,19 @@ span.bar {
     max-width: 400px;
 }
 .info-detail{
-    position: relative;
     font-size: 1em;
-    font-weight: 300;
+    font-weight: normal;
     margin-top: 20px;
     letter-spacing: 1px;
     line-height: 1.3em;
-    width:90%;
-    left:7%
-
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .content-wrapper{
     position: relative;
+    padding-top: 10px;
 }
 .info-text span{
     display: inline-block;
@@ -1277,7 +1340,7 @@ span.bar {
     letter-spacing: 0.09px;
     line-height: 20px;
     font-size: 1.3em;
-    font-weight: 100;
+    font-weight: normal;
 }
 .activity-wrapper{
     position: relative;
@@ -1333,7 +1396,7 @@ span.bar {
     float: left;
 }
 .rate-bar{
-    line-height: 60px;
+    line-height: 56px;
     width: calc(100% - 85px);
 }
 .rate-bar progress{
@@ -1341,7 +1404,7 @@ span.bar {
     appearance: none;
     line-height: 60px;
     left: 10%;
-    width: 80%;
+    width: 90%;
     position: relative;
 }
 .rate-bar progress::-webkit-progress-value {
@@ -1367,16 +1430,22 @@ progress::-webkit-progress-bar {
 }
 .content-more {
     text-align: center;
-    font-size: 1.2em;
-    font-weight: 300;
+    font-size: 1.1em;
+    font-weight: normal;
     letter-spacing: 0.07px;
     line-height: 8px;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .content-more .more-arrow{
     margin: 10px 0 10px 0;
 }
+
+div#bill-keywords {
+    margin-bottom: 5px;
+}
+
 .keywords-wrapper{
     position: relative;
     background-color: #4b8aef;
@@ -1428,15 +1497,15 @@ progress::-webkit-progress-bar {
 
 .btn-right, .bth-left{
     position: absolute;
-    height: 75px;
-    width: 75px;
+    height: 65px;
+    width: 65px;
     background-color: #dcdada;
     color: #ffffff;
     opacity: 0.5;
     border-radius: 100%;
     text-align: center;
-    line-height: 75px;
-    top: 70px;
+    line-height: 65px;
+    top: 65px;
 }
 .btn-right{
     transform: rotate(90deg);
@@ -1464,6 +1533,8 @@ progress::-webkit-progress-bar {
     -moz-overflow: hidden;
     overflow: hidden;
     max-width: 400px;
+    margin-top: 11px;
+    margin-bottom: 6px;
 }
 .news-keyword-text{
     float: left;
@@ -1474,7 +1545,7 @@ progress::-webkit-progress-bar {
     margin: 5px;
     padding: 10px 20px 10px 20px;
     font-size: 1.2em;
-    font-weight: 200;
+    font-weight: normal;
 }
 
 .news-radio:checked + .news-keyword-text.first-card-checked {
@@ -1495,6 +1566,8 @@ progress::-webkit-progress-bar {
 }
 .news-box {
     border-bottom: 1px solid #f2f2f2;
+    padding-top: 7px;
+    padding-bottom: 3px;
 }
 .news-list .title-left:after {
     content: '';
@@ -1503,8 +1576,8 @@ progress::-webkit-progress-bar {
 }
 .news-list .title-right {
     display: inline-block;
-    width: 10%;
-    margin-top: 0.75em;
+    width: 8%;
+    margin-top: 0.8em;
     clear: both;
 }
 .news-list .title-right span {
@@ -1514,21 +1587,33 @@ progress::-webkit-progress-bar {
 }
 .news-list .title-left {
     display: inline-block;
-    width: 90%;
+    width: 92%;
     float: left;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    font-size: 0.9em;
 }
 .news-title {
     display: inline-block;
-    width: 80%;
-    margin-top: 8px;
+    width: 86%;
+    /*margin-top: 8px;*/
     float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 98%;
+    max-height: 51px;
 }
+
+.news-title .content-title {
+    line-height: 22px;
+}
+
 .news-radio {
     display: none;
 }
 .news-box .content-number {
     float: left;
-    margin: 0 10px 0 10px;
+    margin: 4px 10px 0 10px;
 }
 .empty-box{
     height: 100px;
@@ -1663,3 +1748,4 @@ input[type="checkbox"].bigswitch.ios-switch:checked + div > div {
 input[type="checkbox"].green.ios-switch:checked + div > div {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px #777eeb;
 }
+

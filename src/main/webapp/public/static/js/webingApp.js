@@ -56,7 +56,7 @@ webing
         init();
 
     })
-    .config(function($routeProvider) {
+    .config(function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/home', {
                 templateUrl: 'public/static/view/home.html',
@@ -75,7 +75,11 @@ webing
             .when('/candidacyDetail/:candidacyId', {
                 templateUrl: 'public/static/view/candidacyDetail.html',
                 controller: 'CandidacyDetailController'
+            })
+            .otherwise({
+                redirectTo: '/home'
             });
 
+        $locationProvider.html5Mode(true);
     });
 

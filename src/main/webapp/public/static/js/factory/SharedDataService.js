@@ -5,7 +5,7 @@ webing.service('sharedDataService', function() {
     return {
         canSearchTownOpen: false,
         currentDetailCardIndex : null,
-        visited : false,
+        visited : true,
         getDetailPageClass : function(){
             var detailColorClass = [
                 'first-card-',

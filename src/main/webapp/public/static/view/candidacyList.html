@@ -1,6 +1,6 @@
 <div id="candidacyList" >
     <div id="candidacy-list-popup"
-         ng-hide="isPopClosed"
+         ng-hide="isPopClosed || true"
          data-ng-model="popupContent"
          ng-init="popupContent = currentPopup()"
     >
@@ -40,15 +40,15 @@
             </div>
         </div>
     </div>
-    <div class="reverse-wrapper">
-        <div class="text-box">
-            <span class="text-hidden">카드 전체 숨김</span>
-            <div class="toggle-box">
-                <label><input ng-click="changeStatus()" type="checkbox" class="ios-switch blue bigswitch" ng-model="cardChecked" ng-checked="cardChecked"/><div><div></div></div></label>
-            </div>
-            <span class="text-reveal">카드 전체 공개</span>
-        </div>
-    </div>
+    <!--<div class="reverse-wrapper">-->
+        <!--<div class="text-box">-->
+            <!--<span class="text-hidden">카드 전체 숨김</span>-->
+            <!--<div class="toggle-box">-->
+                <!--<label><input ng-click="changeStatus()" type="checkbox" class="ios-switch blue bigswitch" ng-model="cardChecked" ng-checked="cardChecked"/><div><div></div></div></label>-->
+            <!--</div>-->
+            <!--<span class="text-reveal">카드 전체 공개</span>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="candidacy_list_container">
         <div class="candidacy_box" ng-repeat="candidacy in candidacise" ng-class="{reverse : candidacy.isReverse}">
             <div class="card-wrapper">

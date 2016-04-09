@@ -43,9 +43,6 @@
             </div>
         </div>
     </div>
-    <div class="home-logo-container">
-        <img src="/public/static/img/frontpage_logo.png" alt="로고">
-    </div>
     <div class="select-region-container">
         <div class="select-inner-box">
             <div class="select-text-wrapper">
@@ -80,7 +77,7 @@
                     </div>
                     <div class="btn-select search"
                          ng-class="{'selected-region' : region.town.districtCode}"
-                        ng-click="region.town.districtCode && districtFind()"
+                         ng-click="region.town.districtCode && districtFind()"
                     >
                         <div class="text-outer">
                             <img src="/public/static/img/white_zoom.png" alt="찾기">
@@ -90,5 +87,9 @@
             </div>
         </div>
     </div>
+    <div class="home-logo-container">
+        <img src="/public/static/img/frontpage_logo.png" alt="로고">
+    </div>
+
 </div>
 

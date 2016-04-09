@@ -8,13 +8,11 @@
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="public/static/css/reset.css">
-    <link rel="stylesheet" href="public/static/css/font-awesome-4.5.0/css/font-awesome.css">
-    <link rel="stylesheet" href="public/static/css/css.css">
+    <link rel="stylesheet" href="/public/static/css/reset.css">
+    <link rel="stylesheet" href="/public/static/css/font-awesome-4.5.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/static/css/css.css">
     <link rel="icon" type="image/x-icon" href="/assets/static/webing_logo_picto.png">
-    <style>
-
-    </style>
+    <base href="/">
 </head>
 <body ng-app="webingApp" >
 <div ng-controller="WebingController" class="app-container">
@@ -37,7 +35,7 @@
             <img src="/public/static/img/cancel_white.png" alt="닫기">
         </div>
         <div class="btn-menu" ng-click="menuClassToggle()">
-            <a href="#home">홈</a>
+            <a href="/home">홈</a>
         </div>
         <div class="btn-menu" ng-click="menuClassToggle()">
             <a href="https://www.facebook.com/funpolitic" target="_blank">페이스북 페이지</a>
